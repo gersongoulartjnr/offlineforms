@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="OfflineForms" parent="android:Theme.DeviceDefault.Light">
+        <item name="android:colorBackground">@color/offline_forms_roxo_claro</item>
+        <item name="android:colorForeground">?android:attr/textColorSecondary</item>
+        <item name="android:textColorSecondary">@color/primary_text_default_material_light</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:colorPrimary">@color/accent_material_light</item>
+        <item name="android:colorPrimaryDark">@color/accent_material_light</item>
+        <item name="android:colorAccent">@color/accent_material_light</item>
+        <item name="android:navigationBarColor">?android:attr/textColorSecondary</item>
+        <item name="android:windowBackground">@color/offlineforms_roxoclaro</item>
+        <item name="android:textColorPrimaryInverse">@android:color/black</item>
+        <item name="android:statusBarColor">@color/offline_forms</item>
+    </style>
+</resources>

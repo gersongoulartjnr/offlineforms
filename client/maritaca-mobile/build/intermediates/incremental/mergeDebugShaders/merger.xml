@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\offline-forms\client\maritaca-mobile\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\offline-forms\client\maritaca-mobile\build-types\debug\shaders"/></dataSet></merger>

@@ -1,0 +1,6 @@
+/target
+/bin
+/.classpath
+/.project
+/.settings
+.faces-config.xml.jsfdia

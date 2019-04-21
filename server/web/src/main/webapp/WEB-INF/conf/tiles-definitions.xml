@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <!-- Template: Index -->
+    <definition name="index-template" template="/WEB-INF/views/templates/index.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/sections/header.jsp" />
+        <put-attribute name="messages" value="/WEB-INF/views/sections/messages.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/sections/footer.jsp" />
+        <put-attribute name="banners" value="/WEB-INF/views/sections/banners.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/sections/body.jsp" />
+    </definition>
+    
+    <!-- Template: Form Editor -->
+    <definition name="home-template" template="/WEB-INF/views/templates/home.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/sections/header.jsp" />
+        <put-attribute name="messages" value="/WEB-INF/views/sections/messages.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/sections/footer.jsp" />
+        <put-attribute name="banners" value="/WEB-INF/views/sections/banners.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/sections/body.jsp" />
+    </definition>
+    
+    <definition name="formeditor-template" template="/WEB-INF/views/templates/formEditor.jsp">
+    	<put-attribute name="messages" value="/WEB-INF/views/sections/messages.jsp" />
+    </definition>
+    
+    <!-- Template: Analytics Editor -->
+    <definition name="analyticseditor-template" template="/WEB-INF/views/templates/analytics.jsp">
+    	<put-attribute name="messages" value="/WEB-INF/views/sections/messages.jsp" />
+    </definition>
+    
+    <!-- Template: Report Editor -->
+    <definition name="reporteditor-template" template="/WEB-INF/views/templates/reportEditor.jsp">
+    	<put-attribute name="messages" value="/WEB-INF/views/sections/messages.jsp" />
+    </definition>
+    
+    <!-- Template: Mobile -->
+    <definition name="mobile-template" template="/WEB-INF/views/templates/mobile.jsp">
+    	<put-attribute name="mobile" value="/WEB-INF/views/sections/empty.jsp" />
+    </definition>
+    <!-- Template: Popup -->    
+    <definition name="popup-template" template="/WEB-INF/views/templates/popup.jsp">
+    	<put-attribute name="popup" value="/WEB-INF/views/sections/empty.jsp" />
+    </definition>
+    
+    <!-- Extends: Index -->
+    <definition name="index" extends="index-template">
+        <!--put-attribute name="content" value="/WEB-INF/views/sections/general/index.jsp" /-->
+        <put-attribute name="header" value="/WEB-INF/views/sections/headerLogin.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/login/login.jsp" />
+    </definition>
+    
+    <definition name="logout" extends="index-template">
+        <!--put-attribute name="content" value="/WEB-INF/views/sections/general/index.jsp" /-->
+        <put-attribute name="header" value="/WEB-INF/views/sections/headerLogin.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/login/login.jsp" />
+    </definition>
+        
+    <definition name="home-openid" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/login/openid.jsp" />
+    </definition>
+    
+    <definition name="qr_code" extends="popup-template">
+        <put-attribute name="popup" value="/WEB-INF/views/form/qrCode.jsp" />
+    </definition>    
+        
+    <definition name="create_account" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/accountEditor.jsp" />
+    </definition>
+    
+    <definition name="activate_account" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/activateAccount.jsp" />
+    </definition>    
+        
+    <definition name="my_account" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/profile.jsp" />
+    </definition>
+    
+    <definition name="forgot_pass" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/forgotPassword.jsp" />
+    </definition>
+    <definition name="update_pass" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/updatePassword.jsp" />
+    </definition>
+    
+    <definition name="change_pass" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/changePassword.jsp" />
+    </definition>
+        
+    <definition name="group_editor" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/group/groupEditor.jsp" />
+    </definition>
+    
+    <definition name="group_lister" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/group/groupLister.jsp" />
+    </definition>
+    
+    <definition name="form_editor" extends="formeditor-template">
+        <put-attribute name="content" value="/WEB-INF/views/form/formEditor.jsp" />
+    </definition>
+    
+    <definition name="form_share" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/form/formShare.jsp" />
+    </definition>    
+    
+    <definition name="form_lister" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/form/formLister.jsp" />
+    </definition>    
+    
+    <definition name="form_access_request" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/form/formAccessRequest.jsp" />
+    </definition> 
+    
+    <definition name="answers_lister" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/answers/answersLister.jsp" />
+    </definition>
+    
+    <definition name="report_editor" extends="reporteditor-template">
+        <put-attribute name="content" value="/WEB-INF/views/report/reportEditor.jsp" />
+    </definition>
+    
+    <definition name="report_viewer" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/report/reportViewer.jsp" />
+    </definition>
+    <definition name="report_viewer_mob" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/report/reportViewer.jsp" />
+    </definition>
+    
+    <definition name="analytics_editor" extends="analyticseditor-template">
+        <put-attribute name="content" value="/WEB-INF/views/analytics/analyticsEditor.jsp" />
+    </definition>    
+    <definition name="analytics_viewer" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/analytics/analyticsViewer.jsp" />
+    </definition>
+    <definition name="analytics_viewer_mob" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/analytics/analyticsViewer.jsp" />
+    </definition>
+    
+    <!-- General -->
+    <definition name="about" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/sections/general/about.jsp" />
+    </definition>
+    <definition name="license" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/sections/general/license.jsp" />
+    </definition>
+    <definition name="disclaimer" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/sections/general/disclaimer.jsp" />
+    </definition>
+    <definition name="developers" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/sections/general/developers.jsp" />
+    </definition>
+    <definition name="contact_us" extends="index-template">
+        <put-attribute name="content" value="/WEB-INF/views/sections/general/contactUs.jsp" />
+    </definition>
+    
+    <!-- Extends: Mobile -->
+    <definition name="mobile_login" extends="mobile-template">
+        <put-attribute name="mobile" value="/WEB-INF/views/login/mobileLogin.jsp" />
+    </definition>
+    <definition name="mobile_conf" extends="mobile-template">
+        <put-attribute name="mobile" value="/WEB-INF/views/login/mobileConfirmation.jsp" />
+    </definition>
+    <definition name="mob_create_account" extends="mobile-template">
+        <put-attribute name="mobile" value="/WEB-INF/views/account/mobCreateAccount.jsp" />
+    </definition>
+    <definition name="mob_activate_account" extends="mobile-template">
+        <put-attribute name="mobile" value="/WEB-INF/views/account/mobActivateAccount.jsp" />
+    </definition>
+    
+    <!-- Extends: Popup -->
+    <definition name="form_import" extends="popup-template">
+        <put-attribute name="popup" value="/WEB-INF/views/form/importForm.jsp" />
+    </definition>
+    <definition name="form_save_as" extends="popup-template">
+        <put-attribute name="popup" value="/WEB-INF/views/form/saveAsForm.jsp" />
+    </definition>
+    <definition name="form_send_app_link" extends="popup-template">
+        <put-attribute name="popup" value="/WEB-INF/views/form/sendAppLink.jsp" />
+    </definition>
+    
+    
+    <definition name="m_admin" extends="home-template">
+        <put-attribute name="content" value="/WEB-INF/views/account/mAdmin.jsp" />
+    </definition>     
+</tiles-definitions>

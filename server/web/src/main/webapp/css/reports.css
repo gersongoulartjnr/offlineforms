@@ -1,0 +1,238 @@
+#r-menu-container{
+	clear: both;
+	overflow: hidden;
+}
+#r-body-container{
+	clear: both;
+	overflow: hidden;
+}
+#r-h-body{
+	border: #000 1px solid;
+	color: #464745;
+	vertical-align: top;
+	width: 100%;
+}
+#r-h-icon{
+	border: #000 1px solid;	
+}
+#r-h-separator{
+	background-color: #FFF;
+}
+#r-b-title{
+	font-size: 0.8em;
+}
+.report-icon{	
+	width: 70px;
+}
+.simple_label{
+	font-weight: normal;
+}
+input#report_title{
+	width: 400px;
+}
+/**/
+fieldset {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+	border: none !important;
+}
+fieldset legend {
+	padding: 3px 10px;
+	vertical-align: bottom;
+	font-weight: bold;
+	font-size: 14px;
+	text-shadow: 0 0 2px #CCC;
+
+	background-color: #FFF;
+	border: solid 1px #999;
+
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+
+	-moz-box-shadow: 0 0 5x #888;
+	-webkit-box-shadow: 0 0 2px #888;
+	box-shadow: 0 0 5px #888;
+}
+/************************************ Report */
+/************************************ FormEditor */
+#rc-form {
+	min-height: 270px;
+	float:left;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 3px 0 3px 3px;	
+}
+#fs-rc-form{
+	width: 300px;
+	background-color: #9BBB59;
+	color: #464745;
+	padding: 10px;
+	margin: 5px 0 0 5px;	
+}
+#fs-rc-form ol {
+	list-style: none;
+	padding-left: 0px;
+}
+#fs-rc-form ol li{
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+#fs-rc-form ol li div.options{
+	visibility: hidden;
+	float: right;
+	margin-top: -9px;
+}
+#fs-rc-form ol li.selected{
+	background-color: #FFF;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#fs-rc-form ol li.selected div.options{
+	visibility: visible;
+}
+#fs-rc-form ol li label {
+	display: inline-block;
+}
+#fs-rc-form ol li label,
+#fs-rc-form ol li label input {
+	margin-right: 5px;
+}
+#fs-rc-form ol li label.fieldLabel{
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	width: 90%;
+}
+
+/************************************ ReportEditor */
+#rc-report{
+	min-height: 270px;
+	float:left;
+	margin: 3px 0 3px 3px;		
+}
+#fs-rc-report{
+	width: 410px;
+	background-color: #4BACC6;
+	padding: 10px;
+	margin: 5px 0 0 5px;
+}
+#fs-rc-report ol {
+	list-style: none;
+	padding-left: 0px;
+}
+#fs-rc-report ol li{
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 11px;	
+}
+#fs-rc-report ol li div.options{
+	visibility: hidden;
+	float: right;
+	margin-top: -9px;
+}
+#fs-rc-report ol li.selected{
+	background-color: #FFF;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#fs-rc-report ol li.selected div.options{
+	visibility: visible;
+}
+#fs-rc-report ol li label {
+	display: inline-block;
+}
+#fs-rc-report ol li label,
+#fs-rc-report ol li label input {
+	margin-right: 5px;
+}
+#fs-rc-report ol li label.fieldLabel{
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	width: 90%;
+}
+
+/************************************ Field Properties */
+#rc-properties{
+	height: 100%;
+	float:left;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 3px;
+}
+#fs-rc-properties{
+	float: left;
+	display: none;
+	background-color: #6A7EA8;
+	padding: 10px;
+	margin: 0 0 0 5px;
+	width: 180px;
+	font-size: 11px;
+}
+/************************************ ReportViewer */
+.r-v-title{
+	margin: 10px 10px 20px 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+}
+.rc-v-item{
+}
+.r-v-subtitle{
+	font-size: 1.0em;
+	font-weight: bold;
+}
+.r-v-c-res{
+	margin: 5px 0 0 20px;
+}
+.r-v-op{
+	font-weight: bold;
+}
+.r-v-res{}
+.r-v-bold{
+	font-weight: bold;
+	font-size: 0.8em;
+}
+.r-v-text{
+	font-size: 0.8em;
+}
+.hidden {display:none;}
+/**/
+#r-v-items ol {
+	list-style: none;
+	padding-left: 0px;
+}
+#r-v-items ol li{
+	background-color: #F0F0F0;
+	margin: 10px;
+	padding: 10px;
+	font-size: 11px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+table.r-v-table{
+	background-color: #FFFFFF;
+	color: #25271E;
+	font-size: 1em;
+	width: 100px;	
+}
+table.r-v-table th {
+	border: 1px solid #F0F0F0;
+	padding: 5px;
+	font-weight: bold;
+	background-color: #C3F7D7;
+	color: #17801A;
+	text-align: left;
+}
+table.r-v-table td {
+	border: 1px solid #F0F0F0;
+	padding: 1px;
+	color: #25271E;
+	margin: 1px;
+}

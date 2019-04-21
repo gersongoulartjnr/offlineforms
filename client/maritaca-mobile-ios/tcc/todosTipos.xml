@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+    <title>Todos tipos</title>
+    <questions>
+        <text id="0" next="1" required="true" >
+            <label>Entre com uma frase:</label>
+            <help>Ajuda textual</help>
+            <size>100</size>
+            <default>Hello World</default>
+        </text>
+
+        <number id="5" next="6" required="true" min="1" max="125" >
+            <label>Qual a sua idade?</label>
+            <help></help>
+            <default>18</default>
+        </number>
+
+        <date id="2" next="3" required="true" >
+            <label>Qual a data de hoje?</label>
+            <help>Ajuda sobre a data</help>
+            <default></default>
+            <format>mm/dd/yy</format>
+        </date>
+
+        <decimal id="6" next="7" required="true" min="1" max="12" >
+            <label>Número do mês que você nasceu:</label>
+            <help></help>
+            <default>1</default>
+        </decimal>
+
+        <money id="7" next="8" required="true" min="0" >
+            <label>Qual quantia você tem na sua carteira?</label>
+            <help></help>
+            <default>0</default>
+            <currency>R$</currency>
+        </money>
+
+        <slider id="13" next="14" required="true" >
+            <label>Qual percentual de energia nesse momento?</label>
+            <help>duvidas sobre slider?</help>
+            <default>40</default>
+        </slider>
+
+        <combobox id="1" next="2" required="true" >
+            <label>Qual é o mês atual?</label>
+            <help>Ajuda sobre o mês</help>
+            <option value="0" checked="false">janeiro</option>
+            <option value="1" checked="false">fevereiro</option>
+            <option value="2" checked="false">março</option>
+            <option value="3" checked="false">abril</option>
+            <option value="4" checked="false">maio</option>
+            <option value="5" checked="false">junho</option>
+            <option value="6" checked="false">julho</option>
+            <option value="7" checked="true">agosto</option>
+            <option value="8" checked="false">setembro</option>
+            <option value="9" checked="false">outubro</option>
+            <option value="10" checked="false">novembro</option>
+            <option value="11" checked="false">dezembro</option>
+        </combobox>
+
+        <radio id="3" next="4" required="true" >
+            <label>Qual seu sexo?</label>
+            <help></help>
+            <option value="0" checked="false">Masculino</option>
+            <option value="1" checked="false">Feminino</option>
+        </radio>
+
+        <checkbox id="4" next="5" required="true" >
+            <label>Marque quais itens você tem na sua casa</label>
+            <help>Marcação</help>
+            <option value="0" checked="false">video cassete</option>
+            <option value="1" checked="false">super nintendo</option>
+            <option value="2" checked="false">televisão</option>
+            <option value="3" checked="false">dvd player</option>
+            <option value="4" checked="false">carro</option>
+            <option value="5" checked="false">sofá</option>
+        </checkbox>
+
+        <picture id="8" next="9" required="true" >
+            <label>Tire uma foto</label>
+            <help></help>
+        </picture>
+
+        <audio id="9" next="10" required="true" >
+            <label>Fale seu nome:</label>
+            <help></help>
+        </audio>
+
+        <video id="10" next="11" required="true" >
+            <label>Grave um vídeo</label>
+            <help></help>
+        </video>
+
+        <geolocation id="11" next="12" required="true" >
+            <label>Onde você está?</label>
+            <help></help>
+        </geolocation>
+
+        <barcode id="12" next="13" required="true" >
+            <label>Colete um código QR</label>
+            <help></help>
+        </barcode>
+
+        <draw id="14" next="-1" required="true" >
+            <label>Assine na tela:</label>
+            <help></help>
+        </draw>
+    </questions>
+</form>

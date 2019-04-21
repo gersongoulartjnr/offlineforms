@@ -1,0 +1,10 @@
+<jboss-deployment-structure>
+  <deployment>
+    <exclusions>
+      <module name="org.jboss.resteasy.resteasy-jettison-provider" />
+    </exclusions>
+    <dependencies>
+      <module name="org.jboss.resteasy.resteasy-jackson-provider" />
+    </dependencies>
+  </deployment>
+</jboss-deployment-structure>

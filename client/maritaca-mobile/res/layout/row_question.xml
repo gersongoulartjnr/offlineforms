@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+	<!--ImageView
+		android:id="@+id/iconRowQuestion"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/error"/-->
+	<TextView
+		android:id="@+id/idRowQuestion"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="5dp"
+		android:textSize="20sp" 
+		android:padding="8dp" />
+	
+	<TextView
+		android:id="@+id/textRowQuestion"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="5dp"
+		android:textSize="20sp"
+		android:padding="5dp"/>
+</LinearLayout>

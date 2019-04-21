@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<br.unifesp.maritaca.mobile.view.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="@drawable/mobile_background" >
+
+    <Button
+        android:id="@+id/btn_collect"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_collect"
+        android:text="@string/form_collect" />
+    <Button
+        android:id="@+id/btn_answers"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_answers"
+        android:text="@string/form_answers" />
+    <Button
+        android:id="@+id/btn_send"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_send"
+        android:text="@string/form_sync" />
+    <Button
+        android:id="@+id/btn_tell_friend"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_friend"
+        android:text="@string/application_invite" />
+    <Button
+        android:id="@+id/btn_settings"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_settings"
+        android:text="@string/application_settings" />
+    <Button
+        android:id="@+id/btn_about"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/button_about"
+        android:text="@string/application_about" />    
+ 
+</br.unifesp.maritaca.mobile.view.DashboardLayout>

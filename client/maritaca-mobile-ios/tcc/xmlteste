@@ -1,0 +1,1797 @@
+
+TinyXML-2  1.0.5
+Main Page
+Related Pages
+Classes
+Files
+
+File List
+tinyxml2.h
+00001 /*
+00002 Original code by Lee Thomason (www.grinninglizard.com)
+00003 
+00004 This software is provided 'as-is', without any express or implied
+00005 warranty. In no event will the authors be held liable for any
+00006 damages arising from the use of this software.
+00007 
+00008 Permission is granted to anyone to use this software for any
+00009 purpose, including commercial applications, and to alter it and
+00010 redistribute it freely, subject to the following restrictions:
+00011 
+00012 1. The origin of this software must not be misrepresented; you must
+00013 not claim that you wrote the original software. If you use this
+00014 software in a product, an acknowledgment in the product documentation
+00015 would be appreciated but is not required.
+00016 
+00017 2. Altered source versions must be plainly marked as such, and
+00018 must not be misrepresented as being the original software.
+00019 
+00020 3. This notice may not be removed or altered from any source
+00021 distribution.
+00022 */
+00023 
+00024 #ifndef TINYXML2_INCLUDED
+00025 #define TINYXML2_INCLUDED
+00026 
+00027 #include <cctype>
+00028 #include <climits>
+00029 #include <cstdio>
+00030 #include <cstring>
+00031 #include <cstdarg>
+00032 
+00033 /* 
+00034    TODO: intern strings instead of allocation.
+00035 */
+00036 /*
+00037     gcc: g++ -Wall tinyxml2.cpp xmltest.cpp -o gccxmltest.exe
+00038 */
+00039 
+00040 #if defined( _DEBUG ) || defined( DEBUG ) || defined (__DEBUG__)
+00041     #ifndef DEBUG
+00042         #define DEBUG
+00043     #endif
+00044 #endif
+00045 
+00046 
+00047 #if defined(DEBUG)
+00048         #if defined(_MSC_VER)
+00049                 #define TIXMLASSERT( x )           if ( !(x)) { __debugbreak(); } //if ( !(x)) WinDebugBreak()
+00050         #elif defined (ANDROID_NDK)
+00051                 #include <android/log.h>
+00052                 #define TIXMLASSERT( x )           if ( !(x)) { __android_log_assert( "assert", "grinliz", "ASSERT in '%s' at %d.", __FILE__, __LINE__ ); }
+00053         #else
+00054                 #include <assert.h>
+00055                 #define TIXMLASSERT                assert
+00056         #endif
+00057 #else
+00058         #define TIXMLASSERT( x )           {}
+00059 #endif
+00060 
+00061 
+00062 #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
+00063     // Microsoft visual studio, version 2005 and higher.
+00064     /*int _snprintf_s(
+00065        char *buffer,
+00066        size_t sizeOfBuffer,
+00067        size_t count,    
+00068        const char *format [,
+00069           argument] ... 
+00070     );*/
+00071     inline int TIXML_SNPRINTF( char* buffer, size_t size, const char* format, ... ) {
+00072         va_list va;
+00073         va_start( va, format );
+00074         int result = vsnprintf_s( buffer, size, _TRUNCATE, format, va );
+00075         va_end( va );
+00076         return result;
+00077     }
+00078     #define TIXML_SSCANF   sscanf_s
+00079 #else
+00080     // GCC version 3 and higher
+00081     //#warning( "Using sn* functions." )
+00082     #define TIXML_SNPRINTF snprintf
+00083     #define TIXML_SSCANF   sscanf
+00084 #endif
+00085 
+00086 static const int TIXML2_MAJOR_VERSION = 1;
+00087 static const int TIXML2_MINOR_VERSION = 0;
+00088 static const int TIXML2_PATCH_VERSION = 5;
+00089 
+00090 namespace tinyxml2
+00091 {
+00092 class XMLDocument;
+00093 class XMLElement;
+00094 class XMLAttribute;
+00095 class XMLComment;
+00096 class XMLNode;
+00097 class XMLText;
+00098 class XMLDeclaration;
+00099 class XMLUnknown;
+00100 
+00101 class XMLPrinter;
+00102 
+00103 /*
+00104     A class that wraps strings. Normally stores the start and end
+00105     pointers into the XML file itself, and will apply normalization
+00106     and entity translation if actually read. Can also store (and memory
+00107     manage) a traditional char[]
+00108 */
+00109 class StrPair
+00110 {
+00111 public:
+00112     enum {
+00113         NEEDS_ENTITY_PROCESSING         = 0x01,
+00114         NEEDS_NEWLINE_NORMALIZATION     = 0x02,
+00115 
+00116         TEXT_ELEMENT        = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,
+00117         TEXT_ELEMENT_LEAVE_ENTITIES     = NEEDS_NEWLINE_NORMALIZATION,
+00118         ATTRIBUTE_NAME      = 0,
+00119         ATTRIBUTE_VALUE     = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,
+00120         ATTRIBUTE_VALUE_LEAVE_ENTITIES      = NEEDS_NEWLINE_NORMALIZATION,
+00121         COMMENT             = NEEDS_NEWLINE_NORMALIZATION
+00122     };
+00123 
+00124     StrPair() : flags( 0 ), start( 0 ), end( 0 ) {}
+00125     ~StrPair();
+00126 
+00127     void Set( char* _start, char* _end, int _flags ) {
+00128         Reset();
+00129         this->start = _start; this->end = _end; this->flags = _flags | NEEDS_FLUSH;
+00130     }
+00131     const char* GetStr();
+00132     bool Empty() const { return start == end; }
+00133 
+00134     void SetInternedStr( const char* str ) { Reset(); this->start = const_cast<char*>(str); }
+00135     void SetStr( const char* str, int flags=0 );
+00136 
+00137     char* ParseText( char* in, const char* endTag, int strFlags );  
+00138     char* ParseName( char* in );
+00139 
+00140 
+00141 private:
+00142     void Reset();
+00143 
+00144     enum {
+00145         NEEDS_FLUSH = 0x100,
+00146         NEEDS_DELETE = 0x200
+00147     };
+00148 
+00149     // After parsing, if *end != 0, it can be set to zero.
+00150     int flags;
+00151     char* start;    
+00152     char* end;
+00153 };
+00154 
+00155 
+00156 /*
+00157     A dynamic array of Plain Old Data. Doesn't support constructors, etc.
+00158     Has a small initial memory pool, so that low or no usage will not
+00159     cause a call to new/delete
+00160 */
+00161 template <class T, int INIT>
+00162 class DynArray
+00163 {
+00164 public:
+00165     DynArray< T, INIT >() 
+00166     {
+00167         mem = pool;
+00168         allocated = INIT;
+00169         size = 0;
+00170     }
+00171     ~DynArray()
+00172     {
+00173         if ( mem != pool ) {
+00174             delete [] mem;
+00175         }
+00176     }
+00177     void Push( T t )
+00178     {
+00179         EnsureCapacity( size+1 );
+00180         mem[size++] = t;
+00181     }
+00182 
+00183     T* PushArr( int count )
+00184     {
+00185         EnsureCapacity( size+count );
+00186         T* ret = &mem[size];
+00187         size += count;
+00188         return ret;
+00189     }
+00190     T Pop() {
+00191         return mem[--size];
+00192     }
+00193     void PopArr( int count ) 
+00194     {
+00195         TIXMLASSERT( size >= count );
+00196         size -= count;
+00197     }
+00198 
+00199     bool Empty() const                  { return size == 0; }
+00200     T& operator[](int i)                { TIXMLASSERT( i>= 0 && i < size ); return mem[i]; }
+00201     const T& operator[](int i) const    { TIXMLASSERT( i>= 0 && i < size ); return mem[i]; }
+00202     int Size() const                    { return size; }
+00203     int Capacity() const                { return allocated; }
+00204     const T* Mem() const                { return mem; }
+00205     T* Mem()                            { return mem; }
+00206 
+00207 
+00208 private:
+00209     void EnsureCapacity( int cap ) {
+00210         if ( cap > allocated ) {
+00211             int newAllocated = cap * 2;
+00212             T* newMem = new T[newAllocated];
+00213             memcpy( newMem, mem, sizeof(T)*size );  // warning: not using constructors, only works for PODs
+00214             if ( mem != pool ) delete [] mem;
+00215             mem = newMem;
+00216             allocated = newAllocated;
+00217         }
+00218     }
+00219 
+00220     T* mem;
+00221     T pool[INIT];
+00222     int allocated;      // objects allocated
+00223     int size;           // number objects in use
+00224 };
+00225 
+00226 
+00227 /*
+00228     Parent virtual class of a pool for fast allocation
+00229     and deallocation of objects.
+00230 */
+00231 class MemPool
+00232 {
+00233 public:
+00234     MemPool() {}
+00235     virtual ~MemPool() {}
+00236 
+00237     virtual int ItemSize() const = 0;
+00238     virtual void* Alloc() = 0;
+00239     virtual void Free( void* ) = 0; 
+00240 };
+00241 
+00242 
+00243 /*
+00244     Template child class to create pools of the correct type.
+00245 */
+00246 template< int SIZE >
+00247 class MemPoolT : public MemPool
+00248 {
+00249 public:
+00250     MemPoolT() : root(0), currentAllocs(0), nAllocs(0), maxAllocs(0)    {}
+00251     ~MemPoolT() {
+00252         // Delete the blocks.
+00253         for( int i=0; i<blockPtrs.Size(); ++i ) {
+00254             delete blockPtrs[i];
+00255         }
+00256     }
+00257 
+00258     virtual int ItemSize() const    { return SIZE; }
+00259     int CurrentAllocs() const       { return currentAllocs; }
+00260 
+00261     virtual void* Alloc() {
+00262         if ( !root ) {
+00263             // Need a new block.
+00264             Block* block = new Block();
+00265             blockPtrs.Push( block );
+00266 
+00267             for( int i=0; i<COUNT-1; ++i ) {
+00268                 block->chunk[i].next = &block->chunk[i+1];
+00269             }
+00270             block->chunk[COUNT-1].next = 0;
+00271             root = block->chunk;
+00272         }
+00273         void* result = root;
+00274         root = root->next;
+00275 
+00276         ++currentAllocs;
+00277         if ( currentAllocs > maxAllocs ) maxAllocs = currentAllocs;
+00278         nAllocs++;
+00279         return result;
+00280     }
+00281     virtual void Free( void* mem ) {
+00282         if ( !mem ) return;
+00283         --currentAllocs;
+00284         Chunk* chunk = (Chunk*)mem;
+00285         memset( chunk, 0xfe, sizeof(Chunk) );
+00286         chunk->next = root;
+00287         root = chunk;
+00288     }
+00289     void Trace( const char* name ) {
+00290         printf( "Mempool %s watermark=%d [%dk] current=%d size=%d nAlloc=%d blocks=%d\n",
+00291                  name, maxAllocs, maxAllocs*SIZE/1024, currentAllocs, SIZE, nAllocs, blockPtrs.Size() );
+00292     }
+00293 
+00294 private:
+00295     enum { COUNT = 1024/SIZE };
+00296     union Chunk {
+00297         Chunk* next;
+00298         char mem[SIZE];
+00299     };
+00300     struct Block {
+00301         Chunk chunk[COUNT];
+00302     };
+00303     DynArray< Block*, 10 > blockPtrs;
+00304     Chunk* root;
+00305 
+00306     int currentAllocs;
+00307     int nAllocs;
+00308     int maxAllocs;
+00309 };
+00310 
+00311 
+00312 
+00332 class XMLVisitor
+00333 {
+00334 public:
+00335     virtual ~XMLVisitor() {}
+00336 
+00338     virtual bool VisitEnter( const XMLDocument& /*doc*/ )           { return true; }
+00340     virtual bool VisitExit( const XMLDocument& /*doc*/ )            { return true; }
+00341 
+00343     virtual bool VisitEnter( const XMLElement& /*element*/, const XMLAttribute* /*firstAttribute*/ )    { return true; }
+00345     virtual bool VisitExit( const XMLElement& /*element*/ )         { return true; }
+00346 
+00348     virtual bool Visit( const XMLDeclaration& /*declaration*/ )     { return true; }
+00350     virtual bool Visit( const XMLText& /*text*/ )                   { return true; }
+00352     virtual bool Visit( const XMLComment& /*comment*/ )             { return true; }
+00354     virtual bool Visit( const XMLUnknown& /*unknown*/ )             { return true; }
+00355 };
+00356 
+00357 
+00358 /*
+00359     Utility functionality.
+00360 */
+00361 class XMLUtil
+00362 {
+00363 public:
+00364     // Anything in the high order range of UTF-8 is assumed to not be whitespace. This isn't 
+00365     // correct, but simple, and usually works.
+00366     static const char* SkipWhiteSpace( const char* p )  { while( !IsUTF8Continuation(*p) && isspace( *reinterpret_cast<const unsigned char*>(p) ) ) { ++p; } return p; }
+00367     static char* SkipWhiteSpace( char* p )              { while( !IsUTF8Continuation(*p) && isspace( *reinterpret_cast<unsigned char*>(p) ) )       { ++p; } return p; }
+00368 
+00369     inline static bool StringEqual( const char* p, const char* q, int nChar=INT_MAX )  {
+00370         int n = 0;
+00371         if ( p == q ) {
+00372             return true;
+00373         }
+00374         while( *p && *q && *p == *q && n<nChar ) {
+00375             ++p; ++q; ++n;
+00376         }
+00377         if ( (n == nChar) || ( *p == 0 && *q == 0 ) ) {
+00378             return true;
+00379         }
+00380         return false;
+00381     }
+00382     inline static int IsUTF8Continuation( const char p ) { return p & 0x80; }
+00383     inline static int IsAlphaNum( unsigned char anyByte )   { return ( anyByte < 128 ) ? isalnum( anyByte ) : 1; }
+00384     inline static int IsAlpha( unsigned char anyByte )      { return ( anyByte < 128 ) ? isalpha( anyByte ) : 1; }
+00385 
+00386     static const char* ReadBOM( const char* p, bool* hasBOM );
+00387     // p is the starting location,
+00388     // the UTF-8 value of the entity will be placed in value, and length filled in.
+00389     static const char* GetCharacterRef( const char* p, char* value, int* length );
+00390     static void ConvertUTF32ToUTF8( unsigned long input, char* output, int* length );
+00391 };
+00392 
+00393 
+00419 class XMLNode
+00420 {
+00421     friend class XMLDocument;
+00422     friend class XMLElement;
+00423 public:
+00424 
+00426     const XMLDocument* GetDocument() const  { return document; }
+00428     XMLDocument* GetDocument()              { return document; }
+00429 
+00430     virtual XMLElement*     ToElement()     { return 0; }   
+00431     virtual XMLText*        ToText()        { return 0; }   
+00432     virtual XMLComment*     ToComment()     { return 0; }   
+00433     virtual XMLDocument*    ToDocument()    { return 0; }   
+00434     virtual XMLDeclaration* ToDeclaration() { return 0; }   
+00435     virtual XMLUnknown*     ToUnknown()     { return 0; }   
+00436 
+00437     virtual const XMLElement*       ToElement() const       { return 0; }
+00438     virtual const XMLText*          ToText() const          { return 0; }
+00439     virtual const XMLComment*       ToComment() const       { return 0; }
+00440     virtual const XMLDocument*      ToDocument() const      { return 0; }
+00441     virtual const XMLDeclaration*   ToDeclaration() const   { return 0; }
+00442     virtual const XMLUnknown*       ToUnknown() const       { return 0; }
+00443 
+00453     const char* Value() const           { return value.GetStr(); }
+00457     void SetValue( const char* val, bool staticMem=false );
+00458 
+00460     const XMLNode*  Parent() const          { return parent; }
+00461     XMLNode* Parent()                       { return parent; }
+00462 
+00464     bool NoChildren() const                 { return !firstChild; }
+00465 
+00467     const XMLNode*  FirstChild() const      { return firstChild; }
+00468     XMLNode*        FirstChild()            { return firstChild; }
+00472     const XMLElement* FirstChildElement( const char* value=0 ) const;
+00473     XMLElement* FirstChildElement( const char* _value=0 )   { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->FirstChildElement( _value )); }
+00474 
+00476     const XMLNode*  LastChild() const                       { return lastChild; }
+00477     XMLNode*        LastChild()                             { return const_cast<XMLNode*>(const_cast<const XMLNode*>(this)->LastChild() ); }
+00478 
+00482     const XMLElement* LastChildElement( const char* value=0 ) const;
+00483     XMLElement* LastChildElement( const char* _value=0 )    { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->LastChildElement(_value) ); }
+00484     
+00486     const XMLNode*  PreviousSibling() const                 { return prev; }
+00487     XMLNode*    PreviousSibling()                           { return prev; }
+00488 
+00490     const XMLElement*   PreviousSiblingElement( const char* value=0 ) const ;
+00491     XMLElement* PreviousSiblingElement( const char* _value=0 ) { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->PreviousSiblingElement( _value ) ); }
+00492     
+00494     const XMLNode*  NextSibling() const                     { return next; }
+00495     XMLNode*    NextSibling()                               { return next; }
+00496         
+00498     const XMLElement*   NextSiblingElement( const char* value=0 ) const;
+00499     XMLElement* NextSiblingElement( const char* _value=0 )  { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->NextSiblingElement( _value ) ); }
+00500 
+00504     XMLNode* InsertEndChild( XMLNode* addThis );
+00505 
+00506     XMLNode* LinkEndChild( XMLNode* addThis )   { return InsertEndChild( addThis ); }
+00510     XMLNode* InsertFirstChild( XMLNode* addThis );
+00514     XMLNode* InsertAfterChild( XMLNode* afterThis, XMLNode* addThis );
+00515     
+00519     void DeleteChildren();
+00520 
+00524     void DeleteChild( XMLNode* node );
+00525 
+00535     virtual XMLNode* ShallowClone( XMLDocument* document ) const = 0;
+00536 
+00543     virtual bool ShallowEqual( const XMLNode* compare ) const = 0;
+00544 
+00567     virtual bool Accept( XMLVisitor* visitor ) const = 0;
+00568 
+00569     // internal
+00570     virtual char* ParseDeep( char*, StrPair* );
+00571 
+00572 protected:
+00573     XMLNode( XMLDocument* );
+00574     virtual ~XMLNode();
+00575     XMLNode( const XMLNode& );  // not supported
+00576     void operator=( const XMLNode& );   // not supported
+00577     
+00578     XMLDocument*    document;
+00579     XMLNode*        parent;
+00580     mutable StrPair value;
+00581 
+00582     XMLNode*        firstChild;
+00583     XMLNode*        lastChild;
+00584 
+00585     XMLNode*        prev;
+00586     XMLNode*        next;
+00587 
+00588 private:
+00589     MemPool*        memPool;
+00590     void Unlink( XMLNode* child );
+00591 };
+00592 
+00593 
+00606 class XMLText : public XMLNode
+00607 {
+00608     friend class XMLBase;
+00609     friend class XMLDocument;
+00610 public:
+00611     virtual bool Accept( XMLVisitor* visitor ) const;
+00612 
+00613     virtual XMLText*    ToText()            { return this; }
+00614     virtual const XMLText*  ToText() const  { return this; }
+00615 
+00617     void SetCData( bool _isCData )          { this->isCData = _isCData; }
+00619     bool CData() const                      { return isCData; }
+00620 
+00621     char* ParseDeep( char*, StrPair* endTag );
+00622     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00623     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00624 
+00625 
+00626 protected:
+00627     XMLText( XMLDocument* doc ) : XMLNode( doc ), isCData( false )  {}
+00628     virtual ~XMLText()                                              {}
+00629     XMLText( const XMLText& );  // not supported
+00630     void operator=( const XMLText& );   // not supported
+00631 
+00632 private:
+00633     bool isCData;
+00634 };
+00635 
+00636 
+00638 class XMLComment : public XMLNode
+00639 {
+00640     friend class XMLDocument;
+00641 public:
+00642     virtual XMLComment* ToComment()                 { return this; }
+00643     virtual const XMLComment* ToComment() const     { return this; }
+00644 
+00645     virtual bool Accept( XMLVisitor* visitor ) const;
+00646 
+00647     char* ParseDeep( char*, StrPair* endTag );
+00648     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00649     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00650 
+00651 protected:
+00652     XMLComment( XMLDocument* doc );
+00653     virtual ~XMLComment();
+00654     XMLComment( const XMLComment& );    // not supported
+00655     void operator=( const XMLComment& );    // not supported
+00656 
+00657 private:
+00658 };
+00659 
+00660 
+00672 class XMLDeclaration : public XMLNode
+00673 {
+00674     friend class XMLDocument;
+00675 public:
+00676     virtual XMLDeclaration* ToDeclaration()                 { return this; }
+00677     virtual const XMLDeclaration* ToDeclaration() const     { return this; }
+00678 
+00679     virtual bool Accept( XMLVisitor* visitor ) const;
+00680 
+00681     char* ParseDeep( char*, StrPair* endTag );
+00682     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00683     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00684 
+00685 protected:
+00686     XMLDeclaration( XMLDocument* doc );
+00687     virtual ~XMLDeclaration();
+00688     XMLDeclaration( const XMLDeclaration& );    // not supported
+00689     void operator=( const XMLDeclaration& );    // not supported
+00690 };
+00691 
+00692 
+00700 class XMLUnknown : public XMLNode
+00701 {
+00702     friend class XMLDocument;
+00703 public:
+00704     virtual XMLUnknown* ToUnknown()                 { return this; }
+00705     virtual const XMLUnknown* ToUnknown() const     { return this; }
+00706 
+00707     virtual bool Accept( XMLVisitor* visitor ) const;
+00708 
+00709     char* ParseDeep( char*, StrPair* endTag );
+00710     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00711     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00712 
+00713 protected:
+00714     XMLUnknown( XMLDocument* doc );
+00715     virtual ~XMLUnknown();
+00716     XMLUnknown( const XMLUnknown& );    // not supported
+00717     void operator=( const XMLUnknown& );    // not supported
+00718 };
+00719 
+00720 
+00721 enum {
+00722     XML_NO_ERROR = 0,
+00723     XML_SUCCESS = 0,
+00724 
+00725     XML_NO_ATTRIBUTE,
+00726     XML_WRONG_ATTRIBUTE_TYPE,
+00727 
+00728     XML_ERROR_FILE_NOT_FOUND,
+00729     XML_ERROR_FILE_COULD_NOT_BE_OPENED,
+00730     XML_ERROR_FILE_READ_ERROR,
+00731     XML_ERROR_ELEMENT_MISMATCH,
+00732     XML_ERROR_PARSING_ELEMENT,
+00733     XML_ERROR_PARSING_ATTRIBUTE,
+00734     XML_ERROR_IDENTIFYING_TAG,
+00735     XML_ERROR_PARSING_TEXT,
+00736     XML_ERROR_PARSING_CDATA,
+00737     XML_ERROR_PARSING_COMMENT,
+00738     XML_ERROR_PARSING_DECLARATION,
+00739     XML_ERROR_PARSING_UNKNOWN,
+00740     XML_ERROR_EMPTY_DOCUMENT,
+00741     XML_ERROR_MISMATCHED_ELEMENT,
+00742     XML_ERROR_PARSING
+00743 };
+00744 
+00745 
+00752 class XMLAttribute
+00753 {
+00754     friend class XMLElement;
+00755 public:
+00756     const char* Name() const { return name.GetStr(); }          
+00757     const char* Value() const { return value.GetStr(); }        
+00758     const XMLAttribute* Next() const { return next; }           
+00759 
+00764     int      IntValue() const               { int i=0;      QueryIntValue( &i );        return i; }
+00766     unsigned UnsignedValue() const          { unsigned i=0; QueryUnsignedValue( &i );   return i; }
+00768     bool     BoolValue() const              { bool b=false; QueryBoolValue( &b );       return b; }
+00770     double   DoubleValue() const            { double d=0;   QueryDoubleValue( &d );     return d; }
+00772     float    FloatValue() const             { float f=0;    QueryFloatValue( &f );      return f; }
+00773 
+00778     int QueryIntValue( int* value ) const;
+00780     int QueryUnsignedValue( unsigned int* value ) const;
+00782     int QueryBoolValue( bool* value ) const;
+00784     int QueryDoubleValue( double* value ) const;
+00786     int QueryFloatValue( float* value ) const;
+00787 
+00789     void SetAttribute( const char* value );
+00791     void SetAttribute( int value );
+00793     void SetAttribute( unsigned value );
+00795     void SetAttribute( bool value );
+00797     void SetAttribute( double value );
+00799     void SetAttribute( float value );
+00800 
+00801 private:
+00802     enum { BUF_SIZE = 200 };
+00803 
+00804     XMLAttribute() : next( 0 ) {}
+00805     virtual ~XMLAttribute() {}
+00806     XMLAttribute( const XMLAttribute& );    // not supported
+00807     void operator=( const XMLAttribute& );  // not supported
+00808     void SetName( const char* name );
+00809 
+00810     char* ParseDeep( char* p, bool processEntities );
+00811 
+00812     mutable StrPair name;
+00813     mutable StrPair value;
+00814     XMLAttribute* next;
+00815     MemPool* memPool;
+00816 };
+00817 
+00818 
+00823 class XMLElement : public XMLNode
+00824 {
+00825     friend class XMLBase;
+00826     friend class XMLDocument;
+00827 public:
+00829     const char* Name() const        { return Value(); }
+00831     void SetName( const char* str, bool staticMem=false )   { SetValue( str, staticMem ); }
+00832 
+00833     virtual XMLElement* ToElement()             { return this; }
+00834     virtual const XMLElement* ToElement() const { return this; }
+00835     virtual bool Accept( XMLVisitor* visitor ) const;
+00836 
+00860     const char* Attribute( const char* name, const char* value=0 ) const;
+00861 
+00867     int      IntAttribute( const char* name ) const     { int i=0;      QueryIntAttribute( name, &i );      return i; }
+00869     unsigned UnsignedAttribute( const char* name ) const{ unsigned i=0; QueryUnsignedAttribute( name, &i ); return i; }
+00871     bool     BoolAttribute( const char* name ) const    { bool b=false; QueryBoolAttribute( name, &b );     return b; }
+00873     double   DoubleAttribute( const char* name ) const  { double d=0;   QueryDoubleAttribute( name, &d );   return d; }
+00875     float    FloatAttribute( const char* name ) const   { float f=0;    QueryFloatAttribute( name, &f );    return f; }
+00876 
+00890     int QueryIntAttribute( const char* name, int* _value ) const                { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryIntValue( _value ); } 
+00892     int QueryUnsignedAttribute( const char* name, unsigned int* _value ) const  { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryUnsignedValue( _value ); }
+00894     int QueryBoolAttribute( const char* name, bool* _value ) const              { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryBoolValue( _value ); }
+00896     int QueryDoubleAttribute( const char* name, double* _value ) const          { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryDoubleValue( _value ); }
+00898     int QueryFloatAttribute( const char* name, float* _value ) const            { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryFloatValue( _value ); }
+00899 
+00901     void SetAttribute( const char* name, const char* _value )   { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00903     void SetAttribute( const char* name, int _value )           { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00905     void SetAttribute( const char* name, unsigned _value )      { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00907     void SetAttribute( const char* name, bool _value )          { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00909     void SetAttribute( const char* name, double _value )        { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00910 
+00914     void DeleteAttribute( const char* name );
+00915 
+00917     const XMLAttribute* FirstAttribute() const { return rootAttribute; }
+00919     const XMLAttribute* FindAttribute( const char* name ) const;
+00920 
+00949     const char* GetText() const;
+00950 
+00951     // internal:
+00952     enum {
+00953         OPEN,       // <foo>
+00954         CLOSED,     // <foo/>
+00955         CLOSING     // </foo>
+00956     };
+00957     int ClosingType() const { return closingType; }
+00958     char* ParseDeep( char* p, StrPair* endTag );
+00959     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00960     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00961 
+00962 private:
+00963     XMLElement( XMLDocument* doc );
+00964     virtual ~XMLElement();
+00965     XMLElement( const XMLElement& );    // not supported
+00966     void operator=( const XMLElement& );    // not supported
+00967 
+00968     XMLAttribute* FindAttribute( const char* name );
+00969     XMLAttribute* FindOrCreateAttribute( const char* name );
+00970     //void LinkAttribute( XMLAttribute* attrib );
+00971     char* ParseAttributes( char* p );
+00972 
+00973     int closingType;
+00974     // The attribute list is ordered; there is no 'lastAttribute'
+00975     // because the list needs to be scanned for dupes before adding
+00976     // a new attribute.
+00977     XMLAttribute* rootAttribute;
+00978 };
+00979 
+00980 
+00986 class XMLDocument : public XMLNode
+00987 {
+00988     friend class XMLElement;
+00989 public:
+00991     XMLDocument( bool processEntities = true ); 
+00992     ~XMLDocument();
+00993 
+00994     virtual XMLDocument* ToDocument()               { return this; }
+00995     virtual const XMLDocument* ToDocument() const   { return this; }
+00996 
+01002     int Parse( const char* xml );
+01003     
+01009     int LoadFile( const char* filename );
+01010     
+01018     int LoadFile( FILE* );
+01019     
+01025     int SaveFile( const char* filename );
+01026 
+01034     int SaveFile( FILE* );
+01035 
+01036     bool ProcessEntities() const                        { return processEntities; }
+01037 
+01041     bool HasBOM() const { return writeBOM; }
+01044     void SetBOM( bool useBOM ) { writeBOM = useBOM; }
+01045 
+01049     XMLElement* RootElement()               { return FirstChildElement(); }
+01050     const XMLElement* RootElement() const   { return FirstChildElement(); }
+01051 
+01066     void Print( XMLPrinter* streamer=0 );
+01067     virtual bool Accept( XMLVisitor* visitor ) const;
+01068 
+01074     XMLElement* NewElement( const char* name );
+01080     XMLComment* NewComment( const char* comment );
+01086     XMLText* NewText( const char* text );
+01098     XMLDeclaration* NewDeclaration( const char* text=0 );
+01104     XMLUnknown* NewUnknown( const char* text );
+01105 
+01110     void DeleteNode( XMLNode* node )    { node->parent->DeleteChild( node ); }
+01111 
+01112     void SetError( int error, const char* str1, const char* str2 );
+01113     
+01115     bool Error() const { return errorID != XML_NO_ERROR; }
+01117     int  ErrorID() const { return errorID; }
+01119     const char* GetErrorStr1() const { return errorStr1; }
+01121     const char* GetErrorStr2() const { return errorStr2; }
+01123     void PrintError() const;
+01124 
+01125     // internal
+01126     char* Identify( char* p, XMLNode** node );
+01127 
+01128     virtual XMLNode* ShallowClone( XMLDocument* /*document*/ ) const    { return 0; }
+01129     virtual bool ShallowEqual( const XMLNode* /*compare*/ ) const   { return false; }
+01130 
+01131 private:
+01132     XMLDocument( const XMLDocument& );  // not supported
+01133     void operator=( const XMLDocument& );   // not supported
+01134     void InitDocument();
+01135 
+01136     bool writeBOM;
+01137     bool processEntities;
+01138     int errorID;
+01139     const char* errorStr1;
+01140     const char* errorStr2;
+01141     char* charBuffer;
+01142 
+01143     MemPoolT< sizeof(XMLElement) >  elementPool;
+01144     MemPoolT< sizeof(XMLAttribute) > attributePool;
+01145     MemPoolT< sizeof(XMLText) >     textPool;
+01146     MemPoolT< sizeof(XMLComment) >  commentPool;
+01147 };
+01148 
+01149 
+01205 class XMLHandle
+01206 {
+01207 public:
+01209     XMLHandle( XMLNode* _node )                                             { node = _node; }
+01211     XMLHandle( XMLNode& _node )                                             { node = &_node; }
+01213     XMLHandle( const XMLHandle& ref )                                       { node = ref.node; }
+01215     XMLHandle operator=( const XMLHandle& ref )                             { node = ref.node; return *this; }
+01216 
+01218     XMLHandle FirstChild()                                                  { return XMLHandle( node ? node->FirstChild() : 0 ); }
+01220     XMLHandle FirstChildElement( const char* value=0 )                      { return XMLHandle( node ? node->FirstChildElement( value ) : 0 ); }
+01222     XMLHandle LastChild()                                                   { return XMLHandle( node ? node->LastChild() : 0 ); }
+01224     XMLHandle LastChildElement( const char* _value=0 )                      { return XMLHandle( node ? node->LastChildElement( _value ) : 0 ); }
+01226     XMLHandle PreviousSibling()                                             { return XMLHandle( node ? node->PreviousSibling() : 0 ); }
+01228     XMLHandle PreviousSiblingElement( const char* _value=0 )                { return XMLHandle( node ? node->PreviousSiblingElement( _value ) : 0 ); }
+01230     XMLHandle NextSibling()                                                 { return XMLHandle( node ? node->NextSibling() : 0 ); }     
+01232     XMLHandle NextSiblingElement( const char* _value=0 )                    { return XMLHandle( node ? node->NextSiblingElement( _value ) : 0 ); }
+01233 
+01235     XMLNode* ToNode()                           { return node; } 
+01237     XMLElement* ToElement()                     { return ( ( node && node->ToElement() ) ? node->ToElement() : 0 ); }
+01239     XMLText* ToText()                           { return ( ( node && node->ToText() ) ? node->ToText() : 0 ); }
+01241     XMLUnknown* ToUnknown()                     { return ( ( node && node->ToUnknown() ) ? node->ToUnknown() : 0 ); }
+01243     XMLDeclaration* ToDeclaration()             { return ( ( node && node->ToDeclaration() ) ? node->ToDeclaration() : 0 ); }
+01244 
+01245 private:
+01246     XMLNode* node;
+01247 };
+01248 
+01249 
+01254 class XMLConstHandle
+01255 {
+01256 public:
+01257     XMLConstHandle( const XMLNode* _node )                                          { node = _node; }
+01258     XMLConstHandle( const XMLNode& _node )                                          { node = &_node; }
+01259     XMLConstHandle( const XMLConstHandle& ref )                                     { node = ref.node; }
+01260 
+01261     XMLConstHandle operator=( const XMLConstHandle& ref )                           { node = ref.node; return *this; }
+01262 
+01263     const XMLConstHandle FirstChild() const                                         { return XMLConstHandle( node ? node->FirstChild() : 0 ); }
+01264     const XMLConstHandle FirstChildElement( const char* value=0 ) const             { return XMLConstHandle( node ? node->FirstChildElement( value ) : 0 ); }
+01265     const XMLConstHandle LastChild()    const                                       { return XMLConstHandle( node ? node->LastChild() : 0 ); }
+01266     const XMLConstHandle LastChildElement( const char* _value=0 ) const             { return XMLConstHandle( node ? node->LastChildElement( _value ) : 0 ); }
+01267     const XMLConstHandle PreviousSibling() const                                    { return XMLConstHandle( node ? node->PreviousSibling() : 0 ); }
+01268     const XMLConstHandle PreviousSiblingElement( const char* _value=0 ) const       { return XMLConstHandle( node ? node->PreviousSiblingElement( _value ) : 0 ); }
+01269     const XMLConstHandle NextSibling() const                                        { return XMLConstHandle( node ? node->NextSibling() : 0 ); }
+01270     const XMLConstHandle NextSiblingElement( const char* _value=0 ) const           { return XMLConstHandle( node ? node->NextSiblingElement( _value ) : 0 ); }
+01271 
+01272 
+01273     const XMLNode* ToNode() const               { return node; } 
+01274     const XMLElement* ToElement() const         { return ( ( node && node->ToElement() ) ? node->ToElement() : 0 ); }
+01275     const XMLText* ToText() const               { return ( ( node && node->ToText() ) ? node->ToText() : 0 ); }
+01276     const XMLUnknown* ToUnknown() const         { return ( ( node && node->ToUnknown() ) ? node->ToUnknown() : 0 ); }
+01277     const XMLDeclaration* ToDeclaration() const { return ( ( node && node->ToDeclaration() ) ? node->ToDeclaration() : 0 ); }
+01278 
+01279 private:
+01280     const XMLNode* node;
+01281 };
+01282 
+01283 
+01326 class XMLPrinter : public XMLVisitor
+01327 {
+01328 public:
+01335     XMLPrinter( FILE* file=0, bool compact = false );
+01336     ~XMLPrinter()   {}
+01337 
+01339     void PushHeader( bool writeBOM, bool writeDeclaration );
+01343     void OpenElement( const char* name );
+01345     void PushAttribute( const char* name, const char* value );
+01346     void PushAttribute( const char* name, int value );
+01347     void PushAttribute( const char* name, unsigned value );
+01348     void PushAttribute( const char* name, bool value );
+01349     void PushAttribute( const char* name, double value );
+01351     void CloseElement();
+01352 
+01354     void PushText( const char* text, bool cdata=false );
+01356     void PushComment( const char* comment );
+01357 
+01358     void PushDeclaration( const char* value );
+01359     void PushUnknown( const char* value );
+01360 
+01361     virtual bool VisitEnter( const XMLDocument& /*doc*/ );
+01362     virtual bool VisitExit( const XMLDocument& /*doc*/ )            { return true; }
+01363 
+01364     virtual bool VisitEnter( const XMLElement& element, const XMLAttribute* attribute );
+01365     virtual bool VisitExit( const XMLElement& element );
+01366 
+01367     virtual bool Visit( const XMLText& text );
+01368     virtual bool Visit( const XMLComment& comment );
+01369     virtual bool Visit( const XMLDeclaration& declaration );
+01370     virtual bool Visit( const XMLUnknown& unknown );
+01371 
+01376     const char* CStr() const { return buffer.Mem(); }
+01382     int CStrSize() const { return buffer.Size(); }
+01383 
+01384 private:
+01385     void SealElement();
+01386     void PrintSpace( int depth );
+01387     void PrintString( const char*, bool restrictedEntitySet );  // prints out, after detecting entities.
+01388     void Print( const char* format, ... );
+01389 
+01390     bool elementJustOpened;
+01391     bool firstElement;
+01392     FILE* fp;
+01393     int depth;
+01394     int textDepth;
+01395     bool processEntities;
+01396     bool compactMode;
+01397 
+01398     enum {
+01399         ENTITY_RANGE = 64,
+01400         BUF_SIZE = 200
+01401     };
+01402     bool entityFlag[ENTITY_RANGE];
+01403     bool restrictedEntityFlag[ENTITY_RANGE];
+01404 
+01405     DynArray< const char*, 10 > stack;
+01406     DynArray< char, 20 > buffer, accumulator;
+01407 };
+01408 
+01409 
+01410 }   // tinyxml2
+01411 
+01412 
+01413 #endif // TINYXML2_INCLUDED
+Generated on Mon Jul 2 2012 10:12:29 for TinyXML-2 by    1.8.0
+TinyXML-2  1.0.5
+Main Page
+Related Pages
+Classes
+Files
+
+File List
+tinyxml2.h
+00001 /*
+00002 Original code by Lee Thomason (www.grinninglizard.com)
+00003 
+00004 This software is provided 'as-is', without any express or implied
+00005 warranty. In no event will the authors be held liable for any
+00006 damages arising from the use of this software.
+00007 
+00008 Permission is granted to anyone to use this software for any
+00009 purpose, including commercial applications, and to alter it and
+00010 redistribute it freely, subject to the following restrictions:
+00011 
+00012 1. The origin of this software must not be misrepresented; you must
+00013 not claim that you wrote the original software. If you use this
+00014 software in a product, an acknowledgment in the product documentation
+00015 would be appreciated but is not required.
+00016 
+00017 2. Altered source versions must be plainly marked as such, and
+00018 must not be misrepresented as being the original software.
+00019 
+00020 3. This notice may not be removed or altered from any source
+00021 distribution.
+00022 */
+00023 
+00024 #ifndef TINYXML2_INCLUDED
+00025 #define TINYXML2_INCLUDED
+00026 
+00027 #include <cctype>
+00028 #include <climits>
+00029 #include <cstdio>
+00030 #include <cstring>
+00031 #include <cstdarg>
+00032 
+00033 /* 
+00034    TODO: intern strings instead of allocation.
+00035 */
+00036 /*
+00037     gcc: g++ -Wall tinyxml2.cpp xmltest.cpp -o gccxmltest.exe
+00038 */
+00039 
+00040 #if defined( _DEBUG ) || defined( DEBUG ) || defined (__DEBUG__)
+00041     #ifndef DEBUG
+00042         #define DEBUG
+00043     #endif
+00044 #endif
+00045 
+00046 
+00047 #if defined(DEBUG)
+00048         #if defined(_MSC_VER)
+00049                 #define TIXMLASSERT( x )           if ( !(x)) { __debugbreak(); } //if ( !(x)) WinDebugBreak()
+00050         #elif defined (ANDROID_NDK)
+00051                 #include <android/log.h>
+00052                 #define TIXMLASSERT( x )           if ( !(x)) { __android_log_assert( "assert", "grinliz", "ASSERT in '%s' at %d.", __FILE__, __LINE__ ); }
+00053         #else
+00054                 #include <assert.h>
+00055                 #define TIXMLASSERT                assert
+00056         #endif
+00057 #else
+00058         #define TIXMLASSERT( x )           {}
+00059 #endif
+00060 
+00061 
+00062 #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
+00063     // Microsoft visual studio, version 2005 and higher.
+00064     /*int _snprintf_s(
+00065        char *buffer,
+00066        size_t sizeOfBuffer,
+00067        size_t count,    
+00068        const char *format [,
+00069           argument] ... 
+00070     );*/
+00071     inline int TIXML_SNPRINTF( char* buffer, size_t size, const char* format, ... ) {
+00072         va_list va;
+00073         va_start( va, format );
+00074         int result = vsnprintf_s( buffer, size, _TRUNCATE, format, va );
+00075         va_end( va );
+00076         return result;
+00077     }
+00078     #define TIXML_SSCANF   sscanf_s
+00079 #else
+00080     // GCC version 3 and higher
+00081     //#warning( "Using sn* functions." )
+00082     #define TIXML_SNPRINTF snprintf
+00083     #define TIXML_SSCANF   sscanf
+00084 #endif
+00085 
+00086 static const int TIXML2_MAJOR_VERSION = 1;
+00087 static const int TIXML2_MINOR_VERSION = 0;
+00088 static const int TIXML2_PATCH_VERSION = 5;
+00089 
+00090 namespace tinyxml2
+00091 {
+00092 class XMLDocument;
+00093 class XMLElement;
+00094 class XMLAttribute;
+00095 class XMLComment;
+00096 class XMLNode;
+00097 class XMLText;
+00098 class XMLDeclaration;
+00099 class XMLUnknown;
+00100 
+00101 class XMLPrinter;
+00102 
+00103 /*
+00104     A class that wraps strings. Normally stores the start and end
+00105     pointers into the XML file itself, and will apply normalization
+00106     and entity translation if actually read. Can also store (and memory
+00107     manage) a traditional char[]
+00108 */
+00109 class StrPair
+00110 {
+00111 public:
+00112     enum {
+00113         NEEDS_ENTITY_PROCESSING         = 0x01,
+00114         NEEDS_NEWLINE_NORMALIZATION     = 0x02,
+00115 
+00116         TEXT_ELEMENT        = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,
+00117         TEXT_ELEMENT_LEAVE_ENTITIES     = NEEDS_NEWLINE_NORMALIZATION,
+00118         ATTRIBUTE_NAME      = 0,
+00119         ATTRIBUTE_VALUE     = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,
+00120         ATTRIBUTE_VALUE_LEAVE_ENTITIES      = NEEDS_NEWLINE_NORMALIZATION,
+00121         COMMENT             = NEEDS_NEWLINE_NORMALIZATION
+00122     };
+00123 
+00124     StrPair() : flags( 0 ), start( 0 ), end( 0 ) {}
+00125     ~StrPair();
+00126 
+00127     void Set( char* _start, char* _end, int _flags ) {
+00128         Reset();
+00129         this->start = _start; this->end = _end; this->flags = _flags | NEEDS_FLUSH;
+00130     }
+00131     const char* GetStr();
+00132     bool Empty() const { return start == end; }
+00133 
+00134     void SetInternedStr( const char* str ) { Reset(); this->start = const_cast<char*>(str); }
+00135     void SetStr( const char* str, int flags=0 );
+00136 
+00137     char* ParseText( char* in, const char* endTag, int strFlags );  
+00138     char* ParseName( char* in );
+00139 
+00140 
+00141 private:
+00142     void Reset();
+00143 
+00144     enum {
+00145         NEEDS_FLUSH = 0x100,
+00146         NEEDS_DELETE = 0x200
+00147     };
+00148 
+00149     // After parsing, if *end != 0, it can be set to zero.
+00150     int flags;
+00151     char* start;    
+00152     char* end;
+00153 };
+00154 
+00155 
+00156 /*
+00157     A dynamic array of Plain Old Data. Doesn't support constructors, etc.
+00158     Has a small initial memory pool, so that low or no usage will not
+00159     cause a call to new/delete
+00160 */
+00161 template <class T, int INIT>
+00162 class DynArray
+00163 {
+00164 public:
+00165     DynArray< T, INIT >() 
+00166     {
+00167         mem = pool;
+00168         allocated = INIT;
+00169         size = 0;
+00170     }
+00171     ~DynArray()
+00172     {
+00173         if ( mem != pool ) {
+00174             delete [] mem;
+00175         }
+00176     }
+00177     void Push( T t )
+00178     {
+00179         EnsureCapacity( size+1 );
+00180         mem[size++] = t;
+00181     }
+00182 
+00183     T* PushArr( int count )
+00184     {
+00185         EnsureCapacity( size+count );
+00186         T* ret = &mem[size];
+00187         size += count;
+00188         return ret;
+00189     }
+00190     T Pop() {
+00191         return mem[--size];
+00192     }
+00193     void PopArr( int count ) 
+00194     {
+00195         TIXMLASSERT( size >= count );
+00196         size -= count;
+00197     }
+00198 
+00199     bool Empty() const                  { return size == 0; }
+00200     T& operator[](int i)                { TIXMLASSERT( i>= 0 && i < size ); return mem[i]; }
+00201     const T& operator[](int i) const    { TIXMLASSERT( i>= 0 && i < size ); return mem[i]; }
+00202     int Size() const                    { return size; }
+00203     int Capacity() const                { return allocated; }
+00204     const T* Mem() const                { return mem; }
+00205     T* Mem()                            { return mem; }
+00206 
+00207 
+00208 private:
+00209     void EnsureCapacity( int cap ) {
+00210         if ( cap > allocated ) {
+00211             int newAllocated = cap * 2;
+00212             T* newMem = new T[newAllocated];
+00213             memcpy( newMem, mem, sizeof(T)*size );  // warning: not using constructors, only works for PODs
+00214             if ( mem != pool ) delete [] mem;
+00215             mem = newMem;
+00216             allocated = newAllocated;
+00217         }
+00218     }
+00219 
+00220     T* mem;
+00221     T pool[INIT];
+00222     int allocated;      // objects allocated
+00223     int size;           // number objects in use
+00224 };
+00225 
+00226 
+00227 /*
+00228     Parent virtual class of a pool for fast allocation
+00229     and deallocation of objects.
+00230 */
+00231 class MemPool
+00232 {
+00233 public:
+00234     MemPool() {}
+00235     virtual ~MemPool() {}
+00236 
+00237     virtual int ItemSize() const = 0;
+00238     virtual void* Alloc() = 0;
+00239     virtual void Free( void* ) = 0; 
+00240 };
+00241 
+00242 
+00243 /*
+00244     Template child class to create pools of the correct type.
+00245 */
+00246 template< int SIZE >
+00247 class MemPoolT : public MemPool
+00248 {
+00249 public:
+00250     MemPoolT() : root(0), currentAllocs(0), nAllocs(0), maxAllocs(0)    {}
+00251     ~MemPoolT() {
+00252         // Delete the blocks.
+00253         for( int i=0; i<blockPtrs.Size(); ++i ) {
+00254             delete blockPtrs[i];
+00255         }
+00256     }
+00257 
+00258     virtual int ItemSize() const    { return SIZE; }
+00259     int CurrentAllocs() const       { return currentAllocs; }
+00260 
+00261     virtual void* Alloc() {
+00262         if ( !root ) {
+00263             // Need a new block.
+00264             Block* block = new Block();
+00265             blockPtrs.Push( block );
+00266 
+00267             for( int i=0; i<COUNT-1; ++i ) {
+00268                 block->chunk[i].next = &block->chunk[i+1];
+00269             }
+00270             block->chunk[COUNT-1].next = 0;
+00271             root = block->chunk;
+00272         }
+00273         void* result = root;
+00274         root = root->next;
+00275 
+00276         ++currentAllocs;
+00277         if ( currentAllocs > maxAllocs ) maxAllocs = currentAllocs;
+00278         nAllocs++;
+00279         return result;
+00280     }
+00281     virtual void Free( void* mem ) {
+00282         if ( !mem ) return;
+00283         --currentAllocs;
+00284         Chunk* chunk = (Chunk*)mem;
+00285         memset( chunk, 0xfe, sizeof(Chunk) );
+00286         chunk->next = root;
+00287         root = chunk;
+00288     }
+00289     void Trace( const char* name ) {
+00290         printf( "Mempool %s watermark=%d [%dk] current=%d size=%d nAlloc=%d blocks=%d\n",
+00291                  name, maxAllocs, maxAllocs*SIZE/1024, currentAllocs, SIZE, nAllocs, blockPtrs.Size() );
+00292     }
+00293 
+00294 private:
+00295     enum { COUNT = 1024/SIZE };
+00296     union Chunk {
+00297         Chunk* next;
+00298         char mem[SIZE];
+00299     };
+00300     struct Block {
+00301         Chunk chunk[COUNT];
+00302     };
+00303     DynArray< Block*, 10 > blockPtrs;
+00304     Chunk* root;
+00305 
+00306     int currentAllocs;
+00307     int nAllocs;
+00308     int maxAllocs;
+00309 };
+00310 
+00311 
+00312 
+00332 class XMLVisitor
+00333 {
+00334 public:
+00335     virtual ~XMLVisitor() {}
+00336 
+00338     virtual bool VisitEnter( const XMLDocument& /*doc*/ )           { return true; }
+00340     virtual bool VisitExit( const XMLDocument& /*doc*/ )            { return true; }
+00341 
+00343     virtual bool VisitEnter( const XMLElement& /*element*/, const XMLAttribute* /*firstAttribute*/ )    { return true; }
+00345     virtual bool VisitExit( const XMLElement& /*element*/ )         { return true; }
+00346 
+00348     virtual bool Visit( const XMLDeclaration& /*declaration*/ )     { return true; }
+00350     virtual bool Visit( const XMLText& /*text*/ )                   { return true; }
+00352     virtual bool Visit( const XMLComment& /*comment*/ )             { return true; }
+00354     virtual bool Visit( const XMLUnknown& /*unknown*/ )             { return true; }
+00355 };
+00356 
+00357 
+00358 /*
+00359     Utility functionality.
+00360 */
+00361 class XMLUtil
+00362 {
+00363 public:
+00364     // Anything in the high order range of UTF-8 is assumed to not be whitespace. This isn't 
+00365     // correct, but simple, and usually works.
+00366     static const char* SkipWhiteSpace( const char* p )  { while( !IsUTF8Continuation(*p) && isspace( *reinterpret_cast<const unsigned char*>(p) ) ) { ++p; } return p; }
+00367     static char* SkipWhiteSpace( char* p )              { while( !IsUTF8Continuation(*p) && isspace( *reinterpret_cast<unsigned char*>(p) ) )       { ++p; } return p; }
+00368 
+00369     inline static bool StringEqual( const char* p, const char* q, int nChar=INT_MAX )  {
+00370         int n = 0;
+00371         if ( p == q ) {
+00372             return true;
+00373         }
+00374         while( *p && *q && *p == *q && n<nChar ) {
+00375             ++p; ++q; ++n;
+00376         }
+00377         if ( (n == nChar) || ( *p == 0 && *q == 0 ) ) {
+00378             return true;
+00379         }
+00380         return false;
+00381     }
+00382     inline static int IsUTF8Continuation( const char p ) { return p & 0x80; }
+00383     inline static int IsAlphaNum( unsigned char anyByte )   { return ( anyByte < 128 ) ? isalnum( anyByte ) : 1; }
+00384     inline static int IsAlpha( unsigned char anyByte )      { return ( anyByte < 128 ) ? isalpha( anyByte ) : 1; }
+00385 
+00386     static const char* ReadBOM( const char* p, bool* hasBOM );
+00387     // p is the starting location,
+00388     // the UTF-8 value of the entity will be placed in value, and length filled in.
+00389     static const char* GetCharacterRef( const char* p, char* value, int* length );
+00390     static void ConvertUTF32ToUTF8( unsigned long input, char* output, int* length );
+00391 };
+00392 
+00393 
+00419 class XMLNode
+00420 {
+00421     friend class XMLDocument;
+00422     friend class XMLElement;
+00423 public:
+00424 
+00426     const XMLDocument* GetDocument() const  { return document; }
+00428     XMLDocument* GetDocument()              { return document; }
+00429 
+00430     virtual XMLElement*     ToElement()     { return 0; }   
+00431     virtual XMLText*        ToText()        { return 0; }   
+00432     virtual XMLComment*     ToComment()     { return 0; }   
+00433     virtual XMLDocument*    ToDocument()    { return 0; }   
+00434     virtual XMLDeclaration* ToDeclaration() { return 0; }   
+00435     virtual XMLUnknown*     ToUnknown()     { return 0; }   
+00436 
+00437     virtual const XMLElement*       ToElement() const       { return 0; }
+00438     virtual const XMLText*          ToText() const          { return 0; }
+00439     virtual const XMLComment*       ToComment() const       { return 0; }
+00440     virtual const XMLDocument*      ToDocument() const      { return 0; }
+00441     virtual const XMLDeclaration*   ToDeclaration() const   { return 0; }
+00442     virtual const XMLUnknown*       ToUnknown() const       { return 0; }
+00443 
+00453     const char* Value() const           { return value.GetStr(); }
+00457     void SetValue( const char* val, bool staticMem=false );
+00458 
+00460     const XMLNode*  Parent() const          { return parent; }
+00461     XMLNode* Parent()                       { return parent; }
+00462 
+00464     bool NoChildren() const                 { return !firstChild; }
+00465 
+00467     const XMLNode*  FirstChild() const      { return firstChild; }
+00468     XMLNode*        FirstChild()            { return firstChild; }
+00472     const XMLElement* FirstChildElement( const char* value=0 ) const;
+00473     XMLElement* FirstChildElement( const char* _value=0 )   { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->FirstChildElement( _value )); }
+00474 
+00476     const XMLNode*  LastChild() const                       { return lastChild; }
+00477     XMLNode*        LastChild()                             { return const_cast<XMLNode*>(const_cast<const XMLNode*>(this)->LastChild() ); }
+00478 
+00482     const XMLElement* LastChildElement( const char* value=0 ) const;
+00483     XMLElement* LastChildElement( const char* _value=0 )    { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->LastChildElement(_value) ); }
+00484     
+00486     const XMLNode*  PreviousSibling() const                 { return prev; }
+00487     XMLNode*    PreviousSibling()                           { return prev; }
+00488 
+00490     const XMLElement*   PreviousSiblingElement( const char* value=0 ) const ;
+00491     XMLElement* PreviousSiblingElement( const char* _value=0 ) { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->PreviousSiblingElement( _value ) ); }
+00492     
+00494     const XMLNode*  NextSibling() const                     { return next; }
+00495     XMLNode*    NextSibling()                               { return next; }
+00496         
+00498     const XMLElement*   NextSiblingElement( const char* value=0 ) const;
+00499     XMLElement* NextSiblingElement( const char* _value=0 )  { return const_cast<XMLElement*>(const_cast<const XMLNode*>(this)->NextSiblingElement( _value ) ); }
+00500 
+00504     XMLNode* InsertEndChild( XMLNode* addThis );
+00505 
+00506     XMLNode* LinkEndChild( XMLNode* addThis )   { return InsertEndChild( addThis ); }
+00510     XMLNode* InsertFirstChild( XMLNode* addThis );
+00514     XMLNode* InsertAfterChild( XMLNode* afterThis, XMLNode* addThis );
+00515     
+00519     void DeleteChildren();
+00520 
+00524     void DeleteChild( XMLNode* node );
+00525 
+00535     virtual XMLNode* ShallowClone( XMLDocument* document ) const = 0;
+00536 
+00543     virtual bool ShallowEqual( const XMLNode* compare ) const = 0;
+00544 
+00567     virtual bool Accept( XMLVisitor* visitor ) const = 0;
+00568 
+00569     // internal
+00570     virtual char* ParseDeep( char*, StrPair* );
+00571 
+00572 protected:
+00573     XMLNode( XMLDocument* );
+00574     virtual ~XMLNode();
+00575     XMLNode( const XMLNode& );  // not supported
+00576     void operator=( const XMLNode& );   // not supported
+00577     
+00578     XMLDocument*    document;
+00579     XMLNode*        parent;
+00580     mutable StrPair value;
+00581 
+00582     XMLNode*        firstChild;
+00583     XMLNode*        lastChild;
+00584 
+00585     XMLNode*        prev;
+00586     XMLNode*        next;
+00587 
+00588 private:
+00589     MemPool*        memPool;
+00590     void Unlink( XMLNode* child );
+00591 };
+00592 
+00593 
+00606 class XMLText : public XMLNode
+00607 {
+00608     friend class XMLBase;
+00609     friend class XMLDocument;
+00610 public:
+00611     virtual bool Accept( XMLVisitor* visitor ) const;
+00612 
+00613     virtual XMLText*    ToText()            { return this; }
+00614     virtual const XMLText*  ToText() const  { return this; }
+00615 
+00617     void SetCData( bool _isCData )          { this->isCData = _isCData; }
+00619     bool CData() const                      { return isCData; }
+00620 
+00621     char* ParseDeep( char*, StrPair* endTag );
+00622     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00623     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00624 
+00625 
+00626 protected:
+00627     XMLText( XMLDocument* doc ) : XMLNode( doc ), isCData( false )  {}
+00628     virtual ~XMLText()                                              {}
+00629     XMLText( const XMLText& );  // not supported
+00630     void operator=( const XMLText& );   // not supported
+00631 
+00632 private:
+00633     bool isCData;
+00634 };
+00635 
+00636 
+00638 class XMLComment : public XMLNode
+00639 {
+00640     friend class XMLDocument;
+00641 public:
+00642     virtual XMLComment* ToComment()                 { return this; }
+00643     virtual const XMLComment* ToComment() const     { return this; }
+00644 
+00645     virtual bool Accept( XMLVisitor* visitor ) const;
+00646 
+00647     char* ParseDeep( char*, StrPair* endTag );
+00648     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00649     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00650 
+00651 protected:
+00652     XMLComment( XMLDocument* doc );
+00653     virtual ~XMLComment();
+00654     XMLComment( const XMLComment& );    // not supported
+00655     void operator=( const XMLComment& );    // not supported
+00656 
+00657 private:
+00658 };
+00659 
+00660 
+00672 class XMLDeclaration : public XMLNode
+00673 {
+00674     friend class XMLDocument;
+00675 public:
+00676     virtual XMLDeclaration* ToDeclaration()                 { return this; }
+00677     virtual const XMLDeclaration* ToDeclaration() const     { return this; }
+00678 
+00679     virtual bool Accept( XMLVisitor* visitor ) const;
+00680 
+00681     char* ParseDeep( char*, StrPair* endTag );
+00682     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00683     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00684 
+00685 protected:
+00686     XMLDeclaration( XMLDocument* doc );
+00687     virtual ~XMLDeclaration();
+00688     XMLDeclaration( const XMLDeclaration& );    // not supported
+00689     void operator=( const XMLDeclaration& );    // not supported
+00690 };
+00691 
+00692 
+00700 class XMLUnknown : public XMLNode
+00701 {
+00702     friend class XMLDocument;
+00703 public:
+00704     virtual XMLUnknown* ToUnknown()                 { return this; }
+00705     virtual const XMLUnknown* ToUnknown() const     { return this; }
+00706 
+00707     virtual bool Accept( XMLVisitor* visitor ) const;
+00708 
+00709     char* ParseDeep( char*, StrPair* endTag );
+00710     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00711     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00712 
+00713 protected:
+00714     XMLUnknown( XMLDocument* doc );
+00715     virtual ~XMLUnknown();
+00716     XMLUnknown( const XMLUnknown& );    // not supported
+00717     void operator=( const XMLUnknown& );    // not supported
+00718 };
+00719 
+00720 
+00721 enum {
+00722     XML_NO_ERROR = 0,
+00723     XML_SUCCESS = 0,
+00724 
+00725     XML_NO_ATTRIBUTE,
+00726     XML_WRONG_ATTRIBUTE_TYPE,
+00727 
+00728     XML_ERROR_FILE_NOT_FOUND,
+00729     XML_ERROR_FILE_COULD_NOT_BE_OPENED,
+00730     XML_ERROR_FILE_READ_ERROR,
+00731     XML_ERROR_ELEMENT_MISMATCH,
+00732     XML_ERROR_PARSING_ELEMENT,
+00733     XML_ERROR_PARSING_ATTRIBUTE,
+00734     XML_ERROR_IDENTIFYING_TAG,
+00735     XML_ERROR_PARSING_TEXT,
+00736     XML_ERROR_PARSING_CDATA,
+00737     XML_ERROR_PARSING_COMMENT,
+00738     XML_ERROR_PARSING_DECLARATION,
+00739     XML_ERROR_PARSING_UNKNOWN,
+00740     XML_ERROR_EMPTY_DOCUMENT,
+00741     XML_ERROR_MISMATCHED_ELEMENT,
+00742     XML_ERROR_PARSING
+00743 };
+00744 
+00745 
+00752 class XMLAttribute
+00753 {
+00754     friend class XMLElement;
+00755 public:
+00756     const char* Name() const { return name.GetStr(); }          
+00757     const char* Value() const { return value.GetStr(); }        
+00758     const XMLAttribute* Next() const { return next; }           
+00759 
+00764     int      IntValue() const               { int i=0;      QueryIntValue( &i );        return i; }
+00766     unsigned UnsignedValue() const          { unsigned i=0; QueryUnsignedValue( &i );   return i; }
+00768     bool     BoolValue() const              { bool b=false; QueryBoolValue( &b );       return b; }
+00770     double   DoubleValue() const            { double d=0;   QueryDoubleValue( &d );     return d; }
+00772     float    FloatValue() const             { float f=0;    QueryFloatValue( &f );      return f; }
+00773 
+00778     int QueryIntValue( int* value ) const;
+00780     int QueryUnsignedValue( unsigned int* value ) const;
+00782     int QueryBoolValue( bool* value ) const;
+00784     int QueryDoubleValue( double* value ) const;
+00786     int QueryFloatValue( float* value ) const;
+00787 
+00789     void SetAttribute( const char* value );
+00791     void SetAttribute( int value );
+00793     void SetAttribute( unsigned value );
+00795     void SetAttribute( bool value );
+00797     void SetAttribute( double value );
+00799     void SetAttribute( float value );
+00800 
+00801 private:
+00802     enum { BUF_SIZE = 200 };
+00803 
+00804     XMLAttribute() : next( 0 ) {}
+00805     virtual ~XMLAttribute() {}
+00806     XMLAttribute( const XMLAttribute& );    // not supported
+00807     void operator=( const XMLAttribute& );  // not supported
+00808     void SetName( const char* name );
+00809 
+00810     char* ParseDeep( char* p, bool processEntities );
+00811 
+00812     mutable StrPair name;
+00813     mutable StrPair value;
+00814     XMLAttribute* next;
+00815     MemPool* memPool;
+00816 };
+00817 
+00818 
+00823 class XMLElement : public XMLNode
+00824 {
+00825     friend class XMLBase;
+00826     friend class XMLDocument;
+00827 public:
+00829     const char* Name() const        { return Value(); }
+00831     void SetName( const char* str, bool staticMem=false )   { SetValue( str, staticMem ); }
+00832 
+00833     virtual XMLElement* ToElement()             { return this; }
+00834     virtual const XMLElement* ToElement() const { return this; }
+00835     virtual bool Accept( XMLVisitor* visitor ) const;
+00836 
+00860     const char* Attribute( const char* name, const char* value=0 ) const;
+00861 
+00867     int      IntAttribute( const char* name ) const     { int i=0;      QueryIntAttribute( name, &i );      return i; }
+00869     unsigned UnsignedAttribute( const char* name ) const{ unsigned i=0; QueryUnsignedAttribute( name, &i ); return i; }
+00871     bool     BoolAttribute( const char* name ) const    { bool b=false; QueryBoolAttribute( name, &b );     return b; }
+00873     double   DoubleAttribute( const char* name ) const  { double d=0;   QueryDoubleAttribute( name, &d );   return d; }
+00875     float    FloatAttribute( const char* name ) const   { float f=0;    QueryFloatAttribute( name, &f );    return f; }
+00876 
+00890     int QueryIntAttribute( const char* name, int* _value ) const                { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryIntValue( _value ); } 
+00892     int QueryUnsignedAttribute( const char* name, unsigned int* _value ) const  { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryUnsignedValue( _value ); }
+00894     int QueryBoolAttribute( const char* name, bool* _value ) const              { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryBoolValue( _value ); }
+00896     int QueryDoubleAttribute( const char* name, double* _value ) const          { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryDoubleValue( _value ); }
+00898     int QueryFloatAttribute( const char* name, float* _value ) const            { const XMLAttribute* a = FindAttribute( name ); if ( !a ) return XML_NO_ATTRIBUTE; return a->QueryFloatValue( _value ); }
+00899 
+00901     void SetAttribute( const char* name, const char* _value )   { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00903     void SetAttribute( const char* name, int _value )           { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00905     void SetAttribute( const char* name, unsigned _value )      { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00907     void SetAttribute( const char* name, bool _value )          { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00909     void SetAttribute( const char* name, double _value )        { XMLAttribute* a = FindOrCreateAttribute( name ); a->SetAttribute( _value ); }
+00910 
+00914     void DeleteAttribute( const char* name );
+00915 
+00917     const XMLAttribute* FirstAttribute() const { return rootAttribute; }
+00919     const XMLAttribute* FindAttribute( const char* name ) const;
+00920 
+00949     const char* GetText() const;
+00950 
+00951     // internal:
+00952     enum {
+00953         OPEN,       // <foo>
+00954         CLOSED,     // <foo/>
+00955         CLOSING     // </foo>
+00956     };
+00957     int ClosingType() const { return closingType; }
+00958     char* ParseDeep( char* p, StrPair* endTag );
+00959     virtual XMLNode* ShallowClone( XMLDocument* document ) const;
+00960     virtual bool ShallowEqual( const XMLNode* compare ) const;
+00961 
+00962 private:
+00963     XMLElement( XMLDocument* doc );
+00964     virtual ~XMLElement();
+00965     XMLElement( const XMLElement& );    // not supported
+00966     void operator=( const XMLElement& );    // not supported
+00967 
+00968     XMLAttribute* FindAttribute( const char* name );
+00969     XMLAttribute* FindOrCreateAttribute( const char* name );
+00970     //void LinkAttribute( XMLAttribute* attrib );
+00971     char* ParseAttributes( char* p );
+00972 
+00973     int closingType;
+00974     // The attribute list is ordered; there is no 'lastAttribute'
+00975     // because the list needs to be scanned for dupes before adding
+00976     // a new attribute.
+00977     XMLAttribute* rootAttribute;
+00978 };
+00979 
+00980 
+00986 class XMLDocument : public XMLNode
+00987 {
+00988     friend class XMLElement;
+00989 public:
+00991     XMLDocument( bool processEntities = true ); 
+00992     ~XMLDocument();
+00993 
+00994     virtual XMLDocument* ToDocument()               { return this; }
+00995     virtual const XMLDocument* ToDocument() const   { return this; }
+00996 
+01002     int Parse( const char* xml );
+01003     
+01009     int LoadFile( const char* filename );
+01010     
+01018     int LoadFile( FILE* );
+01019     
+01025     int SaveFile( const char* filename );
+01026 
+01034     int SaveFile( FILE* );
+01035 
+01036     bool ProcessEntities() const                        { return processEntities; }
+01037 
+01041     bool HasBOM() const { return writeBOM; }
+01044     void SetBOM( bool useBOM ) { writeBOM = useBOM; }
+01045 
+01049     XMLElement* RootElement()               { return FirstChildElement(); }
+01050     const XMLElement* RootElement() const   { return FirstChildElement(); }
+01051 
+01066     void Print( XMLPrinter* streamer=0 );
+01067     virtual bool Accept( XMLVisitor* visitor ) const;
+01068 
+01074     XMLElement* NewElement( const char* name );
+01080     XMLComment* NewComment( const char* comment );
+01086     XMLText* NewText( const char* text );
+01098     XMLDeclaration* NewDeclaration( const char* text=0 );
+01104     XMLUnknown* NewUnknown( const char* text );
+01105 
+01110     void DeleteNode( XMLNode* node )    { node->parent->DeleteChild( node ); }
+01111 
+01112     void SetError( int error, const char* str1, const char* str2 );
+01113     
+01115     bool Error() const { return errorID != XML_NO_ERROR; }
+01117     int  ErrorID() const { return errorID; }
+01119     const char* GetErrorStr1() const { return errorStr1; }
+01121     const char* GetErrorStr2() const { return errorStr2; }
+01123     void PrintError() const;
+01124 
+01125     // internal
+01126     char* Identify( char* p, XMLNode** node );
+01127 
+01128     virtual XMLNode* ShallowClone( XMLDocument* /*document*/ ) const    { return 0; }
+01129     virtual bool ShallowEqual( const XMLNode* /*compare*/ ) const   { return false; }
+01130 
+01131 private:
+01132     XMLDocument( const XMLDocument& );  // not supported
+01133     void operator=( const XMLDocument& );   // not supported
+01134     void InitDocument();
+01135 
+01136     bool writeBOM;
+01137     bool processEntities;
+01138     int errorID;
+01139     const char* errorStr1;
+01140     const char* errorStr2;
+01141     char* charBuffer;
+01142 
+01143     MemPoolT< sizeof(XMLElement) >  elementPool;
+01144     MemPoolT< sizeof(XMLAttribute) > attributePool;
+01145     MemPoolT< sizeof(XMLText) >     textPool;
+01146     MemPoolT< sizeof(XMLComment) >  commentPool;
+01147 };
+01148 
+01149 
+01205 class XMLHandle
+01206 {
+01207 public:
+01209     XMLHandle( XMLNode* _node )                                             { node = _node; }
+01211     XMLHandle( XMLNode& _node )                                             { node = &_node; }
+01213     XMLHandle( const XMLHandle& ref )                                       { node = ref.node; }
+01215     XMLHandle operator=( const XMLHandle& ref )                             { node = ref.node; return *this; }
+01216 
+01218     XMLHandle FirstChild()                                                  { return XMLHandle( node ? node->FirstChild() : 0 ); }
+01220     XMLHandle FirstChildElement( const char* value=0 )                      { return XMLHandle( node ? node->FirstChildElement( value ) : 0 ); }
+01222     XMLHandle LastChild()                                                   { return XMLHandle( node ? node->LastChild() : 0 ); }
+01224     XMLHandle LastChildElement( const char* _value=0 )                      { return XMLHandle( node ? node->LastChildElement( _value ) : 0 ); }
+01226     XMLHandle PreviousSibling()                                             { return XMLHandle( node ? node->PreviousSibling() : 0 ); }
+01228     XMLHandle PreviousSiblingElement( const char* _value=0 )                { return XMLHandle( node ? node->PreviousSiblingElement( _value ) : 0 ); }
+01230     XMLHandle NextSibling()                                                 { return XMLHandle( node ? node->NextSibling() : 0 ); }     
+01232     XMLHandle NextSiblingElement( const char* _value=0 )                    { return XMLHandle( node ? node->NextSiblingElement( _value ) : 0 ); }
+01233 
+01235     XMLNode* ToNode()                           { return node; } 
+01237     XMLElement* ToElement()                     { return ( ( node && node->ToElement() ) ? node->ToElement() : 0 ); }
+01239     XMLText* ToText()                           { return ( ( node && node->ToText() ) ? node->ToText() : 0 ); }
+01241     XMLUnknown* ToUnknown()                     { return ( ( node && node->ToUnknown() ) ? node->ToUnknown() : 0 ); }
+01243     XMLDeclaration* ToDeclaration()             { return ( ( node && node->ToDeclaration() ) ? node->ToDeclaration() : 0 ); }
+01244 
+01245 private:
+01246     XMLNode* node;
+01247 };
+01248 
+01249 
+01254 class XMLConstHandle
+01255 {
+01256 public:
+01257     XMLConstHandle( const XMLNode* _node )                                          { node = _node; }
+01258     XMLConstHandle( const XMLNode& _node )                                          { node = &_node; }
+01259     XMLConstHandle( const XMLConstHandle& ref )                                     { node = ref.node; }
+01260 
+01261     XMLConstHandle operator=( const XMLConstHandle& ref )                           { node = ref.node; return *this; }
+01262 
+01263     const XMLConstHandle FirstChild() const                                         { return XMLConstHandle( node ? node->FirstChild() : 0 ); }
+01264     const XMLConstHandle FirstChildElement( const char* value=0 ) const             { return XMLConstHandle( node ? node->FirstChildElement( value ) : 0 ); }
+01265     const XMLConstHandle LastChild()    const                                       { return XMLConstHandle( node ? node->LastChild() : 0 ); }
+01266     const XMLConstHandle LastChildElement( const char* _value=0 ) const             { return XMLConstHandle( node ? node->LastChildElement( _value ) : 0 ); }
+01267     const XMLConstHandle PreviousSibling() const                                    { return XMLConstHandle( node ? node->PreviousSibling() : 0 ); }
+01268     const XMLConstHandle PreviousSiblingElement( const char* _value=0 ) const       { return XMLConstHandle( node ? node->PreviousSiblingElement( _value ) : 0 ); }
+01269     const XMLConstHandle NextSibling() const                                        { return XMLConstHandle( node ? node->NextSibling() : 0 ); }
+01270     const XMLConstHandle NextSiblingElement( const char* _value=0 ) const           { return XMLConstHandle( node ? node->NextSiblingElement( _value ) : 0 ); }
+01271 
+01272 
+01273     const XMLNode* ToNode() const               { return node; } 
+01274     const XMLElement* ToElement() const         { return ( ( node && node->ToElement() ) ? node->ToElement() : 0 ); }
+01275     const XMLText* ToText() const               { return ( ( node && node->ToText() ) ? node->ToText() : 0 ); }
+01276     const XMLUnknown* ToUnknown() const         { return ( ( node && node->ToUnknown() ) ? node->ToUnknown() : 0 ); }
+01277     const XMLDeclaration* ToDeclaration() const { return ( ( node && node->ToDeclaration() ) ? node->ToDeclaration() : 0 ); }
+01278 
+01279 private:
+01280     const XMLNode* node;
+01281 };
+01282 
+01283 
+01326 class XMLPrinter : public XMLVisitor
+01327 {
+01328 public:
+01335     XMLPrinter( FILE* file=0, bool compact = false );
+01336     ~XMLPrinter()   {}
+01337 
+01339     void PushHeader( bool writeBOM, bool writeDeclaration );
+01343     void OpenElement( const char* name );
+01345     void PushAttribute( const char* name, const char* value );
+01346     void PushAttribute( const char* name, int value );
+01347     void PushAttribute( const char* name, unsigned value );
+01348     void PushAttribute( const char* name, bool value );
+01349     void PushAttribute( const char* name, double value );
+01351     void CloseElement();
+01352 
+01354     void PushText( const char* text, bool cdata=false );
+01356     void PushComment( const char* comment );
+01357 
+01358     void PushDeclaration( const char* value );
+01359     void PushUnknown( const char* value );
+01360 
+01361     virtual bool VisitEnter( const XMLDocument& /*doc*/ );
+01362     virtual bool VisitExit( const XMLDocument& /*doc*/ )            { return true; }
+01363 
+01364     virtual bool VisitEnter( const XMLElement& element, const XMLAttribute* attribute );
+01365     virtual bool VisitExit( const XMLElement& element );
+01366 
+01367     virtual bool Visit( const XMLText& text );
+01368     virtual bool Visit( const XMLComment& comment );
+01369     virtual bool Visit( const XMLDeclaration& declaration );
+01370     virtual bool Visit( const XMLUnknown& unknown );
+01371 
+01376     const char* CStr() const { return buffer.Mem(); }
+01382     int CStrSize() const { return buffer.Size(); }
+01383 
+01384 private:
+01385     void SealElement();
+01386     void PrintSpace( int depth );
+01387     void PrintString( const char*, bool restrictedEntitySet );  // prints out, after detecting entities.
+01388     void Print( const char* format, ... );
+01389 
+01390     bool elementJustOpened;
+01391     bool firstElement;
+01392     FILE* fp;
+01393     int depth;
+01394     int textDepth;
+01395     bool processEntities;
+01396     bool compactMode;
+01397 
+01398     enum {
+01399         ENTITY_RANGE = 64,
+01400         BUF_SIZE = 200
+01401     };
+01402     bool entityFlag[ENTITY_RANGE];
+01403     bool restrictedEntityFlag[ENTITY_RANGE];
+01404 
+01405     DynArray< const char*, 10 > stack;
+01406     DynArray< char, 20 > buffer, accumulator;
+01407 };
+01408 
+01409 
+01410 }   // tinyxml2
+01411 
+01412 
+01413 #endif // TINYXML2_INCLUDED
+Generated on Mon Jul 2 2012 10:12:29 for TinyXML-2 by    1.8.0

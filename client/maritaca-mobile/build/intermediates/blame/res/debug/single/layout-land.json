@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_layout.xml",
+        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout-land\\fragment_layout.xml"
+    },
+    {
+        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout-land\\dashboard_layout.xml",
+        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout-land\\dashboard_layout.xml"
+    },
+    {
+        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout-land\\menu.xml",
+        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout-land\\menu.xml"
+    }
+]

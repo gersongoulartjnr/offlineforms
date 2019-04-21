@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form>
+    <title>Todos os Componentes</title>
+    <questions>
+        <picture id="8" next="9" required="true">
+            <label>campo Picture</label>
+            <help>ajuda com foto</help>
+        </picture>
+        <video id="10" next="11" required="false">
+            <label>campo Video</label>
+            <help>ajuda com video</help>
+        </video>
+        <audio id="9" next="10" required="false">
+            <label>campo Audio</label>
+            <help>ajuda com audio</help>
+        </audio>
+        <combobox id="1" next="2" required="true">
+            <label>Componente ComboBox</label>
+            <help>ajuda com comp combobox</help>
+            <option value="0" checked="false">op1</option>
+            <option value="1" checked="false">op2</option>
+            <option value="2" checked="false">op3</option>
+            <option value="3" checked="true">op4</option>
+            <option value="4" checked="false">op5</option>
+        </combobox>
+        <radio id="3" next="4" required="true">
+            <label>Campo RadioBox</label>
+            <help>ajuda no campo radiobox</help>
+            <option value="0" checked="false">op1</option>
+            <option value="1" checked="false">op2</option>
+            <option value="2" checked="true">op3</option>
+            <option value="3" checked="false">op4</option>
+            <option value="4" checked="false">op5</option>
+        </radio>
+        <checkbox id="4" next="5" required="false">
+            <label>campo CheckBox</label>
+            <help>ajuda no checkbox</help>
+            <option value="0" checked="false">op1</option>
+            <option value="1" checked="true">op2</option>
+            <option value="2" checked="false">op3</option>
+            <option value="3" checked="false">op4</option>
+            <option value="4" checked="true">op5</option>
+            <option value="5" checked="false">op6</option>
+        </checkbox>
+        <geolocation id="11" next="12" required="false">
+            <label>campo Geolocation</label>
+            <help>ajuda com mapas</help>
+        </geolocation>
+        <barcode id="12" next="13" required="true">
+            <label>campo Bar Code</label>
+            <help>ajuda com codigo de barras</help>
+        </barcode>
+        <slider id="13" next="14" required="false">
+            <label>Slider campo</label>
+            <help>ajuda com slider</help>
+            <default>w</default>
+        </slider>
+        <draw id="14" next="-1" required="true">
+            <label>campo Draw</label>
+            <help>ajuda para desenhar</help>
+        </draw>
+    </questions>
+</form>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.unifesp.maritaca.mobile.activities"
+    android:versionCode="8"
+    android:versionName="1.4" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:icon="@drawable/form_logo"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/OfflineForms" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.MaritacaActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.MenuLoadFormActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.LocalDataActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.ResultsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.AnswersActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.ErrorReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.ControllerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.QuestionsListActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.DrawActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name=".ControllerActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="jim.h.common.android.zxinglib.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <service android:name="br.unifesp.maritaca.mobile.services.NotificationService" />
+
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.AboutActivity2"
+            android:label="@string/title_activity_about2"
+            android:parentActivityName="br.unifesp.maritaca.mobile.activities.AboutActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.unifesp.maritaca.mobile.activities.AboutActivity" />
+        </activity>
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.MenuActivity"
+            android:parentActivityName="br.unifesp.maritaca.mobile.activities.MenuLoadFormActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.SendResponses"
+            android:label="@string/title_activity_send_responses"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuLoadFormActivity" />
+        </activity>
+        <activity
+            android:name="br.unifesp.maritaca.mobile.activities.LoadForm"
+            android:label="@string/title_activity_load_form"
+            android:parentActivityName="br.unifesp.maritaca.mobile.activities.MenuLoadFormActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuLoadFormActivity" />
+        </activity>
+
+        <provider
+            android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:authorities="br.unifesp.maritaca.mobile.activities.com.android.tools.fd.runtime.InstantRunContentProvider"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

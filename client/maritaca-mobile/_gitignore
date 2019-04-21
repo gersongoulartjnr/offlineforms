@@ -1,0 +1,9 @@
+/target
+/bin
+/.settings
+/ant.properties
+/gen
+*~
+form.xml
+R.java
+.classpath

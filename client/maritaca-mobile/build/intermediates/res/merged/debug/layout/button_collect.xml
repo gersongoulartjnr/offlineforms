@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <item android:state_pressed="true"
+          android:drawable="@drawable/icon_dash_collect_over"
+          android:layout_gravity="center_vertical"       
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal" /> <!-- pressed -->
+    <item android:state_focused="true"
+          android:layout_gravity="center_vertical"       
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal"
+          android:drawable="@drawable/icon_dash_collect_over" /> <!-- focused -->
+    <item android:state_hovered="true"
+          android:layout_gravity="center_vertical"       
+       	  android:layout_width="wrap_content"
+      	  android:layout_height="wrap_content"
+      	  android:gravity="center_horizontal"
+          android:drawable="@drawable/icon_dash_collect_over" /> <!-- hovered -->
+    <item 
+        android:layout_gravity="center_vertical"       
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:drawable="@drawable/icon_dash_collect" /> <!-- default -->
+   	   
+</selector>

@@ -1,0 +1,1407 @@
+// Generic Field class
+//
+// This in an abstract class. The following methods must 
+// be implemented in the subclasses: 
+//		addXMLSpecificAttributes: return a string with the tag's attributes 
+//		addXMLElements:	return a string with tag's XML elements
+//		toHTMLSpecific: return a string with HTML corresponding component
+//		showSpecificProperties: show the properties of a specific field 
+//		saveSpecificProperties: updates the properties of a field
+//      validateSpecific: checks if the fields were filled with valid information
+//      setFromXMLDoc: loads the data from xml
+//      setSpecificFromXMLDoc: parses the given document object setting the corresponding
+//                             properties in the current field
+//	See TextBox class as example
+//
+var Field = function() {
+	this.type     = '';
+	this.id       = '';
+	this.next	  = '';
+	this.required = false;
+	
+	this.title    = '';
+	this.help     = '';
+	
+	this.lastCondTableId = 0;	
+	this.conditionals    = new Array();
+	
+	this.toHTML = function(i) {
+		var html = '';
+		html += '<label class="fieldLabel" for="label_' + this.id + '"> ';
+		html += idToQuestionNumber("field_"+i) + " - ";
+		html += this.title;
+		if(this.required)
+			html += ' <span class="required">*</span>';
+		html += '</label>';
+		
+		var up = jQuery.i18n.prop('msg_up');
+		var down = jQuery.i18n.prop('msg_down');
+		var deleteField = jQuery.i18n.prop('msg_delete');
+		
+		html += '<div class="order">' + 
+					'<a href="#" onclick="move(-1); return false;">' + 
+						'<img src="images/form/arrow_up.png" alt="up"' +
+						'title="' + up + '"/></a>' + 
+					'<a href="#" onclick="move(1); return false;">' + 
+						'<img src="images/form/arrow_down.png" alt="down"' +
+						'title="' + down + '"/></a>' +
+					'<a href="#" onclick="deleteField(); return false;">' + 
+						'<img src="images/delete.png" alt="delete"' +
+						'title="' + deleteField + '"/></a>' +
+				'</div>';
+		html += this.toHTMLSpecific();
+		
+		return html;
+	};
+	
+	this.toXML = function() {
+		var xml = '';
+		xml += '<' + this.type + ' id="' + this.id + '" next="' + this.next + '" required="' + this.required  + '" ';
+		xml += this.addXMLSpecificAttributes();
+		xml += '>';
+		xml += tagCreatorXML('label', this.title);
+		xml += tagCreatorXML('help', this.help);
+		xml += this.addConditionalsXML();
+		xml += this.addXMLElements();
+		xml += '</' + this.type + '>';
+		return xml;
+	};
+	
+	this.addConditionalsXML = function(){
+		var xml = '';
+		
+		for(var i=0; i<this.conditionals.length; i++){
+			var comparator = this.symbolToString(this.conditionals[i].comparator);
+			xml += '<'+comparator + ' ';
+			xml += 'value="'+this.conditionals[i].value+'" ';
+			xml += 'goto="'+this.conditionals[i].goTo+'" />';
+		}
+		return xml;
+	};
+	
+	this.symbolToString = function(symbol){				
+		switch(symbol){
+			case "<":
+				return "less";
+			case "<=":
+				return "lessequal";
+			case ">":
+				return "greater";
+			case ">=":
+				return "greaterequal";
+			case "==":
+				return "equal";
+			default:
+				addMessage(jQuery.i18n.prop('msg_error_form_parsing'), 'error');				
+		}
+	};
+	
+	this.stringToSymbol = function(string){
+		switch(string){
+			case "less":
+				return "<";
+			case "lessequal":
+				return "<=";
+			case "greater":
+				return ">";
+			case "greaterequal":
+				return ">=";
+			case "equal":
+				return "==";
+			default:
+				addMessage(jQuery.i18n.prop('msg_error_form_parsing'), 'error');
+		}		
+	};
+	
+	this.setJSONValues = function(element){
+		this.type = element.type;
+		this.id = element.id;
+		this.required = element.required;
+		this.title = element.title;
+		this.help = element.help == undefined ? "" : element.help;
+		this.conditionals = (element.conditionals == undefined || element.conditionals.lenght == 0) ? [] : element.conditionals;
+		this.setJSONValuesSpecific(element);
+	};
+	
+	this.showProperties = function(){
+		// general properties are:
+		var label = jQuery.i18n.prop('msg_field_labelProperty');
+		var help  = jQuery.i18n.prop('msg_field_helpProperty');
+		
+		var html = '<table>';
+		html += createTextProperty('fieldLabel', this.title, label);
+		html += createTextProperty('fieldHelp', this.help, help);
+		html += createRequiredProperty(this.required);
+		
+		if(nextQuestions = $('fieldset#xmlForm > ol > li.editing').nextAll().length<1){
+			html += this.disabledConditions();
+		} else {
+			html += this.addConditions();
+		}
+
+		html += this.showSpecificProperties();
+		html += '</table>';
+		
+		$('#properties').append(html);
+		
+		// initialize JQuery Datepicker;
+		var locale = jQuery.i18n.prop('msg_datepicker_locale');
+		$('.datepicker').datepicker( $.datepicker.regional[locale] );
+	};
+	
+	this.disabledConditions = function(){
+		this.conditionals = new Array();
+		
+		var msg = jQuery.i18n.prop('msg_field_conditional_error_last_question');
+		return this.conditionalButton('addMessage(\''+msg+'\',\'error\');');
+	};
+	
+	this.addConditions = function(){
+		var html       = "";
+		var htmlCondBt = this.addConditionalButton();
+		
+		for(var i=0; i<this.conditionals.length; i++){
+			comparison = this.conditionals[i].comparator;
+			value      = this.conditionals[i].value;
+			goTo       = this.conditionals[i].goTo;
+			
+			html += this.createConditionalProperty(comparison,value,goTo);
+		}
+		
+		html += htmlCondBt;						
+		return html;
+	};
+
+	this.removeConditional = function(tableId){
+		$("table.condPropTable#"+tableId).parent().parent().remove();
+	};
+
+	this.removeConditionalButton = function(tableId){
+		return	'<img src="images/delete.png" class="removeConditional"'+
+				'onclick="new Field().removeConditional('+tableId+');saveField()"/>';
+	};
+
+	this.createConditionalProperty = function(comparison, value, goTo){		
+		var ifHtml        = tagCreatorHTML('label',jQuery.i18n.prop('msg_field_if_conditional'));
+		var comboHtml     = this.conditionalComboBox(comparison);
+		var inputIfHtml   = inputCreator('text',null,value,null,null,'valueCond');
+		var removeIfBtHtml= this.removeConditionalButton(this.lastCondTableId);
+		
+		var ifTdOneHtml   = tagCreatorHTML('td', ifHtml);
+		var ifTdTwoHtml   = tagCreatorHTML('td', comboHtml+inputIfHtml+removeIfBtHtml);
+		
+		var rowOne        = ifTdOneHtml + ifTdTwoHtml;	
+		var rowOneHtml    = tagCreatorHTML('tr', rowOne);
+		
+		var thenHtml      = tagCreatorHTML('label',jQuery.i18n.prop('msg_field_then_conditional'));
+		var inputThenHtml = this.goToBox(goTo);
+		
+		var thenTdOneHtml = tagCreatorHTML('td', thenHtml,'alignRight');
+		var thenTdTwoHtml = tagCreatorHTML('td', inputThenHtml);		
+		
+		var rowTwo        = thenTdOneHtml + thenTdTwoHtml; 
+		var rowTwoHtml    = tagCreatorHTML('tr',rowTwo);
+		
+		var tableHtml     = '<table class="condPropTable" id="'+this.lastCondTableId+'">'; 
+		tableHtml        += rowOneHtml + rowTwoHtml + '</table>';
+		
+		tableHtml         = '<tr><td colspan="2">'+tableHtml+'</td></tr>';
+		
+		this.lastCondTableId++;
+
+		return tableHtml;
+	};
+	
+	this.goToBox = function(goTo){
+		var nextQuestions = $('fieldset#xmlForm > ol > li.editing').nextAll();
+		
+		var html = '<select class="goToCond" onchange="saveField();">';
+		for(var i=0; i<nextQuestions.length; i++){
+			var selected="";
+			if(nextQuestions[i].id == goTo){
+				selected = 'selected="selected"';
+			}
+			var questionOption = nextQuestions[i].textContent;
+			html += '<option '+selected+'>' + questionOption + '</option>';
+		}
+		
+		var endSelected = '';
+		if(goTo=='-1'){
+			endSelected = 'selected="selected"';
+		}
+		
+		var formEnd = jQuery.i18n.prop('msg_field_end_form');
+		html += '<option '+endSelected+'>' + formEnd + '</option>';
+		html += '</select>';
+				
+		return html;
+	};
+	
+	this.addConditionalProperty = function(){
+		var tableHtml = this.createConditionalProperty('','','');				
+		$("#addConditionalTable:first-child").prepend(tableHtml);
+	};
+
+	this.conditionalComboBox = function(selectedValue){
+		var options = "";
+		var conditionals = ["==", "<", "<=", ">", ">="];	
+		for(var i=0; i<conditionals.length; i++){
+			if(conditionals[i] == selectedValue){
+				options += '<option selected="selected">' + conditionals[i] + '</option>';
+			} else {
+				options += tagCreatorHTML('option',conditionals[i]);
+			}
+		}
+		var comboBox = '<select class="compCond">'+options+'</select>';
+
+		return comboBox;
+	};
+		
+	this.addConditionalButton = function(){		
+		return this.conditionalButton('new Field().addConditionalProperty();');
+	};
+	
+	this.conditionalButton = function(onclick){
+		msgAdd = jQuery.i18n.prop('msg_field_add_conditional');
+		
+		var html =	'<tr><td colspan="2">'+
+		    '<table id="addConditionalTable">'+
+		    '<tr><td colspan="2">'+
+			'<button class="properties" type="button" onclick="'+onclick+'">'+						
+				msgAdd+
+			'</button>'+
+			'</td></tr>'+
+			'</table>'+
+			'</td></tr>';
+		
+		return html;		
+	};
+	
+	this.saveProperties = function(){
+		if(!this.validateSpecific()){
+			return;
+		}		
+		this.title = $('#fieldLabel').val();
+		this.help  = $('#fieldHelp').val();
+		this.required = $('#fieldRequired').is(':checked');
+		
+		this.conditionals = this.retrieveConditionals();
+		this.saveSpecificProperties();
+	};
+	
+	this.retrieveConditionals = function (){
+		var localConditionals = new Array();
+		
+		var condComps  = $('select.compCond');
+		var condValues = $('input.valueCond');
+		var condGoTos  = $('select.goToCond > option:selected');
+		var condIds    = $('table.condPropTable');
+				
+		for(var i=0; i<condValues.length; i++){
+			var conditional = {};
+			
+			conditional.comparator=condComps[i].value;
+			conditional.value=condValues[i].value;
+			
+			var formEnd = jQuery.i18n.prop('msg_field_end_form');
+			if(condGoTos[i].value == formEnd){
+				conditional.goTo='-1';
+			} else {
+				conditional.goTo=questionNumberToId(condGoTos[i].value);
+			}
+			conditional.id=condIds[i].attributes[1].value;
+			
+			localConditionals.push(conditional);
+		};
+		
+		return localConditionals;
+	};
+	
+	this.setConditionals = function($xmlDoc) {
+		var strConditionals = ['less', 'lessequal', 'greater', 'greaterequal', 'equal'];
+		var h,
+			condsSize;
+		for(h = 0, condsSize = strConditionals.length; h < condsSize; h++) {
+			var type = strConditionals[h];
+			var listConditionals = $xmlDoc.find(type);		
+			for(var i=0; i<listConditionals.length; i++){
+				var conditional = {};
+				var conditionalElement = listConditionals[i];			
+				conditional.comparator=this.stringToSymbol(type);
+				conditional.value = conditionalElement.attributes[0].value;
+				conditional.goTo  = conditionalElement.attributes[1].value;			
+				this.conditionals.push(conditional);
+			}
+		}
+	};
+	
+	this.setFromXMLDoc = function(xmlDoc){
+		var $xmlDoc = $( xmlDoc );
+		if(xmlDoc.nodeName != this.type){
+			console.error(xmlDoc.nodeName + " is not a compatible type for " + this.type);
+			return;
+		}
+		this.id        = $xmlDoc.attr('id');
+		var isRequired = $xmlDoc.attr('required');
+		this.required  = isRequired == 'true'? true : false;
+
+		this.title     = $xmlDoc.find('label').text();
+		this.help      = $xmlDoc.find('help').text();
+		
+		this.conditionals = new Array();
+		this.setConditionals($xmlDoc);		
+		
+		this.setSpecificFromXMLDoc($xmlDoc);
+	};
+};
+
+// Class TextBox: Inherits from Field
+var TextBox = function() {
+	this.type = 'text';
+	// TODO evaluate the size default
+	this.size = '100';
+	this.bydefault = '';
+	
+	this.toHTMLSpecific = function() {
+		var html = '';
+		html +='<input ';
+		html += attribCreator('type', this.type);
+		html += attribCreator('id', this.id);
+		html += attribCreator('maxlength', this.size);
+		html += attribCreator('readonly', 'readonly');
+		if(this.bydefault)
+			html += attribCreator('value', this.bydefault);
+		html += '/>';
+		
+		return html;
+	};
+	
+	this.setJSONValuesSpecific = function(element) {
+		this.size = element.size;
+		this.bydefault = element.bydefault;
+	};
+	
+	this.addXMLSpecificAttributes = function() {
+		var xml = '';
+		return xml;
+	};
+	
+	this.addXMLElements = function(){
+		var xml = tagCreatorXML('size', this.size);
+		xml += tagCreatorXML('default', this.bydefault);
+		return xml;
+
+	};
+	
+	this.showSpecificProperties = function(){
+		var defaultTitle = jQuery.i18n.prop('msg_field_defaultProperty');
+		var sizeTitle = jQuery.i18n.prop('msg_field_sizeProperty');
+		
+		var html = createTextProperty('fieldDefault', this.bydefault, defaultTitle) ;
+		html += createNumberProperty('fieldSize', this.size, sizeTitle);
+		
+		return html;
+	};
+	
+	this.saveSpecificProperties = function(){
+		this.bydefault = $('#fieldDefault').val();
+		this.size = $('#fieldSize').val();
+	};
+	
+	this.validateSpecific = function(){
+		var bydefault = $('#fieldDefault').val();
+		var size      = $('#fieldSize').val();
+		
+		if( bydefault!='' && size!='' ){
+			if(bydefault.length > size){
+				addMessage(jQuery.i18n.prop("msg_text_validation_error_size"),"error");
+				return false;
+			}
+		}
+		return true;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc){
+		this.size = $xmlDoc.find('size').text();
+		this.bydefault = $xmlDoc.find('default').text();
+	};
+};
+// Inheritance to TextBox from Field
+TextBox.prototype = new Field();
+
+////Slider Field ////
+var SliderField  = function() {
+	this.type = 'slider';	
+	this.bydefault = '';
+	
+	this.toHTMLSpecific = function(){
+		var html = "<img";
+		html += ' src="images/form/slider_demo.png" width="64px" ';
+		html += '/>';
+		html += '<input ';
+		html += attribCreator('type', 'hidden');
+		if(this.bydefault)
+			html += attribCreator('value', this.bydefault);
+		html += ' />';
+		return html;
+	};
+	
+	this.setJSONValuesSpecific = function(element) {
+		this.bydefault = element.bydefault;
+	};
+	
+	this.addXMLSpecificAttributes = function() {
+		var xml = '';
+		return xml;
+	};
+	
+	this.addXMLElements = function(){
+		var xml = tagCreatorXML('default', this.bydefault);
+		return xml;
+
+	};
+	
+	this.showSpecificProperties = function(){
+		var defaultTitle = jQuery.i18n.prop('msg_field_defaultProperty');		
+		var html = createTextProperty('fieldDefault', this.bydefault, defaultTitle) ;		
+		return html;
+	};
+	
+	this.saveSpecificProperties = function(){
+		this.bydefault = $('#fieldDefault').val();
+	};
+	
+	this.validateSpecific = function(){
+		var bydefault = $('#fieldDefault').val();
+		
+		if(bydefault!=''){
+			if(parseInt(bydefault) < 0 || parseInt(bydefault) > 100){
+				addMessage(jQuery.i18n.prop("msg_text_validation_error_size"),"error");
+				return false;
+			}
+		}
+		return true;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc){
+		this.bydefault = $xmlDoc.find('default').text();
+	};
+}; 
+SliderField.prototype = new Field();
+
+/// Box ///
+var globalId = 0;
+var generateUUID = function(){
+	globalId++;
+	if(globalId >= 1000000){
+		globalId = 0;
+	}
+	return globalId;
+};
+
+var Box = function(type) {
+	this.component			= type;
+	this.optionsTitles		= new Array();
+	this.optionsTitles[0]	= '';
+	this.optionsTitles[1]	= '';
+	this.boxId				= '';
+	this.optionLabelInputClass	= this.boxId+"_optionLabel";
+	this.defaultLabelInputClass	= this.boxId+"_defaultLabel";
+	this.type				= type;
+	this.boxClass			= "boxClass";
+	this.msgAddBox			= null;
+	this.msgAddDefault		= null;
+	this.msgRemoveError		= null;
+	this.msgBoxLabel		= null;
+	this.bydefault			= '';
+	this.defaultFields		= new Array();
+
+	this.toHTMLSpecific = function(){
+		var html = '';
+		for(var i=0; i<this.optionsTitles.length; i++){
+			html +='<input ';
+			html += attribCreator('type', this.type);
+			html += attribCreator('name', this.boxId);
+			html += attribCreator('disabled', 'disabled');
+			html += '>';
+			html += this.optionsTitles[i];
+			html += '</input>';	
+		}				
+		return html;
+	};
+	
+	this.setJSONValuesSpecific = function(element) {
+		this.type          = element.type;
+		this.optionsTitles = element.optionsTitles == undefined ? [] : element.optionsTitles;
+	};
+	
+	this.addXMLSpecificAttributes = function(){
+		return "";
+	};
+	
+	this.addXMLElements = function(){
+		var xml = '';
+//		xml += tagCreatorXML('default', this.bydefault);
+		for(var i=0; i<this.optionsTitles.length; i++){
+			xml += '<option ';
+				xml += 'value="' + parseInt(i) + '"';
+				var j = 0;
+				for(; j < this.defaultFields.length; j++){
+					if(this.defaultFields[j] == this.optionsTitles[i]) {
+						xml += ' checked="true"';
+						break;
+					}
+				}
+				if (j >= this.defaultFields.length) {
+					xml += ' checked="false"';
+				}
+			xml += '>';
+			xml += this.optionsTitles[i];
+			xml += '</option>';
+		}		
+		return xml;
+	};
+	
+	this.showSpecificProperties = function(){
+		var defaultTitle = jQuery.i18n.prop('msg_field_defaultProperty');
+		var html = ""; // = createTextProperty('fieldDefault', this.bydefault, defaultTitle) ;		
+			//CheckBox
+			if(type == 'checkbox') {
+				var html = createCheckBoxProperty('fieldDefault', this.optionsTitles, this.optionsTitles, this.defaultFields, defaultTitle);		
+//				html += this.openDefaultTable();
+//				for(var i=0; i<this.defaultFields.length; i++) {
+//					html += this.addBoxDefaultFieldWithValue(this.defaultFields[i]);
+//				}
+//				html += this.closeTable();
+//				html += this.addDefaultButton();
+			} else {
+				var html = createComboBoxProperty('fieldDefault', [''].concat(this.optionsTitles), ['-1'].concat(this.optionsTitles), this.defaultFields, defaultTitle, false);
+			}
+		html += createLabelProperty("",this.msgBoxLabel);
+		
+		html += this.openTable();
+		if(this.optionsTitles.length > 2) {
+			for(var i=0; i<this.optionsTitles.length; i++){
+				html += this.createOptionRow(this.optionsTitles[i], i, true);
+			}
+		} else {
+			for(var i=0; i<this.optionsTitles.length; i++){
+				html += this.createOptionRow(this.optionsTitles[i], i, false);
+			}
+		}
+		html += this.closeTable();		
+		html += this.addItemButton("");
+		
+		return html;
+	};
+	
+	this.createOptionRow = function(value, rowNumber, putDeleteButton){
+		var uuid = generateUUID();
+		var htmlRow = '<tr id="'+uuid+'">';
+		htmlRow    += '   <td colspan="2">';
+		htmlRow    += inputCreator("text","",value,"","",this.optionLabelInputClass);
+		
+		if(putDeleteButton){
+			htmlRow+= '      <a  onclick="new Box().deleteBoxField(\''+uuid+'\');saveField();">'; 
+	        htmlRow+= '         <img src="images/delete.png"/>'; 
+	        htmlRow+= '      </a>';	
+		}
+		
+		htmlRow    += '   </td>';
+		htmlRow    += '</tr>';
+		return htmlRow;
+	};
+
+	this.createDefaultRow = function(value, rowNumber){
+		var uuid = generateUUID();
+		var htmlRow = '<tr id="'+uuid+'">';
+		htmlRow    += '   <td colspan="2">';
+		htmlRow    += inputCreator("text","",value,"","",this.defaultLabelInputClass);
+		
+		if(rowNumber != 0){
+			htmlRow+= '      <a  onclick="new Box().deleteBoxField(\''+uuid+'\');saveField();">'; 
+			htmlRow+= '         <img src="images/delete.png"/>'; 
+			htmlRow+= '      </a>';	
+		}
+		
+		htmlRow    += '   </td>';
+		htmlRow    += '</tr>';
+		return htmlRow;
+	};
+	
+	this.openDefaultTable = function(value){
+		var htmlTable ='<tr><td colspan="2">';		
+		htmlTable    += '<table id="boxDefaultTable">';		
+		return htmlTable;
+	};
+	
+	this.addDefaultButton = function(value) {
+		var html =	'<tr><td colspan="2">'+
+				'<button class="properties" type="button" onclick="new Box().addBoxDefaultField();">'+						
+				'<img src="images/form/add.png"/>'+
+					this.msgAddDefault+
+				'</button>'+
+			'</td></tr>';
+		return html;
+	};
+	
+	this.addBoxDefaultField = function(){
+		var html     = this.createDefaultRow("");
+		$("table#boxDefaultTable").append(html);
+	};
+	
+	this.addBoxDefaultFieldWithValue = function(value){
+		var html     = this.createDefaultRow(value);
+		return html;
+	};
+	
+	//
+	this.addItemButton = function(value){		
+		var html =	'<tr><td colspan="2">'+
+						'<button class="properties" type="button" onclick="new Box().addBoxOptionField();">'+						
+						'<img src="images/form/add.png"/>'+
+							this.msgAddBox+
+						'</button>'+
+					'</td></tr>';
+		return html;
+	};
+	
+	this.addBoxOptionField = function(){
+		var html     = this.createOptionRow("");
+		$("table#boxOptionsTable").append(html);
+	};
+	
+	this.openTable = function(value){
+		var htmlTable ='<tr><td colspan="2">';		
+		htmlTable    += '<table id="boxOptionsTable">';		
+		return htmlTable;
+	};
+	
+	this.closeTable = function(value){
+		var htmlTable = '</table>';
+		htmlTable    += '</td></tr>';
+		return htmlTable;
+	};
+	
+	this. deleteBoxField = function(id){
+		$("tr#"+id).remove();
+	};
+	
+	this.saveSpecificProperties = function(){
+		//this.bydefault = $('#fieldDefault').val();
+		var itensToSave = new Array();
+		$('input.'+this.optionLabelInputClass).each(function() {
+			var item = $(this).val();
+			if(item==null){
+				item='';				
+			}
+			itensToSave.push($(this).val());
+		});
+		this.optionsTitles = itensToSave;
+		if(type == 'checkbox') {
+			var defaulValues = new Array();
+			$.each($("input[name='fieldDefault']:checked"), function(key, value) {
+				defaulValues.push(value.value);
+			});
+			this.defaultFields = defaulValues; 
+		} else {
+			this.defaultFields[0] = $('#fieldDefault').val();
+		}
+	};
+	
+	this.validateSpecific = function(){
+//		var _default = $('#fieldDefault').val();
+		
+		// validate duplications in box
+		var itensToSave  = new Array();
+		var repeatedItem = null; 
+		$('input.'+this.optionLabelInputClass).each(function() {
+			var item = $(this).val();
+			if(item != null && item != ''){
+				if(itensToSave.indexOf(item) != -1){
+					repeatedItem = $(this)[0];
+				} else {
+					itensToSave.push(item);
+				}
+			} else {
+				addMessage(jQuery.i18n.prop("msg_error_box_emptyOption"),"error");
+				return false;
+			}
+		});
+		
+		// TODO validate default value
+//		if( _default != null && _default != "") {
+//			if(itensToSave.indexOf(_default) == -1){
+//				addMessage(jQuery.i18n.prop("msg_error_box_default"),"error");
+//				return false;
+//			}				
+//		}
+
+		if(repeatedItem !=null){
+			var rowId = repeatedItem.parentNode.parentNode.id;
+			this.deleteBoxField(rowId);
+			var errorMsg = jQuery.i18n.prop("msg_box_validation_error_repeated_item",repeatedItem.value); 
+			addMessage(errorMsg,"error");
+			return false;
+		}
+		
+		return true;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc){
+		var parsedOptions = new Array();		
+		var parsedDefaults = new Array();
+		var foundOptions  = $xmlDoc.find('option');
+		
+		for(var i=0; i<foundOptions.length; i++){
+			parsedOptions.push(foundOptions[i].textContent);
+			if (foundOptions[i].getAttribute('checked') == 'true') {
+				parsedDefaults.push(foundOptions[i].textContent);
+			}
+		}
+		this.optionsTitles = parsedOptions;
+		this.defaultFields = parsedDefaults;
+		this.bydefault = $xmlDoc.find('default').text();
+	};
+	
+	this.verifyElement = function(){
+		if (this.optionsTitles.length < 2){
+			var msg = jQuery.i18n.prop('msg_error_box_emptyBox', this.type);
+			addMessage(msg, 'error');
+			return false;
+		}
+		for(var i=0; i<this.optionsTitles.length; i++){
+			if (this.optionsTitles[i] == "") {
+				var msg = jQuery.i18n.prop('msg_error_box_emptyOption', this.type);
+				addMessage(msg, 'error');
+				return false;
+			}
+		}
+		return true;
+	};
+};
+Box.prototype = new Field();
+
+//// CheckBox Field ////
+var CheckBox  = function(){	
+	this.boxId            = this.component+generateUUID();
+	this.msgAddBox        = jQuery.i18n.prop('msg_box_add');
+	this.msgAddDefault    = jQuery.i18n.prop('msg_box_add_default');
+	this.msgRemoveError   = jQuery.i18n.prop('msg_box_remove_error');
+	this.msgBoxLabel      = jQuery.i18n.prop('msg_box_label');
+	
+	this.toHTMLSpecific = function(){
+		var html = '';
+		for(var i=0; i<this.optionsTitles.length; i++){
+			html +='<input ';
+			html += attribCreator('type', this.type);
+			html += attribCreator('name', this.boxId);
+			html += attribCreator('disabled', 'disabled');
+			for(var j=0; j<this.defaultFields.length; j++) {
+				if(this.bydefault != this.defaultFields[j] && this.optionsTitles[i] == this.defaultFields[j]) {
+					html += 'checked';
+				}
+			}
+			html += '>';
+			html += this.optionsTitles[i];
+			html += '</input>';	
+		}				
+		return html;
+	};
+	
+	this.addXMLElements = function(){
+		var xml = '';
+		for(var i=0; i<this.optionsTitles.length; i++){
+			xml += '<option ';
+				xml += 'value="' + parseInt(i) + '"';
+				if(this.bydefault == this.optionsTitles[i] || this.defaultFields.indexOf(this.optionsTitles[i]) != -1) {
+					xml += ' checked="true"';
+				}
+				else {
+					xml += ' checked="false"';
+				}
+			xml += '>';
+			xml += this.optionsTitles[i];
+			xml += '</option>';
+		}		
+		return xml;
+	};
+}; 
+CheckBox.prototype = new Box("checkbox");
+
+//// RadioBox Field ////
+var RadioBox  = function(){
+	this.boxId            = this.component+generateUUID();
+	this.msgAddBox        = jQuery.i18n.prop('msg_box_add'); 
+	this.msgRemoveError   = jQuery.i18n.prop('msg_box_remove_error');
+	this.msgBoxLabel      = jQuery.i18n.prop('msg_box_label');
+	
+	this.toHTMLSpecific = function(){
+		var html = '';
+		for(var i=0; i<this.optionsTitles.length; i++){
+			html +='<input ';
+			html += attribCreator('type', this.type);
+			html += attribCreator('name', this.boxId);
+			html += attribCreator('disabled', 'disabled');
+			if(this.defaultFields.length == 1 && this.optionsTitles[i] == this.defaultFields[0]) {
+				html += 'checked';
+			}
+			html += '>';
+			html += this.optionsTitles[i];
+			html += '</input>';	
+		}				
+		return html;
+	};
+}; 
+RadioBox.prototype = new Box("radio");
+
+//// ComboBox Field ////
+var ComboBox  = function(){
+	this.boxId            = this.component+generateUUID();
+	this.msgAddBox        = jQuery.i18n.prop('msg_box_add'); 
+	this.msgRemoveError   = jQuery.i18n.prop('msg_box_remove_error');
+	this.msgBoxLabel      = jQuery.i18n.prop('msg_box_label');
+	
+	this.toHTMLSpecific = function(){
+		var html = "<select disabled>";
+		if(this.defaultFields.length == 0 || (this.defaultFields.length == 1 && this.defaultFields[0] == '-1')) {
+			html += '<option value="-1" selected></option>';
+		}
+		for(var i = 0; i < this.optionsTitles.length; i++){
+			html += '<option value="' + this.optionsTitles[i]+'" ';
+			if(this.defaultFields.length == 1 && this.optionsTitles[i] == this.defaultFields[0]) {
+				html += 'selected';
+			}
+			html += '>';
+			html += this.optionsTitles[i];
+			html += '</option>';
+		}		
+		html += "</select>";
+
+		return html;
+	};
+}; 
+ComboBox.prototype = new Box("combobox");
+
+//
+var NumericComponent = function NumericComponent(type){
+	this.type = type;
+	this.bydefault = '';
+	this.maxValue  = '';
+	this.minValue  = '';
+	
+	this.toHTMLSpecific = function() {
+		var html = '';		
+		html += '<input ';
+		html += attribCreator('type', this.type);
+		html += attribCreator('id', 'field_'+this.id);
+		html += attribCreator('readonly', 'readonly');
+		html += attribCreator('step', 'any');
+		if(this.bydefault)
+			html += attribCreator('value', this.bydefault);
+		html += this.specificAttributes();
+		html += '/>';
+		
+		return html;
+	};
+	
+	this.addXMLSpecificAttributes = function() {
+		return this.specificAttributes();
+	};
+	
+	this.addXMLElements = function(){
+		var xml = tagCreatorXML('default', this.bydefault);
+		return xml;
+	};
+	
+	this.setJSONValuesSpecific = function(element) {
+		this.bydefault = element.bydefault;
+		this.maxValue = element.maxValue;
+		this.minValue = element.minValue;
+	};
+	
+	this.showSpecificProperties = function(){
+		var defaultTitle  = jQuery.i18n.prop('msg_field_defaultProperty');
+		var maxValueTitle = jQuery.i18n.prop('msg_field_maxValueProperty');
+		var minValueTitle = jQuery.i18n.prop('msg_field_minValueProperty');
+		
+		var html = createNumberSpecificProperty(this.type, 'fieldDefault', this.bydefault, defaultTitle) ;		
+		html    += createNumberSpecificProperty(this.type, 'fieldMaxValue', this.maxValue, maxValueTitle) ;		
+		html    += createNumberSpecificProperty(this.type, 'fieldMinValue', this.minValue, minValueTitle);
+		
+		return html;
+	};
+	
+	this.saveSpecificProperties = function(){
+		this.bydefault = $('#fieldDefault').val();
+		this.minValue = $('#fieldMinValue').val();
+		this.maxValue = $('#fieldMaxValue').val();
+	};
+	
+	this.specificAttributes = function(){
+		var att = attribCreator('min', this.minValue);
+		att += attribCreator('max', this.maxValue);
+		return att;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc){
+		this.maxValue = $xmlDoc.attr('max') == "undefined" ? "" : $xmlDoc.attr('max');
+		this.minValue = $xmlDoc.attr('min') == "undefined" ? "" : $xmlDoc.attr('min');
+		this.bydefault = $xmlDoc.find('default').text();
+		this.currency = $xmlDoc.find('currency').text();
+	};
+};
+NumericComponent.prototype = new Field();
+
+////Number Field ////
+var NumberField = function(){
+	this.specificAttributes = function(){
+		var att = attribCreator('min', this.minValue);
+		att += attribCreator('max', this.maxValue);
+		return att;
+	};
+
+	this.validateSpecific = function(){
+		var maxValue  = parseInt($('#fieldMaxValue').val());
+		var minValue  = parseInt($('#fieldMinValue').val());
+		var bydefault = parseInt($('#fieldDefault').val());
+
+		if(maxValue != '' && minValue != ''){
+			if(maxValue <= minValue){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_min"),"error");
+				return false;
+			}
+		}		
+		if(maxValue != '' && bydefault != ''){
+			if(maxValue < bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_default"),"error");
+				return false;
+			}
+		}		
+		if(minValue != '' && bydefault != ''){
+			if(minValue > bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_min_default"),"error");
+				return false;
+			}
+		}		
+		return true;
+	};
+};
+NumberField.prototype = new NumericComponent("number");
+
+////Decimal Field ////
+var DecimalField = function DecimalField(){	
+	this.specificAttributes = function(){
+		var att = attribCreator('min', this.minValue);
+		att += attribCreator('max', this.maxValue);
+		return att;
+	};
+	
+	this.validateSpecific = function(){
+		var maxValue  = parseFloat($('#fieldMaxValue').val());
+		var minValue  = parseFloat($('#fieldMinValue').val());
+		var bydefault = parseFloat($('#fieldDefault').val());
+		
+		if(maxValue != '' && minValue != ''){
+			if(maxValue <= minValue){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_min"),"error");
+				return false;
+			}
+		}		
+		if(maxValue != '' && bydefault != ''){
+			if(maxValue < bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_default"),"error");
+				return false;
+			}
+		}		
+		if(minValue != '' && bydefault != ''){
+			if(minValue > bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_min_default"),"error");
+				return false;
+			}
+		}		
+		return true;
+	};
+}; 
+DecimalField.prototype = new NumericComponent("money");
+
+////Money Field ////
+var MoneyField = function MoneyField(){
+	this.currency = 'R$';
+	
+	this.toHTMLSpecific = function() {
+		var html = '';		
+		html += '<input ';
+		html += attribCreator('type', 'text');
+		html += attribCreator('id', 'field_'+this.id);
+		html += attribCreator('readonly', 'readonly');
+		if(this.bydefault)
+			html += attribCreator('value', this.currency+' '+this.bydefault);
+		html += this.specificAttributes();
+		html += '/>';
+		
+		return html;
+	};
+	
+	this.addXMLElements = function(){
+		var xml = tagCreatorXML('default', this.bydefault);
+			xml += tagCreatorXML('currency', this.currency);
+		return xml;
+	};
+	
+	this.showSpecificProperties = function(){
+		var currencyTitle = jQuery.i18n.prop('msg_field_currencyProperty');
+		var defaultTitle  = jQuery.i18n.prop('msg_field_defaultProperty');
+		var maxValueTitle = jQuery.i18n.prop('msg_field_maxValueProperty');
+		var minValueTitle = jQuery.i18n.prop('msg_field_minValueProperty');
+		
+		var html = createComboBoxProperty('fieldCurrency', ['Real Brasileiro', 'Dólar Americano'], ['R$','USD'], [this.currency], currencyTitle, false);
+		html 	+= createNumberSpecificProperty(this.type, 'fieldDefault', this.bydefault, defaultTitle) ;		
+		html    += createNumberSpecificProperty(this.type, 'fieldMaxValue', this.maxValue, maxValueTitle) ;		
+		html    += createNumberSpecificProperty(this.type, 'fieldMinValue', this.minValue, minValueTitle);
+		return html;
+	};
+	
+	this.saveSpecificProperties = function(){
+		this.bydefault = $('#fieldDefault').val();
+		this.minValue = $('#fieldMinValue').val();
+		this.maxValue = $('#fieldMaxValue').val();
+		this.currency = $('#fieldCurrency option:selected').val();
+	};
+	
+	this.specificAttributes = function(){
+		var att = attribCreator('min', this.minValue);
+		att += attribCreator('max', this.maxValue);
+		return att;
+	};
+	
+	this.isValidMoney = function isValidMoney(value){
+		if(value == null || value == '')
+			return true;
+		var reg = new RegExp('^[0-9]+(\.[0-9]{1,2})?$');
+		return reg.test(value);
+	};
+	
+	this.validateSpecific = function(){
+		var maxValue  = $('#fieldMaxValue').val();
+		var minValue  = $('#fieldMinValue').val();
+		var bydefault = $('#fieldDefault').val();
+		
+		if(!this.isValidMoney(maxValue)){
+			addMessage(jQuery.i18n.prop("msg_money_format_error"),"error");
+			return false;
+		}
+		if(!this.isValidMoney(minValue)){
+			addMessage(jQuery.i18n.prop("msg_money_format_error"),"error");
+			return false;
+		}
+		if(!this.isValidMoney(bydefault)){
+			addMessage(jQuery.i18n.prop("msg_money_format_error"),"error");
+			return false;
+		}
+		
+		if(maxValue != '' && minValue != ''){
+			if(maxValue <= minValue){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_min"),"error");
+				return false;
+			}
+		}		
+		if(maxValue != '' && bydefault != ''){
+			if(maxValue < bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_max_default"),"error");
+				return false;
+			}
+		}		
+		if(minValue != '' && bydefault != ''){
+			if(minValue > bydefault){
+				addMessage(jQuery.i18n.prop("msg_number_validation_error_min_default"),"error");
+				return false;
+			}
+		}		
+		return true;
+	};
+	
+}; 
+MoneyField.prototype = new NumericComponent("money");
+
+//// Date Field ////
+var DateField = function() {
+	this.type = 'date';
+	this.bydefault = '';
+	this.maxValue = '';
+	this.minValue = '';
+	this.dateformat = 'mm/dd/yy';
+	
+	this.toHTMLSpecific = function() {
+		var html = '';
+		
+		html += '<input ';
+		html += attribCreator( 'type' , this.type);
+		html += attribCreator('id', 'field_' + this.id);
+		html += attribCreator('readonly', 'readonly');
+		if(this.bydefault)
+			html += attribCreator('value', this.bydefault);
+		html += this.specificAttributes();
+		html += '/>';
+		
+		return html;
+	};
+	
+	this.addXMLSpecificAttributes = function() {
+		return this.specificAttributes();
+	};
+	
+	this.addXMLElements = function(){
+		var xml = tagCreatorXML('default', this.bydefault);
+		xml += tagCreatorXML('format', this.dateformat);
+		return xml;
+	};
+	
+	this.setJSONValuesSpecific = function(element) {
+		this.bydefault = element.bydefault;
+		this.maxValue = element.maxValue;
+		this.minValue = element.minValue;
+	};
+	
+	this.showSpecificProperties = function(){
+		var defaultTitle = jQuery.i18n.prop('msg_field_defaultProperty');
+		var maxValueTitle = jQuery.i18n.prop('msg_field_maxValueProperty');
+		var minValueTitle = jQuery.i18n.prop('msg_field_minValueProperty');
+		
+		var html = createDateProperty('fieldDefault', this.bydefault, defaultTitle) ;
+		html += createDateProperty('fieldMaxValue', this.maxValue, maxValueTitle) ;
+		html += createDateProperty('fieldMinValue', this.minValue, minValueTitle);
+		
+		return html;
+	};
+	
+	this.validateSpecific= function(){				
+		maxValue  = new Date( $('#fieldMaxValue').val() );
+		minValue  = new Date( $('#fieldMinValue').val() );
+		bydefault = new Date( $('#fieldDefault').val() );
+		
+		if(maxValue != '' && minValue != ''){
+			if(maxValue <= minValue){
+				addMessage(jQuery.i18n.prop("msg_date_validation_error_max_min"),"error");
+				return false;
+			}
+		}
+		
+		if(maxValue != '' && bydefault != ''){
+			if(maxValue < bydefault){
+				addMessage(jQuery.i18n.prop("msg_date_validation_error_max_default"),"error");
+				return false;
+			}
+		}
+		
+		if(minValue != '' && bydefault != ''){
+			if(minValue > bydefault){
+				addMessage(jQuery.i18n.prop("msg_date_validation_error_min_default"),"error");
+				return false;
+			}
+		}
+				
+		$("#fieldDefault").mask("99/99/9999");
+		$("#fieldMaxValue").mask("99/99/9999");
+		$("#fieldMinValue").mask("99/99/9999");
+							
+		return true;
+	};
+
+	this.saveSpecificProperties = function(){
+		this.bydefault = $('#fieldDefault').val();
+		this.maxValue = $('#fieldMaxValue').val();
+		this.minValue = $('#fieldMinValue').val();
+	};
+
+	this.specificAttributes = function(){
+		var att = attribCreator('min', this.minValue);
+		att += attribCreator('max', this.maxValue);
+		return att;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc){
+		this.maxValue = $xmlDoc.attr('max');
+		this.minValue = $xmlDoc.attr('min');
+		this.bydefault = $xmlDoc.find('default').text();
+	};
+};
+DateField.prototype = new Field();
+
+//// Basic ////
+var Basic = function(type) {
+	this.component	= type;
+	//this.type		= type;
+	
+	this.conditionalButton = function(onclick) {
+		return '';
+	};
+
+	this.setJSONValuesSpecific = function(element) {};
+	
+	this.addXMLSpecificAttributes = function() {
+		var xml = '';
+		return xml;
+	};
+	
+	this.addXMLElements = function() { 
+		var xml = ''; 
+		return xml; 
+	};
+	
+	this.showSpecificProperties = function(){
+		var html = '';
+		return html;
+	};
+	
+	this.saveSpecificProperties = function() {	};
+	
+	this.validateSpecific = function(){
+		return true;
+	};
+	
+	this.setSpecificFromXMLDoc = function($xmlDoc) {};
+};
+
+Basic.prototype = new Field();
+
+////Barcode Field ////
+var BarCodeField  = function() {	
+	this.toHTMLSpecific = function(){
+		var html = "<img";
+		html += ' src="images/form/barcode_demo.png" ';
+		html += '/>';
+		return html;
+	};
+}; 
+BarCodeField.prototype = new Basic("barcode");
+
+////Geolocation Field ////
+var GeolocationField  = function() {	
+	this.toHTMLSpecific = function(){
+		var html = "<img";
+		html += ' src="images/form/gps_demo.png" ';
+		html += '/>';
+		return html;
+	};
+}; 
+GeolocationField.prototype = new Basic("geolocation");
+
+////Picture Field ////
+var PictureField  = function() {	
+	this.toHTMLSpecific = function(){
+		var html = "<img";
+		html += ' src="images/form/picture_demo.png" width="64px" ';
+		html += '/>';
+		return html;
+	};	
+}; 
+PictureField.prototype = new Basic("picture");
+
+////Draw Field ////
+var DrawField  = function() {	
+	
+	this.toHTMLSpecific = function(){
+		var html = "<img";
+		html += ' src="images/form/draw_demo.png" width="64px" ';
+		html += '/>';
+		return html;
+	};	
+}; 
+DrawField.prototype = new Basic("draw");
+
+//// Audio Field ////
+var AudioField  = function() {	
+	this.toHTMLSpecific = function(){
+		var html = "<audio";
+		html += ' controls="controls"';
+		html += '>';
+		html += "</audio>";
+		return html;
+	};	
+}; 
+AudioField.prototype = new Basic("audio");
+
+////Video Field ////
+var VideoField  = function() {	
+	this.toHTMLSpecific = function(){
+		var html = '<video class="editor"';
+		html += ' controls="controls" ';
+		html += '>';
+		html += "</video>";
+		return html;
+	};	
+}; 
+VideoField.prototype = new Basic("video");
+
+//// Field Factory Method ////
+var fieldFactory = function(type){
+	var field;
+	switch (type) {
+	case 'text':
+		field = new TextBox();
+		field.title = jQuery.i18n.prop('msg_form_textBoxTitle');
+		break;
+	case 'number':
+		field = new NumberField();
+		field.title = jQuery.i18n.prop('msg_form_numberTitle');
+		break;
+	case 'decimal':
+		field = new DecimalField();
+		field.title = jQuery.i18n.prop('msg_form_decimalTitle');
+		break;
+	case 'money':
+		field = new MoneyField();
+		field.title = jQuery.i18n.prop('msg_form_moneyTitle');
+		break;	
+	case 'date':
+		field = new DateField();
+		field.title = jQuery.i18n.prop('msg_form_dateTitle');
+		break;
+	case 'checkbox':
+		field = new CheckBox();
+		field.title = jQuery.i18n.prop('msg_form_checkBoxTitle');
+		break;
+	case 'radio':
+		field = new RadioBox();
+		field.title = jQuery.i18n.prop('msg_form_radioBoxTitle');
+		break;
+	case 'combobox':
+		field = new ComboBox();
+		field.title = jQuery.i18n.prop('msg_form_comboBoxTitle');
+		break;
+	case 'picture':
+		field = new PictureField();
+		field.title = jQuery.i18n.prop('msg_form_pictureTitle');
+		break;
+	case 'audio':
+		field = new AudioField();
+		field.title = jQuery.i18n.prop('msg_form_audioTitle');
+		break;
+	case 'video':
+		field = new VideoField();
+		field.title = jQuery.i18n.prop('msg_form_videoTitle');
+		break;
+	case 'geolocation':
+		field = new GeolocationField();
+		field.title = jQuery.i18n.prop('msg_form_geolocationTitle');
+		break;
+	case 'barcode':
+		field = new BarCodeField();
+		field.title = jQuery.i18n.prop('msg_form_barcodeTitle');
+		break;
+	case 'slider':
+		field = new SliderField();
+		field.title = jQuery.i18n.prop('msg_form_sliderTitle');
+		break;
+	case 'draw':
+		field = new DrawField();
+		field.title = jQuery.i18n.prop('msg_form_drawTitle');
+		break;
+	default:
+		return null;
+	}
+	
+	field.type = type;
+	return field;
+};

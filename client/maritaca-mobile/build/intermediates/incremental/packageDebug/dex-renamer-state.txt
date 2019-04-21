@@ -1,0 +1,7 @@
+#Sun Apr 21 00:16:21 BRT 2019
+base.0=C\:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d7291d0f3d051e711626f59fb956f99881d7ed73
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c280502192c39cd77bde27bc822a7d80a7e2de85\\classes.dex
+base.1=C\:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c280502192c39cd77bde27bc822a7d80a7e2de85
+file.0=C\:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d7291d0f3d051e711626f59fb956f99881d7ed73\\classes.dex

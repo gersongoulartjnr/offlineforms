@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Offline Forms</string>
+    <string name="app_description">Description</string>
+    <string name="project_name">Offline Forms</string>
+    <!-- Label -->
+    <string name="label_user">E-mail:</string>
+    <string name="label_password">Password:</string>
+
+    <string name="label_question">Questão: </string>
+
+    <string name="label_previous">Anterior</string>
+    <string name="label_help">Ajuda</string>
+    <string name="label_next">Próximo</string>
+    <string name="label_loading">Carregando&#8230;</string>
+    <string name="label_loading_form">Carregando formulários</string>
+    <string name="label_loading_answers">Carregando respostas</string>
+    <string name="label_loading_data">Carregando dados</string>
+    <string name="lbl_no_results">No results</string>
+    <string name="label_latitude">Latitude</string>
+    <string name="label_longitude">Longitude</string>
+    <string name="label_confirmation">Confirmação</string>
+    <string name="label_enter_valid_value">Please, enter a valid value.</string>
+    <string name="label_combo_chooseone">Escolha uma opção</string>
+
+    <string name="label_sending_data_title">Sending data&#8230;</string>
+    <string name="label_sending_data_content">Sending collected data.</string>
+    <string name="label_sending_data_error">Error sending data to server</string>
+    <string name="label_connection_error">Connection error</string>
+    <string name="label_server_down">Maritaca mobile can\'t establish a connection to the server.</string>
+    <string name="label_error">Error</string>
+    <string name="label_error_has_occurred">An error has occurred. Please report this error to our support team.</string>
+    <string name="label_data_sent">Data has been sent successfully.</string>
+
+    <string name="label_no_data_gathered">No data gathered</string>
+    <string name="label_insert_data">Insert some data to save</string>
+    <string name="label_error_emailslist">Please, ckeck your emails and try again</string>
+
+    <string name="title_invite_friends">Invite your friends</string>
+    <string name="label_invite_friends">Your friends can use this form.</string>
+    <string name="label_friends_required">Please enter at least one friend s email.</string>
+    <string name="label_sending_invitations">Sending invitations to your friends.</string>
+    <!-- -->
+    <string name="title_logout">Logout</string>
+    <string name="msg_session_expired">Your session has expired.</string>
+    <string name="msg_logout">Are you sure you want to logout?</string>
+    <string name="msg_confirmation">Tem certeza que deseja salvar a coleta?</string>
+    <string name="msg_form_cancel">Deseja cancelar sua coleta?</string>
+    <string name="msg_help">Sorry, there is no help for this question</string>
+    <string name="msg_time_has_expired">Time has expired.</string>
+    <!-- menu -->
+    <string name="main_title">Maritaca Mobile</string>
+
+    <string name="form_collect">Collect</string>
+    <string name="form_sync">Send Data</string>
+    <string name="form_settings">Settings</string>
+    <string name="form_answers">Answers</string>
+    <string name="application_invite">Tell a friend</string>
+    <string name="application_settings">Settings</string>
+    <string name="application_about">About</string>
+
+    <!-- Button -->
+    <string name="button_login">Login</string>
+    <string name="button_save">Salvar</string>
+    <string name="button_back">Voltar</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_invite">Invite</string>
+    <string name="button_my_contacts">My contacts</string>
+    <string name="button_clear">Clear</string>
+    <string name="user">User:</string>
+    <string name="expires_in">Expires in:</string>
+    <string name="button_yes">Sim</string>
+    <string name="button_no">Não</string>
+    <string name="button_close">Close</string>
+    <string name="label_get_location">Get location</string>
+    <string name="button_take_picture">Take a picture</string>
+    <string name="button_start_video">Start video</string>
+    <string name="button_play_video">Play video</string>
+    <string name="button_click_draw">Click to draw</string>
+    <string name="btnDrawEraser">Eraser</string>
+    <string name="btnDrawColor">Color</string>
+    <string name="btnDrawClearScreen">Clear Screen</string>
+    <string name="btnDrawSave">Save</string>
+    <!--  Action Bar -->
+    <string name="button_help">Help</string>
+    <string name="button_next">Próxima</string>
+    <string name="button_previous">Anterior</string>
+    <string name="button_social">Friend</string>
+    <!-- Question -->
+    <string name="location_disabled">You can not use this option</string>
+    <string name="button_record_audio">Record audio</string>
+    <string name="button_play_audio">Play Audio</string>
+    <string name="error_saving_file">File cannot be saved</string>
+    <string name="button_code">Code</string>
+    <string name="button_scan">Scan</string>
+    <!-- ERROR server is not up -->
+    <string name="error_msg_server_down">Server is not responding</string>
+
+    <string name="lbl_file_size_error">The file size exceeds the allowable limit.</string>
+    <string name="lbl_answers">Answers</string>
+    <string name="lbl_reports">Reports</string>
+    <string name="lbl_local_data">Local data</string>
+    <!-- Upload notification -->
+    <string name="msg_upload_ticker">Uploading Data</string>
+    <string name="msg_upload_content_title">Your data is being sent.</string>
+    <string name="msg_upload_sending">Sending</string>
+    <!-- Settings -->
+    <string name="msg_settings_sync_minute">minute</string>
+    <string name="msg_settings_sync_minutes">minutes</string>
+    <string name="msg_settings_saved">Saved successfully</string>
+    <string name="msg_settings_nosaved">Not saved, please try again.</string>
+    <!-- List Mode -->
+    <string name="msg_data_saved">Data has been saved.</string>
+    <string name="msg_data_not_saved">Data could not be saved. Try again please.</string>
+    <string name="msg_questions_data_saved">Data has been saved.</string>
+    <string name="msg_questions_data_not_saved">Data could not be saved. Try again please.</string>
+    <string name="msg_back_to_menu">Are you sure? Your data will not be saved.</string>
+
+    <!-- Local Data -->
+    <string name="localdata_menu_delete_label">Delete collection</string>
+    <string name="localdata_menu_delete_shortcut">Delete</string>
+    <string name="title_activity_about2">AboutActivity2</string>
+    <string name="title_activity_send_responses">Enviando coletas</string>
+    <string name="title_activity_load_form">Carregando Formulário</string>
+
+    <!-- GAS -->
+    <string name="msg_error_load_form">Erro ao carregar formulário</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/mobile_background"
+        android:orientation="horizontal"
+        android:id="@+id/QuestionTop" >
+
+        
+
+            <RelativeLayout
+                android:id="@+id/QuestionNext"
+                android:layout_width="20dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="right"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_menu_next"
+                    android:title="@string/button_next"
+                    android:visibility="visible"
+                    android:clickable="true"
+                    android:onClick="onNextClick" 
+                />
+
+            </RelativeLayout>
+             
+            <LinearLayout
+            android:id="@+id/QuestionCenter"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+                
+            </LinearLayout>
+            
+
+            <RelativeLayout
+                android:id="@+id/QuestionPrevious"
+                android:layout_width="20dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/previous"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_menu_previous"
+                    android:title="@string/button_previous"
+                    android:visibility="visible"
+                    android:clickable="true"
+                    android:onClick="onPreviousClick" />
+
+            </RelativeLayout>
+
+       
+
+    </RelativeLayout>

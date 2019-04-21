@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    ">
+
+	<context:annotation-config />
+	<!--context:component-scan base-package="br.unifesp.maritaca.ws" /-->
+
+	<bean class="br.unifesp.maritaca.business.context.SpringApplicationContext"></bean>
+
+	<bean id="managementAnswers" class="br.unifesp.maritaca.ws.mock.ManagementAnswerImplMock"/>
+	
+	<bean id="managementForm" class="br.unifesp.maritaca.ws.mock.ManagementFormImplMock"/>
+	
+	<bean id="managementReport" class="br.unifesp.maritaca.ws.mock.ManagementReportImplMock"/>
+	
+	<bean id="managementAnalytics" class="br.unifesp.maritaca.ws.mock.ManagementAnalyticsImplMock"/>
+	
+	<bean id="managementMessage" class="br.unifesp.maritaca.ws.mock.ManagementMessageImplMock"/>
+	
+	<bean id="itemCalculator" class="br.unifesp.maritaca.ws.mock.ReportItemCalculatorImplMock"/>
+	
+	<!--bean id="messagesService" class="br.unifesp.maritaca.ws.api.impl.MessagesServiceImpl"/-->
+
+</beans>

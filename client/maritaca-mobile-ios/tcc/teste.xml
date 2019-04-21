@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<form>
+    <title>Formulário</title>
+    <questions>
+        <text id="1" next="2" required="true">
+            <label>Qual o seu nome?</label>
+            <help></help>
+            <default></default>
+        </text>
+        <number id="2" next="3" required="true">
+            <label>Quantos anos você tem?</label>
+            <help></help>
+            <default></default>
+        </number>
+        <date id="3" next="4" required="false">
+            <label>Qual a sua data de nascimento?</label>
+            <help></help>
+            <default></default>
+            <format>mm/dd/yy</format>
+        </date>
+        <combobox id="4" next="5" required="true">
+            <label>Quantos irmãos você possui?</label>
+            <help></help>
+            <option value="0" checked="false">1</option>
+            <option value="1" checked="false">2</option>
+            <option value="2" checked="true">3</option>
+            <option value="3" checked="false">4</option>
+            <option value="4" checked="false">5 ou mais</option>
+        </combobox>
+        <decimal id="5" next="6" required="false">
+            <label>Qual a sua altura?</label>
+            <help></help>
+            <default></default>
+        </decimal>
+        <geolocation id="6" next="7" required="false">
+            <label>Qual a sua localização atual?</label>
+            <help>O componente de localização atual procura automaticamente a localização do dispositivo, basta selecionar o botão Get Location. Caso as configurações do dispositivo não estejam com os Serviços de Localização ativado, por favor ative-os.</help>
+        </geolocation>
+        <radio id="7" next="8" required="true">
+            <label>Em qual ano da faculdade você está?</label>
+            <help></help>
+            <option value="0" checked="false">Primeiro</option>
+            <option value="1" checked="false">Segundo</option>
+            <option value="2" checked="false">Terceiro</option>
+            <option value="3" checked="false">Quarto</option>
+            <option value="4" checked="false">Quinto</option>
+            <option value="5" checked="false">Sexto</option>
+            <option value="6" checked="false">Não estudo.</option>
+            <option value="7" checked="false">Já estou formado.</option>
+        </radio>
+         <picture id="8" next="9" required="false">
+            <label>Tire uma foto para colocar no seu perfil.</label>
+            <help>A foto não é obrigatória, caso você não esteja confortável em tirar uma foto, fique a vontade.</help>
+        </picture>
+        <draw id="9" next="10" required="required">
+            <label>Faça um desenho que represente a sua assinatura.</label>
+            <help>Este campo é obrigatório pois será através da assinatura que reconhecemos o usuário.</help>
+        </draw>
+        <money id="10" next="11" required="false" min="0">
+            <label>Qual o valor máximo que você pagaria num PS4?</label>
+            <help></help>
+            <default>4000</default>
+            <currency>R$</currency>
+        </money>
+        <barcode id="11" next="12" required="false">
+            <label>Aperte Scan para leitura de código de barras.</label>
+            <help>Este componente reconhece código de barras comum, QR Code e outros.</help>
+        </barcode>
+        <audio id="12" next="13" required="false">
+            <label>Aperte Record Audio para gravar uma nota de áudio.</label>
+            <help></help>
+        </audio>
+        <video id="13" next="14" required="false">
+            <label>Aperte Capture Video para fazer uma gravação.</label>
+            <help></help>
+        </video>
+        <checkbox id="14" next="15" required="false">
+            <label>Selecione os tipos de chocolate que você gosta.</label>
+            <help></help>
+            <option value="0" checked="false">Ao leite</option>
+            <option value="1" checked="false">Meio amargo</option>
+            <option value="2" checked="false">Com castanhas em geral</option>
+            <option value="4" checked="false">Guardachuvinha</option>
+            <option value="3" checked="false">Outros</option>
+            <option value="5" checked="false">Não gosto de chocolate.</option>
+        </checkbox>
+        <slider id="15" next="-1" required="false">
+            <label>Qual a porcentagem de perguntas respondidas corretamente nesse formulário?</label>
+            <help>Essa questão tem a finalidade de saber a veracidade das respostas recebidas por essa coleta de dados. Por favor, seja verdadeiro(a)!</help>
+            <default>100</default>
+        </slider>   
+    </questions>
+</form>

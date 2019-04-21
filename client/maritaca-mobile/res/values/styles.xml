@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="button_gr">
+        <item name="android:textColor">#ffffff</item>       
+        <item name="android:layout_width">fill_parent</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:textSize">10dp</item>
+    	<item name="android:textStyle">bold</item>
+    	<item name="android:layout_margin">10dp</item>
+    	<item name="android:shadowColor">#1a73e8</item>
+    	<item name="android:shadowDx">1</item>
+    	<item name="android:shadowDy">1</item>
+    	<item name="android:shadowRadius">2</item>
+    	<item name="android:paddingBottom">15dp</item>
+    	<item name="android:background">@drawable/bt_green</item>
+    </style>
+    
+    <style name="footer_font" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+
+    <style name="OfflineForms" parent="android:Theme.DeviceDefault.Light" >
+        <item name="android:colorBackground">@color/offline_forms_roxo_claro</item>
+        <item name="android:colorForeground">?android:attr/textColorSecondary</item>
+        <item name="android:textColorSecondary">@color/primary_text_default_material_light</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/offlineforms_roxoclaro</item>
+        <item name="android:textColorPrimaryInverse">@android:color/black</item>
+    </style>
+
+    <style name="OfflineForms.ActionBar" parent="OfflineForms" />
+
+
+</resources>

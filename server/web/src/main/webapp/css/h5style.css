@@ -1,0 +1,301 @@
+fieldset {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+	border: none !important;
+}
+fieldset legend {
+	padding: 3px 10px;
+	vertical-align: bottom;
+	font-weight: bold;
+	font-size: 14px;
+	text-shadow: 0 0 2px #CCC;
+
+	background-color: #FFF;
+	border: solid 1px #999;
+
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+
+	-moz-box-shadow: 0 0 5x #888;
+	-webkit-box-shadow: 0 0 2px #888;
+	box-shadow: 0 0 5px #888;
+}
+button.properties {
+    background-color: #54AF88;
+    background-position: left top;
+    background-repeat: repeat-x;
+    
+    border: 1px solid #0F6B0C;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 2px #0F6B0C;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 3px 6px;
+    text-shadow: 0 0 2px #CCCCCC;
+    font-size: 11px;        
+}
+button.properties:hover {
+    background-color: #0F6B0C;
+    background-position: left top;
+    background-repeat: repeat-x;
+    
+    border: 1px solid #0F6B0C;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 0 2px #0F6B0C;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 3px 6px;
+    text-shadow: 0 0 2px #CCCCCC;
+    font-size: 11px;
+}
+
+div#containerFormHeader{
+	position: relative;
+	background-color: #FFF;
+	z-index: 1;
+	height: 170px;
+	width: 990px;
+}
+
+.formEditorHeader {
+	position: relative;
+	height: 200px;
+}
+
+.formEditorContent {
+	position: relative;
+}
+
+.form_header_1 {
+	width: 750px;
+}
+
+/******************************** Components ********************************/
+.divComponents {
+	position: relative;
+	float: left;
+	vertical-align: top; 
+	width: 250px;
+	margin: 3px 0 3px 3px;
+	height: 480px;
+}
+#components {
+	float: left;
+	width: 190px;
+	background-color: #9BBB59;
+	padding: 10px;
+	margin: 0;
+}
+#components ol {
+	list-style: none;
+	padding-left: 0px;
+	margin: 0;
+	padding: 0;
+}
+#components ol li{
+	float: left;
+	margin: 0;
+	padding: 5px 0px 5px 0px;
+	cursor: move;
+	width: 5.5em;
+}
+#components ol li *{
+	cursor: move;
+}
+
+a.component img {
+	filter:alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	-khtml-opacity: 0.5;
+}
+
+a.component:hover img {
+	filter:alpha(opacity=100);
+	-moz-opacity: 1.0;
+	opacity: 1.0;
+	-khtml-opacity: 1.0; 
+}
+
+.tableContainer {
+	width: 1000px;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+div.subsection{
+	clear: both;
+	overflow: auto;
+	margin: 0 0 5px 0;
+	padding: 2px;
+	background-color: #F7FFE6;
+	border-radius: 8px 8px 8px 8px;
+}
+h4.subtitle{
+	color: #4C4D4B;
+	font-size: 0.8em;
+	font-weight: bold;
+	margin: 0 0 0 5px;
+}
+hr.underline{
+    width: 100%;
+    border-color: #4C4D4B;
+    border-style: solid;
+    border-width: 0 0 3px 0
+}
+
+input#form_title, textarea#form_description{
+	width: 400px;
+}
+
+textarea#form_description{
+	height: 44px;
+}
+video.editor {
+	border: 1px solid #000;
+	background-color: #F0F0F0;
+}
+
+/******************************** XML Form ********************************/
+hr.addElement {
+    width: 100%;
+    border-color: #C0C0C0;
+    border-style: dashed;
+    border-width: 3px 0 0 0
+}
+.divXmlForm {
+	clear: both;
+	position: absolute;
+	min-height: 270px;
+	max-height: 480px;
+	float:left;
+	margin: 3px 0 3px 215px;
+	overflow: auto;
+    overflow-x:hidden;
+}
+#xmlForm{
+	width: 520px;
+	background-color: #4BACC6;
+	padding: 10px;
+	margin: 0 0 0 2px;	
+}
+#xmlForm ol {
+	list-style: none;
+	padding-left: 0px;
+}
+#xmlForm ol li{
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 11px;	
+}
+#xmlForm ol li div.order{
+	visibility: hidden;
+	float: right;
+	margin-top: -24px;
+}
+#xmlForm ol li.editing{
+	background-color: #FFF;
+
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#xmlForm ol li.editing div.order{
+	visibility: visible;
+}
+#xmlForm ol li label {
+	display: inline-block;
+}
+#xmlForm ol li label,
+#xmlForm ol li label input {
+	margin-right: 5px;
+}
+#xmlForm ol li label.fieldLabel{
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+	width: 90%;
+}
+.infoDropBox {
+	background-color: #FFF;
+	padding: 18px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+/******************************** Properties ********************************/
+.divProperties {
+	clear: both;
+	position: absolute;
+	height: 100%;
+	float:left;
+	margin: 3px 3px 3px 755px;
+}
+#properties {
+	float: left;
+	display: none;
+	background-color: #CCE9CC;
+	padding: 10px;
+	margin: 0 0 0 5px;
+	width: 200px;
+	font-size: 11px;
+}
+#properties div{
+	display: none;
+}
+#properties ul {
+	list-style: none;
+	padding-left: 0px;
+}
+#properties ul li label{
+	font-weight: bold;
+}
+#properties ul li input[type=text]{
+	margin-left: 10px;
+	margin-top: -2px;
+}
+#properties ul li ol{
+	list-style: none;
+	margin-left: 20px;
+}
+#properties ul li ol li {
+	border-top: solid 1px #999;
+}
+#properties ul li ol li:first-child {
+	border-top: none;
+}
+#properties ul li ol li label{
+	display: block;
+	padding: 4px;
+}
+.required {
+	color: red;
+	font-weight: bold;
+}
+.alignRight{
+	text-align : right;
+}
+.condPropTable{
+	background-color: #DEFEDE;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-moz-box-shadow: 0 0 5px #888;
+}
+input.valueCond{
+	width: 65px;	
+}
+select.goToCond{
+	width: 112px;
+}
+.removeConditional{
+	position: relative;
+	top: 18px;
+}
