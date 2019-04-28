@@ -55,13 +55,15 @@ public class TextQuestion extends Question {
 			//field.setLayoutParams(params);
 			field.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES | 0x00020001);
 			field.requestFocus();
-			String value = getValue() != null ? getValue().toString() : getDefault();
-			field.setText(value);			
+			//Limpando a primeira questão
+			/*String value = getValue() != null ? getValue().toString() : getDefault();
+			field.setText(value);*/
 			editText.addView(field);			
 		
 		PackageManager pm = activity.getPackageManager();
         List<ResolveInfo> activities = pm.queryIntentActivities(new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
-        if(activities.size() != 0){	
+        /*gravar texto por voz*/
+		/*if(activities.size() != 0){
 			LinearLayout recogVoice = new LinearLayout(activity);
 			outputLayout.addView(recogVoice);
 				ImageButton imgBtn = new ImageButton(activity);
@@ -72,7 +74,7 @@ public class TextQuestion extends Question {
 					}
 				});		
 			recogVoice.addView(imgBtn);
-        }
+        }*/
         
         if(activity.getSuggestionsList() != null){
         	LinearLayout suggestions = new LinearLayout(activity);

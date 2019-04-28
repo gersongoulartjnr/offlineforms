@@ -1,0 +1,177 @@
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/mobile_background"
+    android:padding="30dip" >
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical">
+    
+    <TextView
+        android:id="@+id/textSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:drawableLeft="@drawable/settings"
+        android:paddingBottom="10dp"
+        android:text="Settings"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- ===================== SYNCHRONIZATION INTERVAL ================ -->
+    <View
+        android:id="@+id/lineSeparator1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/textSettings"
+        android:layout_alignLeft="@+id/textSettings"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textSyncTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Synchronization Interval"
+        android:layout_below="@+id/lineSeparator1"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <RelativeLayout android:id="@+id/linearLayoutSync"
+       	android:orientation="vertical"
+       	android:layout_width="fill_parent"
+        android:layout_below="@+id/textSyncTitle"
+       	android:layout_height="wrap_content">
+	    <ToggleButton
+	        android:id="@+id/toggleBtnSync"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:text="Sync"
+	        android:textOff="OFF"
+	        android:textOn="ON" />
+	    <TextView
+	        android:id="@+id/textValueSync"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/toggleBtnSync"
+	        android:layout_alignParentRight="true"
+	        android:text="0 minutes"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+    
+    <SeekBar
+        android:id="@+id/seekBarSync"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioSendingData"
+        android:layout_below="@+id/linearLayoutSync"
+        android:layout_marginTop="5dp" />
+    
+    <!-- ===================== TYPE OF COLLECTING DATA ====================== -->
+    <View
+        android:id="@+id/lineCollectData"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignRight="@+id/seekBarSync"
+        android:layout_below="@+id/seekBarSync"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textCollectingDataTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lineCollectData"
+        android:layout_marginTop="10dp"
+        android:text="Collect data:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <RadioGroup
+        android:id="@+id/radioCollectingData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textCollectingDataTitle"
+        android:layout_below="@+id/textCollectingDataTitle"
+        android:layout_marginLeft="24dp" >
+
+        <RadioButton
+            android:id="@+id/radioCollectingWizard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Wizard" />
+
+        <RadioButton
+            android:id="@+id/radioCollectingList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List" />
+    </RadioGroup>
+    
+ 	<!-- ===================== TYPE OF SENDING DATA ====================== -->
+    <View
+        android:id="@+id/lineSeparator2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignRight="@+id/seekBarSync"
+        android:layout_below="@+id/radioCollectingData"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/textSendingDataTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lineSeparator2"
+        android:layout_marginTop="10dp"
+        android:text="Sending data:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <!-- ===================== SAVE BUTTON ====================== -->
+    
+    <RadioGroup
+        android:id="@+id/radioSendingData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textSendingDataTitle"
+        android:layout_below="@+id/textSendingDataTitle"
+        android:layout_marginLeft="24dp" >
+
+        <RadioButton
+            android:id="@+id/radioSendingManually"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Manually" />
+
+        <RadioButton
+            android:id="@+id/radioSendingAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Automatically" />
+    </RadioGroup>
+    <View
+        android:id="@+id/lineSeparator3"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/radioSendingData"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/btnSaveSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lineSeparator3"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Save" />
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

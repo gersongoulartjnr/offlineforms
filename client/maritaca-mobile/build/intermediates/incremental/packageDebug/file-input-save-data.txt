@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Apr 28 11:38:21 BRT 2019
+#Sun Apr 28 13:28:49 BRT 2019
 20.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 143.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 439.set=ANDROID_RESOURCE
@@ -208,7 +208,7 @@
 215.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\help.png
 405.set=ANDROID_RESOURCE
 32.set=JAVA_RESOURCE
-248.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__list_pressed_holo_dark.9.png
+248.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_bottom_solid_inverse_holo.9.png
 206.set=JAVA_RESOURCE
 112.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 145.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
@@ -423,7 +423,7 @@
 321.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abs__ic_menu_moreoverflow_holo_dark.xml
 34.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 127.set=ANDROID_RESOURCE
-183.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__spinner_ab_default_holo_light.9.png
+183.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abs__activated_background_holo_dark.xml
 337.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 199.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 93.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__progress_primary_holo_light.9.png
@@ -437,7 +437,7 @@
 311.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__list_selector_disabled_holo_light.9.png
 24.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 173.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_solid_dark_holo.9.png
-344.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\custom_dialog.xml
+344.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\error.png
 402.set=ANDROID_RESOURCE
 57.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 357.set=ANDROID_RESOURCE
@@ -473,7 +473,7 @@
 144.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_load_form_drive.xml
 112.set=JAVA_RESOURCE
 54.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\http\\version.properties
-357.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_share_pack_holo_light.9.png
+357.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__list_menu_item_checkbox.xml
 87.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\commons\\codec\\language\\bm\\gen_exact_arabic.txt
 410.set=JAVA_RESOURCE
 365.set=ANDROID_RESOURCE
@@ -516,7 +516,7 @@
 225.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 373.set=ANDROID_RESOURCE
 251.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout-xlarge-v4\\abs__screen_action_bar_overlay.xml
-422.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\circle_white.png
+422.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_signin_btn_text_normal_dark.9.png
 17.set=JAVA_RESOURCE
 284.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\splash_layout.xml
 438.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\folders\\2\\1f\\main
@@ -649,7 +649,7 @@
 313.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png
 26.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 175.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\commons\\codec\\language\\bm\\sep_rules_spanish.txt
-346.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\error.png
+346.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_signin_btn_text_disabled_focus_dark.9.png
 422.set=ANDROID_RESOURCE
 59.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 377.set=JAVA_RESOURCE
@@ -670,7 +670,7 @@
 277.set=JAVA_RESOURCE
 198.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\clear.png
 200.set=ANDROID_RESOURCE
-369.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__action_bar_tab.xml
+369.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\spinner_ab_disabled_maritaca.9.png
 155.set=ANDROID_RESOURCE
 9.set=ANDROID_RESOURCE
 370.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
@@ -689,7 +689,7 @@
 132.set=ANDROID_RESOURCE
 56.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__tab_selected_pressed_holo.9.png
 177.set=ANDROID_RESOURCE
-359.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__action_menu_item_layout.xml
+359.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_share_pack_holo_light.9.png
 89.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\http\\client\\version.properties
 360.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 430.set=ANDROID_RESOURCE
@@ -712,7 +712,7 @@
 285.set=ANDROID_RESOURCE
 383.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 163.set=ANDROID_RESOURCE
-230.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__search_dropdown_item_icons_2line.xml
+230.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\list_focused_maritaca.9.png
 2.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 401.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\actionbar_dashboard.xml
 263.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abs__primary_text_holo_light.xml
@@ -774,7 +774,7 @@
 214.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\pressed_background_maritaca.xml
 99.set=ANDROID_RESOURCE
 22.set=ANDROID_RESOURCE
-247.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_bottom_solid_inverse_holo.9.png
+247.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__list_pressed_holo_dark.9.png
 111.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 144.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 21.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
@@ -991,7 +991,7 @@
 146.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 23.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 172.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon_dash_answers_over.png
-343.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_signin_btn_text_disabled_focus_dark.9.png
+343.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\custom_dialog.xml
 56.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 96.set=JAVA_RESOURCE
 347.set=JAVA_RESOURCE
@@ -1017,7 +1017,7 @@
 125.set=ANDROID_RESOURCE
 79.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 399.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__ab_bottom_solid_dark_holo.9.png
-229.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\list_focused_maritaca.9.png
+229.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__search_dropdown_item_icons_2line.xml
 230.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 423.set=JAVA_RESOURCE
 401.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
@@ -1082,7 +1082,7 @@
 224.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 363.set=ANDROID_RESOURCE
 250.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\common_signin_btn_text_dark.xml
-421.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_signin_btn_text_normal_dark.9.png
+421.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\circle_white.png
 283.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\commons\\codec\\language\\bm\\gen_approx_portuguese.txt
 437.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 286.set=ANDROID_RESOURCE
@@ -1194,7 +1194,7 @@ count=445
 322.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\common_signin_btn_icon_disabled_light.9.png
 35.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 137.set=ANDROID_RESOURCE
-184.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abs__activated_background_holo_dark.xml
+184.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\abs__spinner_ab_default_holo_light.9.png
 338.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_
 94.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\novomenu.xml
 218.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\commons\\codec\\language\\bm\\ash_rules_any.txt
@@ -1225,7 +1225,7 @@ count=445
 48.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 267.set=JAVA_RESOURCE
 197.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\tab_selected_pressed_maritaca.9.png
-368.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\spinner_ab_disabled_maritaca.9.png
+368.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__action_bar_tab.xml
 145.set=ANDROID_RESOURCE
 232.base=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar
 443.set=ANDROID_RESOURCE
@@ -1242,7 +1242,7 @@ count=445
 145.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon_dash_settings.png
 122.set=ANDROID_RESOURCE
 55.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\mergeJavaRes\\debug\\jars\\2\\1f\\main.jar\\org\\apache\\commons\\codec\\language\\bm\\ash_approx_spanish.txt
-358.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__list_menu_item_checkbox.xml
+358.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abs__action_menu_item_layout.xml
 88.file=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\eraser.png
 420.set=ANDROID_RESOURCE
 375.set=JAVA_RESOURCE

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<br.unifesp.maritaca.mobile.view.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="2"
+    android:background="@drawable/mobile_background" >
+
+    <Button
+        android:id="@+id/btn_collect"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_collect"
+        android:drawablePadding="0dp"
+        android:text="@string/form_collect"
+        android:textSize = "9sp" />
+    <Button
+        android:id="@+id/btn_answers"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_answers"
+        android:drawablePadding="0dp"
+        android:text="@string/form_answers"
+        android:textSize = "9sp" />
+    <Button
+        android:id="@+id/btn_send"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_send"
+        android:drawablePadding="0dp"
+        android:text="@string/form_sync" 
+        android:textSize = "9sp"/>
+    <Button
+        android:id="@+id/btn_tell_friend"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_friend"
+        android:drawablePadding="0dp"
+        android:text="@string/application_invite" 
+        android:textSize = "9sp" />
+    <Button
+        android:id="@+id/btn_settings"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_settings"
+        android:drawablePadding="0dp"
+        android:text="@string/application_settings"
+        android:textSize = "9sp" />
+    <Button
+        android:id="@+id/btn_about"
+        style="@style/DashboardButtonLand"
+        android:drawableTop="@drawable/button_about"
+        android:drawablePadding="0dp"
+        android:text="@string/application_about" 
+        android:textSize = "9sp"/>    
+ 
+</br.unifesp.maritaca.mobile.view.DashboardLayout>

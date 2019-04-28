@@ -34,19 +34,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 
-/**
- * An AdapterView is a view whose children are determined by an {@link Adapter}.
- *
- * <p>
- * See {@link ListView}, {@link GridView}, {@link Spinner} and
- *      {@link Gallery} for commonly used subclasses of AdapterView.
- *
- * <div class="special reference">
- * <h3>Developer Guides</h3>
- * <p>For more information about using AdapterView, read the
- * <a href="{@docRoot}guide/topics/ui/binding.html">Binding to Data with AdapterView</a>
- * developer guide.</p></div>
- */
 public abstract class IcsAdapterView<T extends Adapter> extends ViewGroup {
 
     /**
@@ -366,12 +353,6 @@ public abstract class IcsAdapterView<T extends Adapter> extends ViewGroup {
         return mOnItemSelectedListener;
     }
 
-    /**
-     * Extra menu information provided to the
-     * {@link android.view.View.OnCreateContextMenuListener#onCreateContextMenu(ContextMenu, View, ContextMenuInfo) }
-     * callback when a context menu is brought up for this AdapterView.
-     *
-     */
     public static class AdapterContextMenuInfo implements ContextMenu.ContextMenuInfo {
 
         public AdapterContextMenuInfo(View targetView, int position, long id) {
@@ -711,7 +692,8 @@ public abstract class IcsAdapterView<T extends Adapter> extends ViewGroup {
             // Force one here to make sure that the state of the list matches
             // the state of the adapter.
             if (mDataChanged) {
-                this.onLayout(false, getLeft(), getTop(), getRight(), getBottom());
+                this.layout(getLeft(), getTop(), getRight(), getBottom());
+                //this.onLayout(false, getLeft(), getTop(), getRight(), getBottom());
             }
         } else {
             if (mEmptyView != null) mEmptyView.setVisibility(View.GONE);
