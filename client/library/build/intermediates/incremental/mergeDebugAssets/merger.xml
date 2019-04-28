@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\offline-forms\client\library\assets"/><source path="C:\offline-forms\client\library\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\offline-forms\client\library\build-types\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Gerson\Documents\offlineforms\client\library\assets"/><source path="C:\Users\Gerson\Documents\offlineforms\client\library\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Gerson\Documents\offlineforms\client\library\build-types\debug\assets"/></dataSet></merger>

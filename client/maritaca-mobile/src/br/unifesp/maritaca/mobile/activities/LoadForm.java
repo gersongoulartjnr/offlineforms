@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import br.unifesp.maritaca.mobile.dataaccess.MaritacaHelper;
 import br.unifesp.maritaca.mobile.util.Constants;
 
 public class LoadForm extends Activity implements View.OnClickListener{
@@ -60,7 +61,7 @@ public class LoadForm extends Activity implements View.OnClickListener{
     static final int REQUEST_AUTHORIZATION = 1001;
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
     private static final String PREF_ACCOUNT_NAME = "accountName";
-    private static final String[] SCOPES = { "https://www.googleapis.com/auth/drive","https://www.googleapis.com/auth/forms","https://www.googleapis.com/auth/script.external_request" };
+    private static final String[] SCOPES = { "https://www.googleapis.com/auth/drive.readonly","https://www.googleapis.com/auth/forms","https://www.googleapis.com/auth/script.external_request" };
     int cont=0;
 
     @Override
@@ -95,6 +96,7 @@ public class LoadForm extends Activity implements View.OnClickListener{
         activityLayout.addView(mOutputText);
 
         btnVoltar = new Button(this);
+        btnVoltar.setVisibility(View.INVISIBLE);
         btnVoltar.setText("Voltar");
         btnVoltar.setBackgroundColor(getResources().getColor(R.color.azul_offline_forms));
         btnVoltar.setTextColor(getResources().getColor(R.color.white));
@@ -117,6 +119,7 @@ public class LoadForm extends Activity implements View.OnClickListener{
         mCredential = GoogleAccountCredential.usingOAuth2(
                 getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff());
+
 
     }
 
@@ -323,7 +326,6 @@ public class LoadForm extends Activity implements View.OnClickListener{
                     String xml = op.getResponse().get("result").toString();
 
                     String path = Constants.PATH_FORM;
-
                     File myFile = new File(path);
                     PrintWriter textFileWriter = new PrintWriter(new FileWriter(myFile));
                     textFileWriter.write(xml);
@@ -333,6 +335,8 @@ public class LoadForm extends Activity implements View.OnClickListener{
 
                 return folderList;
         }
+
+
 
         /**
          * Interpret an error response returned by the API and return a String
@@ -390,6 +394,7 @@ public class LoadForm extends Activity implements View.OnClickListener{
                     try {
                         Thread.sleep(50000);
                     } catch (InterruptedException e) {
+                        btnVoltar.setVisibility(View.VISIBLE);
                         e.printStackTrace();
                     }
                 }

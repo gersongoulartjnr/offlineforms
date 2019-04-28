@@ -56,6 +56,9 @@ public class MaritacaHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE " + Constants.URL_FORM + " (" +
 				 Constants.URL_FORM_URL + " URL TEXT);");
 
+        db.execSQL("CREATE TABLE " + Constants.NAME_FORM + " (" +
+                Constants.NAME_FORM_NAME + " NAME TEXT);");
+
 		db.execSQL("CREATE TABLE " + Constants.USER_TABLE_NAME + " (" +
 				Constants.USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + 
 				Constants.USER_EMAIL + " TEXT NOT NULL, " +
@@ -1436,6 +1439,14 @@ public class MaritacaHelper extends SQLiteOpenHelper {
 
 	}
 
+	public void insertNameForm(String name){
+		dbWritable.delete(Constants.NAME_FORM, null, null);
+		ContentValues cv = new ContentValues();
+		cv.put("NAME", name);
+		dbWritable.insert(Constants.NAME_FORM, null, cv);
+
+	}
+
 	public String loadURLForms(){
 		String url;
 
@@ -1450,6 +1461,23 @@ public class MaritacaHelper extends SQLiteOpenHelper {
 				cursor.close();
 				return url;
 			} else return null;
+
+	}
+
+	public String loadNameForms(){
+		String url;
+
+		SQLiteQueryBuilder sqb = new SQLiteQueryBuilder();
+		sqb.setTables(Constants.NAME_FORM);
+		String[] cols = new String[] {Constants.NAME_FORM+"."+Constants.NAME_FORM_NAME};
+		String query = sqb.buildQuery(cols, null, null, null, null, null, null);
+
+		cursor=dbReadable.rawQuery(query, null);
+		if (cursor.moveToFirst()) {
+			url = cursor.getString(0);
+			cursor.close();
+			return url;
+		} else return null;
 
 	}
 }

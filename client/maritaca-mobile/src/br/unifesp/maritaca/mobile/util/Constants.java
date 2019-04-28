@@ -152,5 +152,8 @@ public class Constants {
 
 	public static final String URL_FORM="URL_FORM";
 	public static final String URL_FORM_URL="URL";
+
+	public static final String NAME_FORM="NAME_FORM";
+	public static final String NAME_FORM_NAME="NAME";
 	
 }

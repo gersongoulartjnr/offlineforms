@@ -155,6 +155,26 @@
                 android:value=".MenuLoadFormActivity" />
         </activity>
 
+        <activity
+            android:name=".LoadFormDrive"
+            android:screenOrientation="portrait"
+            android:label="Procurando Formulários"
+            android:parentActivityName=".MenuLoadFormActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuLoadFormActivity" />
+        </activity>
+
+        <activity
+            android:name=".SelectFormActivity"
+            android:screenOrientation="portrait"
+            android:label="Escolhendo o formulário"
+            android:parentActivityName=".SelectFormActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuLoadFormActivity" />
+        </activity>
+
     </application>
 
 </manifest>

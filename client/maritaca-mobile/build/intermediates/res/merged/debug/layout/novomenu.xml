@@ -8,60 +8,87 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_weight="1.18"
         android:background="@drawable/mobile_background"
         android:orientation="vertical"
-        android:layout_weight="1"
-        android:padding="20dip" >
-
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="30dp"
-            android:layout_centerInParent="true">
+        android:padding="20dip">
 
 
-            <TextView
-                android:id="@+id/text_url_google_forms"
-                android:gravity="center"
-                android:shadowColor="#0F0F0F"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.5"
-                android:text="Insira o link do seu formulário Google no modo de edição"
-                android:textAppearance="@style/TextAppearance.Sherlock.Widget.ActionBar.Title.Inverse" />
+        <TextView
+            android:id="@+id/text_url_google_forms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:shadowColor="#0F0F0F"
+            android:shadowRadius="1.5"
+            android:text="Insira o link do seu formulário Google no modo de edição"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="36dp" />
 
 
-            <EditText
-                android:id="@+id/txtIdForm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:textColor="@android:color/black">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:gravity="center"
+            android:shadowColor="#0F0F0F"
+            android:text="Ou clique no botão abaixo para carregar a partir dos formulários do seu Google Drive"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:layout_below="@+id/btnCarregaGS"
+            android:layout_alignParentLeft="true" />
 
-                <requestFocus />
-            </EditText>
+        <EditText
+            android:id="@+id/txtIdForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/text_url_google_forms"
+            android:layout_alignLeft="@+id/btnCarregaGS">
 
-            <Button
-                android:id="@+id/btnCarregaGS"
-                style="@android:style/Widget.DeviceDefault.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:background="@color/azul_offline_forms"
-                android:text="CARREGAR FORMULÁRIO"
-                android:textAppearance="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" />
+            <requestFocus />
+        </EditText>
 
-            <ImageView
-                android:id="@+id/appLogo"
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/logo_fundo_branco" />
+        <Button
+            android:id="@+id/btnCarregaGS"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtIdForm"
+            android:layout_centerHorizontal="true"
+            android:layout_column="0"
+            android:layout_marginTop="19dp"
+            android:background="@color/azul_offline_forms"
+            android:enabled="false"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="CARREGAR FORMULÁRIO"
+            android:textAppearance="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
+            android:textColor="@android:color/white" />
 
 
-        </TableLayout>
+        <Button
+            android:id="@+id/btnCarregaGSDrive"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginTop="22dp"
+            android:background="@color/azul_offline_forms"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="CARREGAR FORMULÁRIO DO DRIVE"
+            android:textAppearance="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
 </LinearLayout>

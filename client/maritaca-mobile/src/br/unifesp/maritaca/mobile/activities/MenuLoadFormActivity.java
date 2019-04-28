@@ -2,6 +2,7 @@ package br.unifesp.maritaca.mobile.activities;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,7 +51,12 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
         setContentView(R.layout.novomenu);
 
         Button btnCarregaGS = (Button) findViewById(R.id.btnCarregaGS);
+        btnCarregaGS.setEnabled(false);
+        btnCarregaGS.setBackgroundColor(Color.GRAY);
         btnCarregaGS.setOnClickListener(this);
+
+        Button btnCarregaGSDrive = (Button) findViewById(R.id.btnCarregaGSDrive);
+        btnCarregaGSDrive.setOnClickListener(this);
 
     //     TextView txtIdForm = (TextView) findViewById(R.id.txtIdForm);
 
@@ -92,6 +98,9 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
             case R.id.btnCarregaGS:
                 carregaGS();
                 break;
+            case R.id.btnCarregaGSDrive:
+                carregaGSDrive();
+                break;
         }
     }
 
@@ -102,6 +111,12 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
         Intent intent = new Intent(this, LoadForm.class);
         intent.putExtra("url",url);
         sqliteHelper.insertURL(url);
+        startActivity(intent);
+    }
+
+    public void carregaGSDrive(){
+        limpaQuestions();
+        Intent intent = new Intent(this, LoadFormDrive.class);
         startActivity(intent);
     }
 

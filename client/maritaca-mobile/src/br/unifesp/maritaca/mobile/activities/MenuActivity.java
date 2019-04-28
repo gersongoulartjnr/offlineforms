@@ -1,14 +1,21 @@
 package br.unifesp.maritaca.mobile.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import br.unifesp.maritaca.mobile.dataaccess.MaritacaHelper;
 import br.unifesp.maritaca.mobile.exception.MaritacaExceptionHandler;
+import br.unifesp.maritaca.mobile.util.Constants;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -28,12 +35,25 @@ public class MenuActivity extends SherlockActivity implements OnClickListener {
         System.out.println(e.toString());
     }
 
+        sqliteHelper = new MaritacaHelper(this);
+        TextView txtNameForm = (TextView) findViewById(R.id.txtNomeForm);
+        txtNameForm.setText(sqliteHelper.loadNameForms().toString());
 
         Button btnCollect = (Button) findViewById(R.id.btnCollect);
         btnCollect.setOnClickListener(this);
 
         Button btnSync = (Button) findViewById(R.id.btnSync);
         btnSync.setOnClickListener(this);
+
+        if(isDeviceOnline()==false){
+            btnSync.setEnabled(false);
+            btnSync.setBackgroundColor(Color.GRAY);
+            Toast.makeText(getApplicationContext(), "Não há conexão com a internet", Toast.LENGTH_SHORT).show();
+        }else{
+            btnSync.setEnabled(true);
+            btnSync.setBackgroundColor(Color.parseColor("#1A73E8"));
+        }
+
 
         Button btnReplace = (Button) findViewById(R.id.btnReplace);
         btnReplace.setOnClickListener(this);
@@ -64,6 +84,13 @@ public class MenuActivity extends SherlockActivity implements OnClickListener {
                 startActivity(intent);
                 break;
         }
+    }
+
+    private boolean isDeviceOnline() {
+        ConnectivityManager connMgr =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.isConnected());
     }
 
     public void sendGS(){

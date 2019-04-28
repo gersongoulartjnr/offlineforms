@@ -1,226 +1,234 @@
 [
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_home.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_home.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_menu_item_layout.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_menu_item_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\novomenubkp.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\novomenubkp.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_action_bar.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_action_bar.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\menu.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__activity_chooser_view.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__activity_chooser_view.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_load_form.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\activity_load_form.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\errorreport.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\errorreport.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_action_bar_overlay.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_action_bar_overlay.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\report_list.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\report_list.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\novomenu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\novomenu.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\button_collect.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\button_collect.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\capture.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\capture.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\webview.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\localdata_input.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\localdata_input.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\result_item.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\result_item.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_icon.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_icon.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_bar.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_mode_bar.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\fragment_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__search_view.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__search_view.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_tab_bar_view.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_tab_bar_view.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\menu_navigation.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\menu_navigation.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_radio.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_layout.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__search_view.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__search_view.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\row_question.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\row_question.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\about.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__popup_menu_item_layout.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__popup_menu_item_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_title_item.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_title_item.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_simple.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_simple.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\checkbox.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\checkbox.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_tab.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_tab.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_action_bar.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_action_bar.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\custom_dialog.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_dashboard.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\actionbar_dashboard.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\footer_layout.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\footer_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_bar.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_mode_bar.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_radio.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_radio.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_home.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_home.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\actionbar_dashboard.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\actionbar_dashboard.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_simple.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_simple.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_title_item.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_title_item.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_checkbox.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\about.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\about.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_tab.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_tab.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\checkbox.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\checkbox.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\splash_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\splash_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\question.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\question.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_close_item.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_mode_close_item.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__activity_chooser_view_list_item.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__activity_chooser_view_list_item.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\settings.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\results.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\results.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\footer_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\footer_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_bar_tab_bar_view.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_bar_tab_bar_view.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__activity_chooser_view.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__activity_chooser_view.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__search_dropdown_item_icons_2line.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__search_dropdown_item_icons_2line.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\dashboard_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\dashboard_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_mode_close_item.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_mode_close_item.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\answers.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\answers.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__dialog_title_holo.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__dialog_title_holo.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\report_list.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\report_list.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\comoboxblack.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\comoboxblack.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\row_question.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\row_question.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_simple_overlay_action_mode.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_simple_overlay_action_mode.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\menu_navigation.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\menu_navigation.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\menu.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\result_item.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\result_item.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_action_bar_overlay.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_action_bar_overlay.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_form.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\activity_select_form.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\novomenucoleta.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\novomenucoleta.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_load_form_drive.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\activity_load_form_drive.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_menu_layout.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_menu_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\invite_friends.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\invite_friends.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\splash_layout.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\splash_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about2.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\activity_about2.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_load_form.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\activity_load_form.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\custom_dialog.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\main.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\webview.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__simple_dropdown_hint.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__simple_dropdown_hint.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\novomenucoleta.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\novomenucoleta.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_send_responses.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\activity_send_responses.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\comboboxblack.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\comboboxblack.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\login.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about2.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\activity_about2.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\progressbar_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\progressbar_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\dashboard_layout.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\dashboard_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__popup_menu_item_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\settings.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\login.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\results.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\results.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\progressbar_layout.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\progressbar_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\question.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\question.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\novomenu.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\novomenu.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\main.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_icon.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_icon.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\comboboxblack.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\comboboxblack.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\answers.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\answers.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__simple_dropdown_hint.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__simple_dropdown_hint.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\capture.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\capture.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\invite_friends.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\invite_friends.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\activity_send_responses.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\activity_send_responses.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\localdata_input.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\localdata_input.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\button_collect.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\button_collect.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__list_menu_item_checkbox.xml",
-        "source": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__list_menu_item_checkbox.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_menu_item_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_layout.xml",
-        "source": "C:\\offline-forms\\client\\maritaca-mobile\\res\\layout\\fragment_layout.xml"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__action_menu_layout.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\abs__dialog_title_holo.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\layout\\abs__dialog_title_holo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\layout\\errorreport.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\layout\\errorreport.xml"
     }
 ]

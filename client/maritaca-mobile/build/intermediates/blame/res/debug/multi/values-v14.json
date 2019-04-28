@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+        "outputFile": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 127
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -54,7 +54,7 @@
                     "endOffset": 1067
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -75,7 +75,7 @@
                     "endOffset": 1212
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -96,7 +96,7 @@
                     "endOffset": 1357
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -117,7 +117,7 @@
                     "endOffset": 1494
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -138,7 +138,7 @@
                     "endOffset": 1639
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -159,7 +159,7 @@
                     "endOffset": 1800
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -180,7 +180,7 @@
                     "endOffset": 1939
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 2094
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -222,7 +222,7 @@
                     "endOffset": 2241
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -243,7 +243,7 @@
                     "endOffset": 2404
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -264,7 +264,7 @@
                     "endOffset": 2545
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 4,
@@ -285,7 +285,7 @@
                     "endOffset": 2702
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -306,7 +306,7 @@
                     "endOffset": 2829
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
@@ -327,7 +327,7 @@
                     "endOffset": 2968
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -348,7 +348,7 @@
                     "endOffset": 3107
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
@@ -369,7 +369,7 @@
                     "endOffset": 3196
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
@@ -390,7 +390,7 @@
                     "endOffset": 3297
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -411,7 +411,7 @@
                     "endOffset": 3471
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 50,
                         "startColumn": 4,
@@ -432,7 +432,7 @@
                     "endOffset": 3639
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
@@ -453,7 +453,7 @@
                     "endOffset": 3736
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 58,
                         "startColumn": 4,
@@ -474,7 +474,7 @@
                     "endOffset": 3845
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 60,
                         "startColumn": 4,
@@ -495,7 +495,7 @@
                     "endOffset": 3956
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 62,
                         "startColumn": 4,
@@ -516,7 +516,7 @@
                     "endOffset": 4069
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 64,
                         "startColumn": 4,
@@ -537,7 +537,7 @@
                     "endOffset": 4182
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 66,
                         "startColumn": 4,
@@ -558,7 +558,7 @@
                     "endOffset": 4285
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 68,
                         "startColumn": 4,
@@ -579,7 +579,7 @@
                     "endOffset": 4408
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 70,
                         "startColumn": 4,
@@ -600,7 +600,7 @@
                     "endOffset": 4529
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 72,
                         "startColumn": 4,
@@ -621,7 +621,7 @@
                     "endOffset": 4628
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 74,
                         "startColumn": 4,
@@ -642,7 +642,7 @@
                     "endOffset": 4737
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 76,
                         "startColumn": 4,
@@ -663,7 +663,7 @@
                     "endOffset": 4858
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 78,
                         "startColumn": 4,
@@ -684,7 +684,7 @@
                     "endOffset": 4995
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 80,
                         "startColumn": 4,
@@ -705,7 +705,7 @@
                     "endOffset": 5118
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 82,
                         "startColumn": 4,
@@ -726,7 +726,7 @@
                     "endOffset": 5257
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 84,
                         "startColumn": 4,
@@ -747,7 +747,7 @@
                     "endOffset": 5382
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 86,
                         "startColumn": 4,
@@ -768,7 +768,7 @@
                     "endOffset": 5523
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 88,
                         "startColumn": 4,
@@ -789,7 +789,7 @@
                     "endOffset": 5648
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 90,
                         "startColumn": 4,
@@ -810,7 +810,7 @@
                     "endOffset": 5789
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 92,
                         "startColumn": 4,
@@ -831,7 +831,7 @@
                     "endOffset": 5904
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 94,
                         "startColumn": 4,
@@ -852,7 +852,7 @@
                     "endOffset": 6039
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 96,
                         "startColumn": 4,
@@ -873,7 +873,7 @@
                     "endOffset": 6172
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 98,
                         "startColumn": 4,
@@ -894,7 +894,7 @@
                     "endOffset": 6283
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 100,
                         "startColumn": 4,
@@ -915,7 +915,7 @@
                     "endOffset": 6410
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 102,
                         "startColumn": 4,
@@ -936,7 +936,7 @@
                     "endOffset": 6535
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 104,
                         "startColumn": 4,
@@ -957,7 +957,7 @@
                     "endOffset": 6644
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 106,
                         "startColumn": 4,
@@ -978,7 +978,7 @@
                     "endOffset": 6768
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 108,
                         "startColumn": 4,
@@ -999,7 +999,7 @@
                     "endOffset": 6881
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 110,
                         "startColumn": 4,
@@ -1020,7 +1020,7 @@
                     "endOffset": 7016
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 112,
                         "startColumn": 4,
@@ -1041,7 +1041,7 @@
                     "endOffset": 7153
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 114,
                         "startColumn": 4,
@@ -1062,7 +1062,7 @@
                     "endOffset": 7277
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 116,
                         "startColumn": 4,
@@ -1083,7 +1083,7 @@
                     "endOffset": 7390
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 118,
                         "startColumn": 4,
@@ -1104,7 +1104,7 @@
                     "endOffset": 7487
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 120,
                         "startColumn": 4,
@@ -1125,7 +1125,7 @@
                     "endOffset": 7599
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 122,
                         "startColumn": 4,
@@ -1146,7 +1146,7 @@
                     "endOffset": 7700
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 124,
                         "startColumn": 4,
@@ -1167,7 +1167,7 @@
                     "endOffset": 7823
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 126,
                         "startColumn": 4,
@@ -1188,7 +1188,7 @@
                     "endOffset": 7948
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 128,
                         "startColumn": 4,
@@ -1209,7 +1209,7 @@
                     "endOffset": 8060
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 130,
                         "startColumn": 4,

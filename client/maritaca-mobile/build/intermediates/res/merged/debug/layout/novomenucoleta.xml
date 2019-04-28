@@ -5,64 +5,89 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_weight="1.18"
         android:background="@drawable/mobile_background"
         android:orientation="vertical"
         android:padding="20dip">
 
         <Button
-            android:id="@+id/btnReplace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnSync"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:background="@color/azul_offline_forms"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="TROCAR DE FORMULÁRIO"
-            android:theme="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" />
-
-        <Button
             android:id="@+id/btnSync"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnCollect"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
             android:background="@color/azul_offline_forms"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="SINCRONIZAR"
             android:textAlignment="center"
-            android:theme="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" />
+            android:theme="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
+            android:layout_marginTop="39dp"
+            android:layout_below="@+id/btnCollect"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/btnCollect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="26dp"
             android:autoText="true"
             android:background="@color/azul_offline_forms"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="REALIZAR COLETAS"
+            android:theme="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/txtNomeForm"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btnReplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:background="@color/common_signin_btn_light_text_disabled"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="SAIR DO FORMULÁRIO"
+            android:textColor="@color/offline_forms"
+            android:textSize="14sp"
             android:theme="@style/TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="500px"
-            android:layout_height="500px"
-            android:src="@drawable/logo_fundo_branco"
-            android:layout_marginTop="44dp"
-            android:layout_below="@+id/btnReplace"
-            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/txtNomeForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="22dp"
+            android:text="Nome do Formulário"
+            android:textAlignment="textStart"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp"
+            android:text="Você está realizando coletas no Formulário:"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
+
 </LinearLayout>

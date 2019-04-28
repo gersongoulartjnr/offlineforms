@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\offline-forms\\client\\maritaca-mobile\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "outputFile": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -12,14 +12,14 @@
                     "endOffset": 635
                 },
                 "from": {
-                    "file": "C:\\offline-forms\\client\\maritaca-mobile\\res\\values-v18\\styles.xml",
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\values-v18\\styles.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 59,
+                        "startOffset": 56,
                         "endLine": 10,
                         "endColumn": 12,
-                        "endOffset": 646
+                        "endOffset": 636
                     }
                 }
             }
