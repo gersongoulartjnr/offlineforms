@@ -19,7 +19,7 @@ import br.unifesp.maritaca.mobile.util.Constants;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
-public class MenuActivity extends SherlockActivity implements OnClickListener {
+public class MenuActivity extends SherlockActivity implements OnClickListener  {
 
     private MaritacaHelper sqliteHelper;
 
@@ -46,18 +46,30 @@ public class MenuActivity extends SherlockActivity implements OnClickListener {
         btnSync.setOnClickListener(this);
 
         if(isDeviceOnline()==false){
-            btnSync.setEnabled(false);
-            btnSync.setBackgroundColor(Color.GRAY);
-            Toast.makeText(getApplicationContext(), "Não há conexão com a internet", Toast.LENGTH_SHORT).show();
+            disableSync();
         }else{
-            btnSync.setEnabled(true);
-            btnSync.setBackgroundColor(Color.parseColor("#1A73E8"));
+            enableSync();
         }
 
 
         Button btnReplace = (Button) findViewById(R.id.btnReplace);
         btnReplace.setOnClickListener(this);
 
+    }
+
+    public void disableSync(){
+        Button btnSync = (Button) findViewById(R.id.btnSync);
+        btnSync.setOnClickListener(this);
+       // btnSync.setEnabled(false);
+        btnSync.setBackgroundColor(Color.GRAY);
+        Toast.makeText(getApplicationContext(), "Não há conexão com a internet", Toast.LENGTH_SHORT).show();
+    }
+
+    public void enableSync(){
+        Button btnSync = (Button) findViewById(R.id.btnSync);
+        btnSync.setOnClickListener(this);
+        //btnSync.setEnabled(true);
+        btnSync.setBackgroundColor(Color.parseColor("#1A73E8"));
     }
 
     public void onBackPressed() {
@@ -76,7 +88,12 @@ public class MenuActivity extends SherlockActivity implements OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.btnSync:
-                sendGS();
+                if(isDeviceOnline()==false){
+                    disableSync();
+                }else{
+                    enableSync();
+                    sendGS();
+                }
                 //carregaGS();
                 break;
             case R.id.btnReplace:
@@ -124,7 +141,7 @@ public class MenuActivity extends SherlockActivity implements OnClickListener {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+       // finish();
     }
 
     @Override

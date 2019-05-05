@@ -17,11 +17,11 @@
     <string name="label_loading_form">Carregando formulários</string>
     <string name="label_loading_answers">Carregando respostas</string>
     <string name="label_loading_data">Carregando dados</string>
-    <string name="lbl_no_results">No results</string>
+    <string name="lbl_no_results">Sem resultados</string>
     <string name="label_latitude">Latitude</string>
     <string name="label_longitude">Longitude</string>
     <string name="label_confirmation">Confirmação</string>
-    <string name="label_enter_valid_value">Please, enter a valid value.</string>
+    <string name="label_enter_valid_value">Por favor, entre com um valor válido</string>
     <string name="label_combo_chooseone">Escolha uma opção</string>
 
     <string name="label_sending_data_title">Sending data&#8230;</string>
@@ -47,7 +47,7 @@
     <string name="msg_logout">Are you sure you want to logout?</string>
     <string name="msg_confirmation">Tem certeza que deseja salvar a coleta?</string>
     <string name="msg_form_cancel">Deseja cancelar sua coleta?</string>
-    <string name="msg_help">Sorry, there is no help for this question</string>
+    <string name="msg_help">Desculpe, não há ajuda para essa questão.</string>
     <string name="msg_time_has_expired">Time has expired.</string>
     <!-- menu -->
     <string name="main_title">Maritaca Mobile</string>

@@ -126,8 +126,7 @@
 
         <activity
             android:name=".MenuActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MenuLoadFormActivity">
+            android:screenOrientation="portrait">
         </activity>
 
         <meta-data
@@ -137,10 +136,11 @@
         <activity
             android:name=".SendResponses"
             android:screenOrientation="portrait"
-            android:label="@string/title_activity_send_responses">
+            android:label="@string/title_activity_send_responses"
+            android:parentActivityName=".MenuActivity">>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuLoadFormActivity" />
+                android:value=".MenuActivity" />
         </activity>
 
 
@@ -168,7 +168,7 @@
             android:name=".SelectFormActivity"
             android:screenOrientation="portrait"
             android:label="Escolhendo o formulário"
-            android:parentActivityName=".SelectFormActivity">
+            android:parentActivityName=".MenuLoadFormActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MenuLoadFormActivity" />

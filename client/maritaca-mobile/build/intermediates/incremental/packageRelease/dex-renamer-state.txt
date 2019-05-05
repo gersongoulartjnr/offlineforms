@@ -1,4 +1,0 @@
-#Sun Apr 28 13:05:54 BRT 2019
-base.0=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

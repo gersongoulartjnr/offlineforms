@@ -50,16 +50,17 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
         this.initMenu();
         setContentView(R.layout.novomenu);
 
+        /*
         Button btnCarregaGS = (Button) findViewById(R.id.btnCarregaGS);
         btnCarregaGS.setEnabled(false);
         btnCarregaGS.setBackgroundColor(Color.GRAY);
         btnCarregaGS.setOnClickListener(this);
+        */
 
         Button btnCarregaGSDrive = (Button) findViewById(R.id.btnCarregaGSDrive);
         btnCarregaGSDrive.setOnClickListener(this);
 
-    //     TextView txtIdForm = (TextView) findViewById(R.id.txtIdForm);
-
+        /*
         EditText txtIdForm = (EditText) findViewById(R.id.txtIdForm);
 
         txtIdForm.setOnEditorActionListener(new OnEditorActionListener() {
@@ -80,6 +81,7 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
                 return false;
             }
         });
+        */
 
 
     }
@@ -95,15 +97,16 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.btnCarregaGS:
+           /* case R.id.btnCarregaGS:
                 carregaGS();
-                break;
+                break;*/
             case R.id.btnCarregaGSDrive:
                 carregaGSDrive();
                 break;
         }
     }
 
+    /*
     public void carregaGS(){
         limpaQuestions();
         TextView txtIdForm = (TextView) findViewById(R.id.txtIdForm);
@@ -113,11 +116,12 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
         sqliteHelper.insertURL(url);
         startActivity(intent);
     }
-
+    */
     public void carregaGSDrive(){
         limpaQuestions();
         Intent intent = new Intent(this, LoadFormDrive.class);
         startActivity(intent);
+        //finish();
     }
 
     public void limpaQuestions(){
@@ -142,7 +146,7 @@ public class MenuLoadFormActivity extends SherlockActivity implements OnClickLis
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+        //finish();
     }
 
     @Override

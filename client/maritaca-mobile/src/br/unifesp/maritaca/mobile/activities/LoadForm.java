@@ -295,8 +295,6 @@ public class LoadForm extends Activity implements View.OnClickListener{
 
         private List<String> getDataFromApi()
                 throws IOException, GoogleAuthException {
-                // ID of the script to call. Acquire this from the Apps Script editor,
-                // under Publish > Deploy as API executable.
 
                 String scriptId = "MqppBDJm7aTKWjN41OXCUbZxLbWWIB-1a";
 
@@ -412,6 +410,7 @@ public class LoadForm extends Activity implements View.OnClickListener{
 
             }
         }
+
 
         @Override
         protected void onCancelled() {

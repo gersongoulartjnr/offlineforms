@@ -59,8 +59,8 @@ public class SendResponses extends Activity {
     static final int REQUEST_AUTHORIZATION = 1001;
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
     private static final String PREF_ACCOUNT_NAME = "accountName";
-    private static final String[] SCOPES = { "https://www.googleapis.com/auth/drive","https://www.googleapis.com/auth/forms","https://www.googleapis.com/auth/script.external_request" };
-    int cont=0;
+    private static final String[] SCOPES = { "https://www.googleapis.com/auth/drive.readonly","https://www.googleapis.com/auth/forms","https://www.googleapis.com/auth/script.external_request" };
+   int cont=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,7 +18,6 @@ public class XMLFormParser {
 		try {
 
 			FileInputStream file = new FileInputStream(Constants.PATH_FORM);
-		//	InputStream file = is;
 			Serializer serializer = new Persister();
 			this.form = serializer.read(Form.class, file);
 		} catch (Exception e) {
