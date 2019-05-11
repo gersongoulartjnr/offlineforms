@@ -1,0 +1,218 @@
+[
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\spinner_ab_default_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\spinner_ab_default_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_normal_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_disabled_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_focus_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_normal_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_pressed_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_unselected_pressed_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\tab_unselected_pressed_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_disabled_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_help_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_help_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_next.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_next.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_selected_pressed_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\tab_selected_pressed_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_normal_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_social_add.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_social_add.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\menu_hardkey_panel_offlineforms.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\menu_hardkey_panel_offlineforms.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_focus_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_normal_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_full_open_on_phone.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_next_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_next_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_selected_focused_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\tab_selected_focused_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_previous_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_previous_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ab_stacked_solid_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ab_stacked_solid_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ab_transparent_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ab_transparent_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_about_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_about_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_pressed_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\progress_secondary_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\progress_secondary_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\menu_dropdown_panel_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\menu_dropdown_panel_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\spinner_ab_focused_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\spinner_ab_focused_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\menu_dropdown_panel_offlineforms.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\menu_dropdown_panel_offlineforms.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ab_bottom_solid_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ab_bottom_solid_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_cancel_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_cancel_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_pressed_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\menu_hardkey_panel_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\menu_hardkey_panel_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_help.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_help.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\list_focused_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\list_focused_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_focus_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\progress_primary_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\progress_primary_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_pressed_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_social_add_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_social_add_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ab_solid_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ab_solid_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_focus_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_focus_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_selected_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\tab_selected_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_disabled_focus_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\progress_bg_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\progress_bg_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_disabled_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_about.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_about.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_previous.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_previous.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_text_disabled_focus_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_unselected_focused_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\tab_unselected_focused_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\spinner_ab_pressed_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\spinner_ab_pressed_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\spinner_ab_disabled_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\spinner_ab_disabled_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ab_solid_offlineforms.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ab_solid_offlineforms.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_signin_btn_icon_disabled_light.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_light.9.png"
+    }
+]

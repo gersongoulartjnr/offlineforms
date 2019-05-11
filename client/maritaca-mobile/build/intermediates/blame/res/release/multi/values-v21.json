@@ -1,0 +1,28 @@
+[
+    {
+        "outputFile": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v21\\values-v21.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 1032
+                },
+                "from": {
+                    "file": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\values-v21\\styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 1033
+                    }
+                }
+            }
+        ]
+    }
+]

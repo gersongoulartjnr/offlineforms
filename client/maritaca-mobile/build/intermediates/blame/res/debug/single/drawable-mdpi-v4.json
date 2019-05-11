@@ -76,12 +76,12 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__cab_background_top_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__list_divider_holo_dark.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__list_divider_holo_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__tab_unselected_pressed_holo.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__list_divider_holo_dark.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__list_divider_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__ic_cab_done_holo_light.png",
@@ -212,12 +212,12 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__progress_primary_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__ab_bottom_transparent_dark_holo.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__ab_bottom_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\abs__ab_stacked_transparent_light_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abs__btn_cab_done_focused_holo_dark.9.png",

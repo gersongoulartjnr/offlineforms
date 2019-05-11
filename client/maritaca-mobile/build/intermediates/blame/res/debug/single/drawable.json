@@ -192,12 +192,12 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable\\abs__list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_dash_settings_over.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_settings_over.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable\\button_send.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\button_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_dash_settings_over.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_settings_over.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable\\common_signin_btn_text_light.xml",

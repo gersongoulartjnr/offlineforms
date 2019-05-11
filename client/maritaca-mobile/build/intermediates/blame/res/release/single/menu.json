@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\menu\\list_mode_menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\menu\\list_mode_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\menu\\localdata_menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\menu\\localdata_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\menu\\main_menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\menu\\drawer_menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\menu\\drawer_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\menu\\list_questions_menu.xml",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\menu\\list_questions_menu.xml"
+    }
+]

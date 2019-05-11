@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:components="http://schemas.android.com/apk/res/com.wvr.widget"
+        android:id="@+id/dotsL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/circle_white"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/circle_white" >
+        </ImageView>
+        
+        <ImageView
+            android:id="@+id/circle_green"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/circle_white"
+            android:background="@drawable/circle_green" >
+        </ImageView>
+</RelativeLayout>

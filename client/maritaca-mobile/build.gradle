@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile fileTree(dir: 'libs', exclude: 'android-support-v4.jar', include: '*.jar')
+    compile fileTree(include: '*.jar', exclude: 'android-support-v4.jar', dir: 'libs')
     compile project(':library')
     compile('com.google.android.gms:play-services-identity:7.8.0') {
         exclude module: 'support-v4'
@@ -23,13 +23,20 @@ repositories {
 
 android {
     signingConfigs {
+        config {
+            keyAlias 'offlineforms'
+            keyPassword 'offlineforms'
+            storeFile file('C:/Users/Gerson/releaseKeyStore/release-offlineforms.jks')
+            storePassword 'offlineforms'
+        }
     }
     compileSdkVersion 21
     buildToolsVersion '28.0.1'
     defaultConfig {
         multiDexEnabled true
-        minSdkVersion 15
-        targetSdkVersion 15
+        minSdkVersion 26
+        targetSdkVersion 26
+        signingConfig signingConfigs.config
     }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
@@ -65,6 +72,7 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.config
         }
     }
 }
