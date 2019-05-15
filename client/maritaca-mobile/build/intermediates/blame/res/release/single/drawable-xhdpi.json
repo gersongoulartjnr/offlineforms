@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-xhdpi\\common_signin_btn_icon_pressed_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\menu_dropdown_panel_offlineforms.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\menu_dropdown_panel_offlineforms.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\spinner_ab_default_maritaca.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\spinner_ab_default_maritaca.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\menu_dropdown_panel_offlineforms.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\menu_dropdown_panel_offlineforms.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_menu_previous.png",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\tab_selected_pressed_maritaca.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_menu_help.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\ic_menu_help.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_menu_cancel_over.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\ic_menu_cancel_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\ic_menu_help.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-xhdpi\\ic_menu_help.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi\\common_signin_btn_icon_normal_dark.9.png",

@@ -16,24 +16,24 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__progress_bg_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__ic_go_search_api_holo_light.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__ic_go_search_api_holo_light.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__tab_selected_pressed_holo.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__tab_selected_pressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__progress_bg_holo_dark.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__progress_bg_holo_dark.9.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__ic_go_search_api_holo_light.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__ic_go_search_api_holo_light.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__list_activated_holo.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__list_activated_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__textfield_search_right_default_holo_light.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__textfield_search_right_default_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__list_activated_holo.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__list_activated_holo.9.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__progress_bg_holo_dark.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\abs__progress_bg_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abs__ab_stacked_solid_dark_holo.9.png",

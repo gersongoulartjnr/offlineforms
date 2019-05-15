@@ -106,9 +106,12 @@ public class ComboBoxQuestion extends Question {
 						String key = (String) it.next();
 						jsonVal = jsonObj.getString(key);						
 					}
+					//Limpando a primeira questão
+					/*
 					if (option.getText().equals(jsonVal)) {
 						pos = option.getId() + 1;
 					}
+					*/
 				} catch (JSONException e) {
 					throw new RuntimeException(e.getMessage());
 				}

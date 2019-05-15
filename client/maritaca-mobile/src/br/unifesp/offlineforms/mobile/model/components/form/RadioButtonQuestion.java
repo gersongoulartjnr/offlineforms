@@ -90,9 +90,12 @@ public class RadioButtonQuestion extends Question {
 						String key = (String) it.next();
 						jsonVal = jsonObj.getString(key);						
 					}
+					//Limpando a primeira questão
+					/*
 					if (radioButton.getText().equals(jsonVal)) {
 						radioButton.setChecked(true);
 					}
+					*/
 				} catch (JSONException e) {
 					throw new RuntimeException(e.getMessage());
 				}

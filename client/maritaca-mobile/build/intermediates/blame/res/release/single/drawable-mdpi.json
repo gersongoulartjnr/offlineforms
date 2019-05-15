@@ -64,12 +64,12 @@
         "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_signin_btn_icon_normal_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_full_open_on_phone.png",
-        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_full_open_on_phone.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\ic_menu_next_over.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-mdpi\\ic_menu_next_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\common_full_open_on_phone.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-mdpi\\common_full_open_on_phone.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\tab_selected_focused_maritaca.9.png",
