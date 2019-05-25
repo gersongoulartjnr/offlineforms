@@ -41,7 +41,7 @@ public class NotificationHelper {
 		Intent notificationIntent = new Intent();
 		contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
 		
-		notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+		//notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 		notification.flags = Notification.FLAG_ONGOING_EVENT;
 		mBuilder.setProgress(100, 0, false);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -58,7 +58,7 @@ public class NotificationHelper {
 			notificationManager.notify(NOTIFICATION_ID, mBuilder.build());
 		} else {
 	        CharSequence contentText = R.string.msg_upload_sending + currentData + "% " + currentData+ "/100.";
-	        notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+	       // notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 		}
     }
     

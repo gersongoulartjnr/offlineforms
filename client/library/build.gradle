@@ -9,7 +9,7 @@ android {
         config {
             keyAlias 'offlineforms'
             keyPassword 'offlineforms'
-            storeFile file('C:/Users/Gerson/releaseKeyStore/release-offlineforms.jks')
+            storeFile file('C:/Users/Gerson/releaseKeyStore/release.jks')
             storePassword 'offlineforms'
         }
     }

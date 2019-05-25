@@ -118,7 +118,7 @@ public class NotificationService extends IntentService {
 		notificationIntent.putExtra(Constants.USER_DATA, mUser);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 
-		notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+		//notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 		
 		notification.defaults |= Notification.DEFAULT_VIBRATE;
 		notification.defaults |= Notification.DEFAULT_SOUND;

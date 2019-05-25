@@ -1,5 +1,6 @@
 package br.unifesp.offlineforms.mobile.activities;
 
+import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.common.ConnectionResult;
@@ -46,6 +48,7 @@ import br.unifesp.offlineforms.mobile.util.Constants;
 public class LoadFormDrive extends Activity implements View.OnClickListener{
 
     GoogleAccountCredential mCredential;
+
     private TextView mOutputText;
     private Button btnVoltar;
     ProgressDialog mProgress;
@@ -108,10 +111,6 @@ public class LoadFormDrive extends Activity implements View.OnClickListener{
                 getApplicationContext(), Arrays.asList(SCOPES))
                 .setBackOff(new ExponentialBackOff())
                 .setSelectedAccountName(settings.getString(PREF_ACCOUNT_NAME, null));
-
-        mCredential = GoogleAccountCredential.usingOAuth2(
-                getApplicationContext(), Arrays.asList(SCOPES))
-                .setBackOff(new ExponentialBackOff());
 
     }
 
@@ -183,7 +182,9 @@ public class LoadFormDrive extends Activity implements View.OnClickListener{
                     String accountName =
                             data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                     if (accountName != null) {
-                        mCredential.setSelectedAccountName(accountName);
+
+                        mCredential.setSelectedAccount(new Account(accountName,Constants.PACKAGE_APP));
+                        //alterar-mCredential.setSelectedAccount(new Account(accountName,Constants.PACKAGE_APP));
                         SharedPreferences settings =
                                 getPreferences(Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = settings.edit();
@@ -203,12 +204,13 @@ public class LoadFormDrive extends Activity implements View.OnClickListener{
         }
 
 
-        // super.onActivityResult(requestCode, resultCode, data);
+        //super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void refreshResults() {
         if (mCredential.getSelectedAccountName() == null) {
             chooseAccount();
+
         } else {
             if (isDeviceOnline()) {
                     new MakeRequestTask(mCredential).execute();

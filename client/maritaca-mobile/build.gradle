@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 dependencies {
     compile fileTree(include: '*.jar', exclude: 'android-support-v4.jar', dir: 'libs')
     compile project(':library')
-    compile('com.google.android.gms:play-services-identity:7.8.0') {
+    /*compile('com.google.android.gms:play-services-identity:7.8.0') {
         exclude module: 'support-v4'
     }
     compile('com.google.api-client:google-api-client-android:1.20.0') {
@@ -13,7 +13,20 @@ dependencies {
     compile('com.google.apis:google-api-services-script:v1-rev1-1.20.0') {
         exclude group: 'org.apache.httpcomponents'
         exclude module: 'support-v4'
+    }*/
+
+    compile('com.google.android.gms:play-services-identity:7.8.0') {
+    exclude module: 'support-v4'
     }
+    compile('com.google.api-client:google-api-client-android:1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+        exclude module: 'support-v4'
+    }
+    compile('com.google.apis:google-api-services-script:v1-rev366-1.25.0') {
+        exclude group: 'org.apache.httpcomponents'
+        exclude module: 'support-v4'
+    }
+
 }
 
 repositories {
@@ -26,15 +39,15 @@ android {
         config {
             keyAlias 'offlineforms'
             keyPassword 'offlineforms'
-            storeFile file('C:/Users/Gerson/releaseKeyStore/release-offlineforms.jks')
+            storeFile file('C:/Users/Gerson/releaseKeyStore/release.jks')
             storePassword 'offlineforms'
         }
     }
-    compileSdkVersion 21
+    compileSdkVersion 28
     buildToolsVersion '28.0.1'
     defaultConfig {
-        multiDexEnabled true
-        minSdkVersion 21
+        //multiDexEnabled true
+        minSdkVersion 15
         targetSdkVersion 26
         signingConfig signingConfigs.config
     }
@@ -72,6 +85,9 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.config
+        }
+        debug {
             signingConfig signingConfigs.config
         }
     }

@@ -6,7 +6,7 @@ import br.unifesp.offlineforms.mobile.model.Question;
 
 public class Constants {
 
-	//public static final String FORM_ID="7421fb10-564e-11e5-874f-52540043a0d4"; //Don't touch	
+	public static final String PACKAGE_APP="br.unifesp.offlineforms.mobile.activities";
 	public static String FORM_ID="";
 	public static final String FORM_NAME_ID = "form_id"; //Don't touch
 	

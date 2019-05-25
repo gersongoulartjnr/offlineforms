@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\cancel.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\cancel.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\invite_friends.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\invite_friends.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\common_signin_btn_text_normal_light.9.png",
         "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-hdpi\\common_signin_btn_text_normal_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\invite_friends.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\invite_friends.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\cancel.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\cancel.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\common_signin_btn_text_pressed_light.9.png",
@@ -20,16 +20,16 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\progress_secondary_maritaca.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\common_signin_btn_icon_focus_dark.9.png",
-        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-hdpi\\common_signin_btn_icon_focus_dark.9.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\progress_bg_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\progress_bg_maritaca.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ab_stacked_solid_maritaca.9.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\ab_stacked_solid_maritaca.9.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\progress_bg_maritaca.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\progress_bg_maritaca.9.png"
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\common_signin_btn_icon_focus_dark.9.png",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable-hdpi\\common_signin_btn_icon_focus_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\menu_dropdown_panel_offlineforms.png",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\btn_collect.png"
     },
     {
-        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\list_focused_maritaca.9.png",
-        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\list_focused_maritaca.9.png"
-    },
-    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\ab_solid_offlineforms.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\ab_solid_offlineforms.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\list_focused_maritaca.9.png",
+        "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable-hdpi\\list_focused_maritaca.9.png"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable-hdpi\\tab_selected_pressed_maritaca.9.png",

@@ -2,121 +2,238 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\oauth2-client.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.25.0\e7ff725e89ff5dcbed107be1a24e8102ae2441ee\google-api-client-1.25.0.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="2385dfe1b11ed9dbad59351a548bb5df6d2ceae4">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\oauth2-client_97e92c8314051051f30028230ad67092f41c50e9\classes.dex" />
+        sha1="e7ff725e89ff5dcbed107be1a24e8102ae2441ee">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-api-client-1.25.0_9f3107f7ef05d81c60875496b3aed01746aec0a8.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\oauth2-common.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\.android\build-cache\eb47e26298773d0f575a42ff989756a2deb426cf\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="92d35cc320ca7fb0a006183d203779f2cb301472">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\oauth2-common_d22435fa1db612847309da5f2ade13b0d6dd837c\classes.dex" />
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\classes_d875700312dfbb4752beabcdae2e89496748a8f7.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\jettison-1.2.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-script\v1-rev366-1.25.0\2099674b4d2662b657b7185931fec48f4b8da256\google-api-services-script-v1-rev366-1.25.0.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="0765a6181653f4b05c18c7a9e8f5c1f8269bf9b2">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\jettison-1.2_a6b7bf0e0640e25e6e1df8dc5a2ed6e798e9bdc9\classes.dex" />
+        sha1="2099674b4d2662b657b7185931fec48f4b8da256">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-api-services-script-v1-rev366-1.25.0_d87fec78e3bd99c3829a9c630e278e76af99efc4.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="4e393793c37c77e042ccc7be5a914ae39251b365">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\jackson-core-2.9.6_388f1b6521cffe8d0a051458f5800a335f9ab6b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.android\build-cache\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\classes_5b686b3ddc8f05e71b6e77bd0e4b9e28d437600e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.25.0\7c5c89bd4d0d34d9f1cb3396e8da6233e5074b5c\google-http-client-jackson2-1.25.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="7c5c89bd4d0d34d9f1cb3396e8da6233e5074b5c">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-http-client-jackson2-1.25.0_cc678f7d572fea48fb0cd72318c0fbafc8eb0cee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\20.0\89507701249388e1ed5ddcf8c41f4ce1be7831ef\guava-20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="89507701249388e1ed5ddcf8c41f4ce1be7831ef">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\guava-20.0_213e126317fb2fbc0a45756c1d63b67a82298da0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\commons-codec-1.6.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
         sha1="b7f0fc8f61ecadeb3695f0b9464755eee44374d4">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\commons-codec-1.6_575573792704a8d89c1f23ae32b784d15ceb3bf3\classes.dex" />
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\commons-codec-1.6_575573792704a8d89c1f23ae32b784d15ceb3bf3.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpclient-4.2.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.1"
-        sha1="3bfeb9062b12d5b340445336790dbc14c59c2d79">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\httpclient-4.2.5_77dbd1f52107d3f7b208393282ea970a0d802c27\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpmime-4.2.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.1"
-        sha1="6efc2f9df23c2ac4d3b701a11cab9f9fa6a641d4">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\httpmime-4.2.5_1534e5df045e9c6dc6a7c94b4948824b69a9177a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\library\build\intermediates\bundles\default\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="28.0.1"
-        sha1="1a75c9792230da3b8927b101f233c081ea868553">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\4\classes_a59fe33f09418dc80f350e247c30ecb2948f3d19\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\simple-xml-2.6.7.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
         sha1="e266d0e0b5f1c10ee590dead593a6d2702f306dd">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\simple-xml-2.6.7_b9560e96d7d3a634694138c16333a93374e7caaf\classes.dex" />
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\simple-xml-2.6.7_b9560e96d7d3a634694138c16333a93374e7caaf.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\apache-mime4j-core-0.7.2.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\oauth2-client.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="a81264fe0265ebe8fd1d8128aad06dc320de6eef">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\apache-mime4j-core-0.7.2_147af544a010ab2cd25ec18cafd9ecb0f4ab622d\classes.dex" />
+        sha1="2385dfe1b11ed9dbad59351a548bb5df6d2ceae4">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\oauth2-client_97e92c8314051051f30028230ad67092f41c50e9.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\zxingjar-1.1.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\oauth2-common.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="734ce52ec1144865e306c96029a23d339705a67a">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\zxingjar-1.1_e965bc1ea77ce6ac221ee5f93357ef116e33d2fe\classes.dex" />
+        sha1="92d35cc320ca7fb0a006183d203779f2cb301472">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\oauth2-common_d22435fa1db612847309da5f2ade13b0d6dd837c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\library\build\intermediates\bundles\default\libs\android-support-v4.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\library\build\intermediates\bundles\default\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="15c03170be6fbbb27ca5bae0eb284fef5755253a">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\8\android-support-v4_ff45828ddf6f009021fe5ecb26b6df4dd08bc6fd\classes.dex" />
+        sha1="1a75c9792230da3b8927b101f233c081ea868553">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\classes_a59fe33f09418dc80f350e247c30ecb2948f3d19.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpcore-4.2.4.jar"
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpclient-4.2.5.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
-        sha1="3b7f38df6de5dd8b500e602ae8c2dd5ee446f883">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\httpcore-4.2.4_a738c573ba13e75ba286bdd952f7ce84a9048db2\classes.dex" />
+        sha1="3bfeb9062b12d5b340445336790dbc14c59c2d79">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\httpclient-4.2.5_77dbd1f52107d3f7b208393282ea970a0d802c27.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.1\ed28ded51a8b1c6b112568def5f4b455e6809019\j2objc-annotations-1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="ed28ded51a8b1c6b112568def5f4b455e6809019">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\j2objc-annotations-1.1_90b7ea458791dbf13e90d72f6302682920f2ec84.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\core.jar"
         jumboMode="false"
         optimize="true"
         revision="28.0.1"
         sha1="b2fc078692d1736ed87b3f4a8d94469d91cb816f">
-        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\transforms\dex\release\folders\1000\2\core_5e8240ec33e1e35f681cd32766de9881659b2547\classes.dex" />
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\core_5e8240ec33e1e35f681cd32766de9881659b2547.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\apache-mime4j-core-0.7.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="a81264fe0265ebe8fd1d8128aad06dc320de6eef">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\apache-mime4j-core-0.7.2_147af544a010ab2cd25ec18cafd9ecb0f4ab622d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpmime-4.2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="6efc2f9df23c2ac4d3b701a11cab9f9fa6a641d4">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\httpmime-4.2.5_1534e5df045e9c6dc6a7c94b4948824b69a9177a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.25.0\cf407b7190e978fb811bc76c9297e78a2c564a38\google-http-client-android-1.25.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="cf407b7190e978fb811bc76c9297e78a2c564a38">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-http-client-android-1.25.0_44bb5eca2327837868cf2a2b9e0d495ffbf47d51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\zxingjar-1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="734ce52ec1144865e306c96029a23d339705a67a">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\zxingjar-1.1_e965bc1ea77ce6ac221ee5f93357ef116e33d2fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.25.0\c9ee14e8b095b4b301b28d57755cc482b8d6f39f\google-oauth-client-1.25.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="c9ee14e8b095b4b301b28d57755cc482b8d6f39f">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-oauth-client-1.25.0_ec83441649e671ebc14cd4044306ead1e7058d45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.25.0\5fb16523c393bfe0210c29db44742bd308311841\google-http-client-1.25.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="5fb16523c393bfe0210c29db44742bd308311841">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-http-client-1.25.0_9c6b29249ff7769b7e619a53613fcbe16643e0a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\jettison-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="0765a6181653f4b05c18c7a9e8f5c1f8269bf9b2">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\jettison-1.2_a6b7bf0e0640e25e6e1df8dc5a2ed6e798e9bdc9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\libs\httpcore-4.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="3b7f38df6de5dd8b500e602ae8c2dd5ee446f883">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\httpcore-4.2.4_a738c573ba13e75ba286bdd952f7ce84a9048db2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="25ea2e8b0c338a877313bd4672d3fe056ea78f0d">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\jsr305-3.0.2_77ed497812c010d5711e734582b78cfa97acc6b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\Documents\offlineforms\client\library\build\intermediates\bundles\default\libs\android-support-v4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="15c03170be6fbbb27ca5bae0eb284fef5755253a">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\android-support-v4_ff45828ddf6f009021fe5ecb26b6df4dd08bc6fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gerson\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.25.0\dfd2c70b386dc05abc3e8953def2188ec0669f5b\google-api-client-android-1.25.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="dfd2c70b386dc05abc3e8953def2188ec0669f5b">
+        <dex dex="C:\Users\Gerson\Documents\offlineforms\client\maritaca-mobile\build\intermediates\pre-dexed\release\google-api-client-android-1.25.0_91a9771fc8c42e7a0ed1ad6cbd3f2faae7396891.jar" />
     </item>
 
 </items>

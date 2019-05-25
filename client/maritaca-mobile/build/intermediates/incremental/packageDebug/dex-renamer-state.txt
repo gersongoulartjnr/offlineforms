@@ -1,4 +1,4 @@
-#Wed May 08 23:53:45 BRT 2019
+#Wed May 22 23:36:10 BRT 2019
 file.9=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\google-api-client-1.20.0_3b29b11a12dcfab874f643e10bf5c42947a2687a\\classes.dex
 base.10=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5b686b3ddc8f05e71b6e77bd0e4b9e28d437600e
 file.8=C\:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\google-http-client-1.20.0_5e5c1fbf7a3c42d8e2a8b295facb43117d0669db\\classes.dex

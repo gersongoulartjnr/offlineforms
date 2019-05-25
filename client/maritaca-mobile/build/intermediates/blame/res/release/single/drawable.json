@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_plus_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_signin_btn_text_light.xml",
         "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable\\common_signin_btn_text_light.xml"
     },
@@ -18,6 +22,14 @@
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\icon_dash_settings.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_settings.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_light_focused.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\btn_collect.png",
@@ -42,6 +54,10 @@
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\progress_horizontal_green.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\progress_horizontal_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_signin_btn_icon_dark.xml",
@@ -80,6 +96,10 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\progress_horizontal_maritaca.xml"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\button_send.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\button_send.xml"
     },
@@ -116,6 +136,10 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\bt_green.xml"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\spinner_background_ab_maritaca.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\spinner_background_ab_maritaca.xml"
     },
@@ -126,6 +150,14 @@
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\icon_dash_tell_a_friend_over.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_tell_a_friend_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_plus_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_dark_focused.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\icon_dash_about_over.png",
@@ -140,8 +172,16 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable\\abs__ic_clear_holo_light.xml"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\tab_indicator_ab_maritaca.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\tab_indicator_ab_maritaca.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\warn.png",
@@ -170,6 +210,10 @@
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\btn_sync.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\btn_sync.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\button_collect.xml",
@@ -220,6 +264,10 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_about.png"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\abs__btn_cab_done_holo_dark.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable\\abs__btn_cab_done_holo_dark.xml"
     },
@@ -240,6 +288,14 @@
         "source": "C:\\Users\\Gerson\\.android\\build-cache\\5a5b0e4bd8cbfc996b2e94e5e6ad5e8036cf0709\\output\\res\\drawable\\common_signin_btn_text_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_disabled.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\abs__textfield_searchview_right_holo_dark.xml",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\library\\build\\intermediates\\bundles\\default\\res\\drawable\\abs__textfield_searchview_right_holo_dark.xml"
     },
@@ -256,6 +312,10 @@
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\progressbar_drawable.xml"
     },
     {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\icon_dash_send.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_send.png"
     },
@@ -270,5 +330,17 @@
     {
         "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\icon_dash_answers_over.png",
         "source": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\res\\drawable\\icon_dash_answers_over.png"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_plus_signin_btn_icon_dark.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_plus_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_plus_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\8c85cd0a4336e4494dbbb280b906e2d5dca00c78\\output\\res\\drawable\\common_plus_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Gerson\\Documents\\offlineforms\\client\\maritaca-mobile\\build\\intermediates\\res\\merged\\release\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
+        "source": "C:\\Users\\Gerson\\.android\\build-cache\\e23d2f631b0a6450b87cec576b7a25dd7f65a16a\\output\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
     }
 ]

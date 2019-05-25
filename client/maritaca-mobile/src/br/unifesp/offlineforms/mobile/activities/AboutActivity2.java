@@ -1,5 +1,6 @@
 package br.unifesp.offlineforms.mobile.activities;
 
+import android.accounts.Account;
 import android.os.Bundle;
 import android.app.Activity;
 import com.google.android.gms.common.ConnectionResult;
@@ -19,6 +20,8 @@ import java.io.*;
 
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.api.services.script.model.*;
+
+import java.io.File;
 import java.util.Map;
 
 import android.accounts.AccountManager;
@@ -145,7 +148,7 @@ public class AboutActivity2 extends Activity {
                     String accountName =
                             data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                     if (accountName != null) {
-                        mCredential.setSelectedAccountName(accountName);
+                        mCredential.setSelectedAccount(new Account(accountName,Constants.PACKAGE_APP));
                         SharedPreferences settings =
                                 getPreferences(Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = settings.edit();

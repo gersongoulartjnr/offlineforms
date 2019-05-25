@@ -1,5 +1,6 @@
 package br.unifesp.offlineforms.mobile.activities;
 
+import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -163,7 +164,7 @@ public class SendResponses extends Activity {
                     String accountName =
                             data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                     if (accountName != null) {
-                        mCredential.setSelectedAccountName(accountName);
+                        mCredential.setSelectedAccount(new Account(accountName,Constants.PACKAGE_APP));
                         SharedPreferences settings =
                                 getPreferences(Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = settings.edit();
