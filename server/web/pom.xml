@@ -28,7 +28,7 @@
 		<standardtaglibs.version>1.1.2</standardtaglibs.version>
 		<jspapi.version>2.0</jspapi.version>
 		<tiles.version>2.2.2</tiles.version>
-		<springframework.version>3.1.0.RELEASE</springframework.version>
+		<springframework.version>5.2.7.RELEASE</springframework.version>
 		<slf4j.version>1.5.11</slf4j.version>
 		<commons-logging.version>1.1</commons-logging.version>
 		<log4j.version>1.2.16</log4j.version>
