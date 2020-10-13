@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javaeewebapi.version>6.0</javaeewebapi.version>
 		<springframework.version>3.1.0.RELEASE</springframework.version>
-		<junit.version>4.8.1</junit.version>
+		<junit.version>4.13.1</junit.version>
 	</properties>
 
 	<build>
